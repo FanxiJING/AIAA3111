@@ -1,0 +1,194 @@
+{
+  "seed": 42,
+  "target_test_fraction": 0.2,
+  "candidate_attempts": 10000,
+  "selection_score": 0.04794473126993699,
+  "split_unit": "users; users sharing exact timestamp/latitude/longitude/mode records are grouped",
+  "input_directory": "D:\\UG_Study\\27FALL\\Data Mining\\final project\\AIAA3111\\data\\processed\\quality_features",
+  "excluded_empty_users": [
+    "059",
+    "088",
+    "116",
+    "118",
+    "124"
+  ],
+  "duplicate_linked_groups": [
+    [
+      "069",
+      "126",
+      "129",
+      "167"
+    ],
+    [
+      "081",
+      "125"
+    ],
+    [
+      "084",
+      "085"
+    ],
+    [
+      "089",
+      "144"
+    ],
+    [
+      "108",
+      "139"
+    ],
+    [
+      "153",
+      "163"
+    ]
+  ],
+  "duplicate_links": [
+    {
+      "users": [
+        "069",
+        "129"
+      ],
+      "shared_unique_records": 3808
+    },
+    {
+      "users": [
+        "069",
+        "167"
+      ],
+      "shared_unique_records": 3808
+    },
+    {
+      "users": [
+        "081",
+        "125"
+      ],
+      "shared_unique_records": 25776
+    },
+    {
+      "users": [
+        "084",
+        "085"
+      ],
+      "shared_unique_records": 3432
+    },
+    {
+      "users": [
+        "089",
+        "144"
+      ],
+      "shared_unique_records": 9486
+    },
+    {
+      "users": [
+        "108",
+        "139"
+      ],
+      "shared_unique_records": 484
+    },
+    {
+      "users": [
+        "126",
+        "167"
+      ],
+      "shared_unique_records": 150688
+    },
+    {
+      "users": [
+        "153",
+        "163"
+      ],
+      "shared_unique_records": 7438
+    }
+  ],
+  "total_points": 4347764,
+  "train": {
+    "users": [
+      "010",
+      "020",
+      "021",
+      "053",
+      "056",
+      "062",
+      "064",
+      "065",
+      "067",
+      "068",
+      "073",
+      "075",
+      "076",
+      "078",
+      "080",
+      "081",
+      "084",
+      "085",
+      "086",
+      "092",
+      "096",
+      "098",
+      "100",
+      "101",
+      "102",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "110",
+      "111",
+      "112",
+      "114",
+      "115",
+      "117",
+      "125",
+      "128",
+      "136",
+      "138",
+      "139",
+      "141",
+      "147",
+      "153",
+      "154",
+      "161",
+      "163",
+      "170",
+      "174",
+      "175",
+      "179"
+    ],
+    "user_count": 51,
+    "points": 3486792,
+    "mode_counts": {
+      "walk": 1012051,
+      "bus": 981452,
+      "bike": 583792,
+      "train": 469094,
+      "car": 440403
+    },
+    "point_fraction": 0.801973612183182
+  },
+  "test": {
+    "users": [
+      "052",
+      "058",
+      "060",
+      "069",
+      "082",
+      "087",
+      "089",
+      "091",
+      "097",
+      "126",
+      "129",
+      "144",
+      "167"
+    ],
+    "user_count": 13,
+    "points": 860972,
+    "mode_counts": {
+      "walk": 309175,
+      "bus": 211313,
+      "bike": 192185,
+      "train": 87288,
+      "car": 61011
+    },
+    "point_fraction": 0.19802638781681803
+  }
+}
