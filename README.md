@@ -1,7 +1,8 @@
 # GPS 轨迹逐点出行方式识别
 
 本项目使用 GeoLife GPS 轨迹识别每个样本点的出行方式，允许同一 trip 内包含多种类别。
-当前已完成逐点标签匹配、基础清洗、trip 划分与第一批运动特征构造，供后续队友继续进行数据集划分、模型训练和评估。
+当前已完成逐点标签匹配、基础清洗、trip 划分与第一批运动特征构造（Part 1），以及基础模型训练、时序平滑、分段输出与评估（Part 2）；
+窗口大小、采样率、噪声和特征组实验留给 Part 3/4。
 
 ## 项目状态与交接
 
@@ -12,7 +13,10 @@
 | 异常运动处理 | 已实施连接阻断 | 来源文件变化或速度 >100 m/s 时重启 feature_block；重算特征，不删点、不补值；剩余高加速度和 jerk 仅标记 |
 | train/test 划分 | 已完成 | 51 个训练用户、13 个测试用户；重复记录关联用户绑定；validation 由训练用户内部另分 |
 | 类别筛选 | 已完成 | 当前交付 walk、bus、bike、train、car 五类；其他类别从交付样本中移除 |
-| 模型训练与评估 | Part 2 已完成 | 见下文 “Part 2: model training” 及 `src/model_training/README.md` |
+| 窗口构造与窗口特征 | 已完成（Part 2） | 每个 feature_block 切成 50 点窗口，不跨 feature_block_id；测试窗口盲切；27 个窗口特征进入模型 |
+| 模型训练与评估 | 已完成（Part 2） | 7 个模型；仅用训练用户分组 CV 调参和选模型；选中 SVM (RBF)；测试点级 macro-F1 0.760 |
+| 时序平滑 | 已完成（Part 2） | block 内 k 窗口多数投票；k 仅由训练用户 out-of-fold 预测选定（SVM k = 9）；测试点级 macro-F1 0.821 |
+| 分段输出 | 已完成（Part 2） | 同一 block 内相邻同类窗口合并为单一出行方式子序列；输出 segments_test.csv |
 
 接手数据入口为 `data/processed/quality_features/`。feature_points 和 five_class_features 作为处理前中间版本保留。
 有效性标记表示数值可计算，不能保证所有噪声已消除。训练窗口不得跨 feature_block_id。
@@ -47,6 +51,9 @@ uv run python -m unittest discover -s tests
 - `data/processed/quality_features/`：连接质量处理后重新计算的特征，当前交接入口。
 - `data/splits/`：固定的 train/test 用户清单、manifest.csv 和划分报告；这些小文件应提交版本管理。
 - `tests/`：标签匹配边界和重叠情况验证。
+- `src/model_training/`：Part 2 窗口构造、模型训练、时序平滑、分段输出与作图代码；说明见该目录 README.md。
+- `src/model_training/windows_w50*.csv`、`src/model_training/results/`：Part 2 生成的窗口表与结果，不提交版本管理。
+- `docs/`：Part 2 交接说明（part2_handover.md）、报告草稿（part2_report_draft.md）与 AIGC 使用记录（aigc_log_part2.md）。
 
 `uv.lock` 提交版本管理；原始/生成数据、缓存和 `.venv` 不提交。
 
@@ -316,31 +323,216 @@ uv run quality-features
 
 团队交接时应记录数据包对应的版本和校验值。目前仓库未配置自动下载，队友需从数据提供者取得数据包。
 
-## Part 2: model training
+## 模型训练与评估（Part 2）
 
-Code in `src/model_training/` (details and commands: its `README.md`; handover for Parts 3/4:
-`docs/part2_handover.md`). It reads `data/processed/quality_features/` and `data/splits/`, cuts every
-feature block into 50-point windows (test windows cut without labels), computes 27 window features,
-and compares a majority baseline with logistic regression, decision tree, k-NN, RBF-SVM, random forest
-and gradient boosting. Hyperparameters and the model are chosen by user-grouped CV on the training
-users only; the final step smooths predictions over 9 consecutive windows inside each block, with k
-also chosen on training users only. Output: per-point modes and single-mode segments.
+代码位于 `src/model_training/`，细节见该目录 README.md；给 Part 3/4 的交接说明见 `docs/part2_handover.md`。
+输入为 `data/processed/quality_features/` 与 `data/splits/`，不修改 Part 1 的任何数据或清单。
+以下数字均来自 `src/model_training/results/` 下的结果文件；“点级”指每个 GPS 点继承其所在窗口的预测后计分。
 
-Result on the 13 test users (selected model SVM, point level, 95% CI from resampling test users):
-macro-F1 0.821 (0.460–0.856), accuracy 0.845 (0.744–0.898).
+### 环境与运行
+
+使用 Python 3.12.6，依赖版本固定在 `src/model_training/requirements.txt`（pandas 3.1.1、scikit-learn 1.9.1 等）。
+pandas 2.x 未测试。内存不足时先设 `$env:LOKY_MAX_CPU_COUNT = "8"`，结果与 20 线程完全一致。
 
 ```powershell
 cd src\model_training
-pip install -r requirements.txt          # exact versions used (Python 3.12.6)
-python build_windows.py
-python build_windows.py --no-pure-train --out windows_w50_blind.csv
-python train_basic.py
-python tune_smoothing.py
-python evaluate_smoothing.py
-python make_figures.py
+pip install -r requirements.txt
+python build_windows.py                                      # 窗口表 windows_w50.csv
+python build_windows.py --no-pure-train --out windows_w50_blind.csv   # 全部用户盲切窗口，用于选 k
+python train_basic.py                                        # 7 个模型，调参、选模型、测试 -> results/basic_w50_no_dt/
+python train_basic.py --keep-dt                              # 含 dt 特征的消融 -> results/basic_w50/
+python tune_smoothing.py                                     # 仅用训练用户选平滑窗口 k
+python evaluate_smoothing.py                                 # 把选定的 k 一次性用于测试用户，生成分段
+python make_figures.py                                       # 报告/海报图 -> results/figures/
 ```
 
-Window tables and `results/` are not in git; share them separately (see `docs/part2_handover.md`).
+### 窗口构造
+
+推理时输入是没有分隔的逐点序列（见 关于输入输出的一点说明.docx），因此先把序列切成固定长度窗口，
+对窗口分类，再把窗口预测赋给其中每个点。
+
+| 项目 | 规则 |
+|---|---|
+| 窗口长度 | W = 50 点；不足 W/2 的尾段并入前一窗口，每个点恰好属于一个窗口 |
+| 边界 | 窗口不跨 feature_block_id |
+| 测试用户 | 盲切：不使用标签决定窗口边界，与真实推理一致 |
+| 训练用户（拟合用） | 另在真实类别变化处切开，使每个训练窗口只含一类；少于 10 点的训练窗口丢弃 |
+| 训练用户（选 k 用） | 与测试相同的盲切（windows_w50_blind.csv），因为按标签切开的窗口不像真实输入 |
+| 窗口标签 | 窗口内多数类别；同时保留各类点数，点级评估按点数计分，混合窗口不失真 |
+
+| 集合 | 用户数 | 点数 | 窗口数 | 说明 |
+|---|---:|---:|---:|---|
+| train（拟合） | 51 → 49 | 3,486,792 → 3,485,114 | 70,441 → 70,086 | 丢弃 355 个少于 10 点的窗口（1,678 点）；用户 100、147 仅有 9、7 个点，因此不再有窗口 |
+| train（盲切，选 k） | 49 | 3,486,776 | 70,203 | 用户 100、147 不属于任何 CV 折，不参与 |
+| test（盲切） | 13 | 860,972 | 17,380 | 平均纯度 0.9905；96.36% 的窗口只含一类 |
+
+窗口点数与 Part 1 逐类核对一致（train：walk 1,012,051、bus 981,452、bike 583,792、train 469,094、car 440,403；
+test：walk 309,175、bus 211,313、bike 192,185、train 87,288、car 61,011）。
+窗口时长中位数约 98 秒。
+
+### 窗口特征
+
+每个窗口计算 29 个统计量，其中 27 个作为模型输入：
+
+| 特征组 | 内容 |
+|---|---|
+| 速度 | 均值、标准差、最小、最大、10/50/90/95 分位数 |
+| 加速度绝对值 | 均值、标准差、90 分位数、最大值 |
+| jerk 绝对值 | 均值、90 分位数 |
+| 转向 | 转向率均值、中位数、90 分位数；转向角均值 |
+| 事件比例 | 停止（<0.5 m/s）、低速（<2 m/s）、急转（>30°）、大加速度（>1 m/s²） |
+| 整体 | 时长、路径长度、直线度（位移/路径长度）、整体平均速度、有效速度点比例 |
+| 不进入模型 | dt_mean、dt_max（采样间隔，保留在窗口表中供核查） |
+
+采样间隔描述的是设备记录频率而非运动方式，且在用户间漂移：car 窗口的 dt_mean 中位数在训练用户为 4.12 s，
+在测试用户为 2.0 s。消融结果（不平滑）如下；去掉后没有任何模型的 CV macro-F1 下降，因此默认排除。
+
+| 模型 | CV macro-F1 含 dt | CV 不含 dt | 测试 macro-F1 含 dt | 测试 不含 dt |
+|---|---:|---:|---:|---:|
+| SVM (RBF) | 0.648 | 0.653 | 0.760 | 0.760 |
+| 逻辑回归 | 0.631 | 0.631 | 0.716 | 0.717 |
+| 随机森林 | 0.607 | 0.618 | 0.769 | 0.770 |
+| 梯度提升 (HGB) | 0.602 | 0.607 | 0.758 | 0.767 |
+| k-NN | 0.582 | 0.585 | 0.751 | 0.752 |
+| 决策树 | 0.575 | 0.581 | 0.723 | 0.703 |
+
+HGB 与 k-NN 在两次运行中选到的超参数不同，其变化不完全来自特征。
+
+### 模型、调参与选模型
+
+| 模型 | 选定超参数 | 说明 |
+|---|---|---|
+| 多数类基线 | – | 永远预测 walk |
+| 逻辑回归 | C = 0.1 | 标准化；类别加权 |
+| 决策树 | max_depth = 8，min_samples_leaf = 10 | 类别加权 |
+| k-NN | k = 15，按距离加权 | 标准化 |
+| SVM (RBF) | C = 1，gamma = scale | 标准化；类别加权；在 20,000 个窗口的分层子样本上训练 |
+| 随机森林 | 200 棵树，max_features = sqrt，min_samples_leaf = 5 | balanced_subsample 加权 |
+| 梯度提升 (HGB) | learning_rate = 0.05，max_leaf_nodes = 31，l2 = 1.0 | 固定 300 轮，不用早停（其内部验证集是随机划分，不按用户分组） |
+
+- 调参：网格搜索，3 折 StratifiedGroupKFold，**只用训练用户**，目标 macro-F1。
+- 分组：按用户分组；Part 1 的重复记录关联组（report.json 中 duplicate_linked_groups）放在同一折，训练用户共 45 个分组。
+- 选模型：**CV macro-F1 最高者**，即 SVM (RBF)。该规则在看到测试结果前确定；测试成绩只报告，不用于选模型、选特征或选 k。
+- 缺失值用训练集中位数填补。
+
+### 时序平滑
+
+同一 block 内窗口时间相邻，但分类器逐窗口独立预测。未平滑时 SVM 在测试 block 内改变预测 3,163 次，
+真实类别只变化 529 次；858 个窗口是孤立的单窗口翻转，其中 82% 是错的。因此在模型最后加一步：
+
+| 项目 | 规则 |
+|---|---|
+| 方法 | 每个窗口的预测替换为以它为中心的 k 个连续窗口的多数类；只在同一 feature_block_id 内投票，靠近边界时只用 block 内窗口；平票保留原预测 |
+| 候选 k | 1（不平滑）、3、5、7、9、11、13、15、21 |
+| 选 k 的数据 | 只用训练用户：沿用上面的 3 折，每折用其余两折的纯窗口重新拟合（超参数不变），预测本折用户的盲切窗口，得到 out-of-fold 预测 |
+| 选 k 的规则 | 配对 one-SE：先取各折平均 macro-F1 最高的 k；对每个 k 计算与它的逐折差值，取平均差值不低于“负一个配对标准误”的最小 k |
+| 结果 | SVM 9、逻辑回归 13、随机森林 9、HGB 13、k-NN 7、决策树 9；写入 smoothing_choice.json 后才计算任何测试分段指标 |
+
+不用普通（非配对）标准误的原因：三折难度差异很大（SVM 在 k = 1 时三折 macro-F1 为 0.639、0.697、0.556，相差 0.14），
+这部分差异对所有 k 相同，会使标准误约达 0.04，连 k = 1 也落在“一个标准误以内”；而实际上 k = 9 在每一折都比 k = 1 高至少 0.033。
+
+SVM 在训练用户 out-of-fold 预测上的选择过程：
+
+| k | 各折平均 macro-F1 | 与最优 k 的差 | 配对标准误 | 分段召回 (IoU ≥ 0.5) | 变化点召回 (±1 窗口) |
+|---:|---:|---:|---:|---:|---:|
+| 1 | 0.631 | −0.039 | 0.003 | 0.670 | 0.914 |
+| 3 | 0.647 | −0.023 | 0.003 | 0.728 | 0.864 |
+| 5 | 0.660 | −0.010 | 0.004 | 0.717 | 0.677 |
+| 7 | 0.666 | −0.004 | 0.004 | 0.704 | 0.607 |
+| **9（选定）** | 0.668 | −0.002 | 0.003 | 0.687 | 0.476 |
+| 13（最高） | 0.670 | 0 | 0 | 0.662 | 0.345 |
+| 21 | 0.666 | −0.004 | 0.004 | 0.632 | 0.161 |
+
+k 越大，点级 F1 越高但真实的短段被一起抹掉：变化点召回从 0.91 降到 0.48（k = 9），这是已知局限，后续可改用显式建模类别转换的方法（如 HMM 或变化点检测）。
+
+### 测试结果
+
+13 个测试用户；95% 置信区间由按用户重抽样的 bootstrap 得到（5,000 次，关联用户整组抽取，共 9 个独立组）。
+关联组 069/126/129/167 占测试点数的 78.9%，因此区间较宽且偏斜。
+
+| 模型 | CV macro-F1（3 折均值 ± 标准差） | 测试 macro-F1 不平滑（95% CI） | k | 测试 macro-F1 平滑后（95% CI） | 测试准确率 平滑后（95% CI） |
+|---|---:|---:|---:|---:|---:|
+| 多数类基线 | – | 0.106 (0.094–0.177) | – | – | 0.359 (0.289–0.612) |
+| **SVM (RBF)，选定** | **0.653 ± 0.060** | 0.760 (0.404–0.792) | 9 | **0.821 (0.460–0.856)** | **0.845 (0.744–0.898)** |
+| 逻辑回归 | 0.631 ± 0.052 | 0.717 (0.375–0.757) | 13 | 0.785 (0.462–0.829) | 0.822 (0.715–0.931) |
+| 随机森林 | 0.618 ± 0.049 | 0.770 (0.415–0.791) | 9 | 0.830 (0.467–0.853) | 0.850 (0.779–0.864) |
+| 梯度提升 (HGB) | 0.607 ± 0.051 | 0.767 (0.400–0.796) | 13 | 0.844 (0.474–0.875) | 0.854 (0.761–0.935) |
+| k-NN | 0.585 ± 0.062 | 0.752 (0.386–0.761) | 7 | 0.804 (0.417–0.819) | 0.841 (0.585–0.862) |
+| 决策树 | 0.581 ± 0.040 | 0.703 (0.369–0.725) | 9 | 0.787 (0.424–0.811) | 0.817 (0.728–0.837) |
+
+- 所有模型都显著优于多数类基线（配对差值的置信区间均不含 0）。
+- SVM、随机森林、HGB、k-NN 之间的配对差值置信区间都包含 0，无法区分；随机森林和 HGB 在测试上略高，但按既定规则仍选 SVM。
+- 平滑对 6 个模型的 macro-F1 提升都显著；SVM 提升 +0.061（95% CI 0.018–0.108），准确率 +0.048（0.002–0.072）。
+- 加入平滑后，逻辑回归在训练 out-of-fold 上略高于 SVM（0.752 对 0.746，k = 9），差距小于折间波动，仍保留 SVM。
+- CV（0.58–0.65）低于测试（0.70–0.77，不平滑），SVM 的 CV 值落在其测试置信区间内；可能原因是测试集由一个关联组主导。
+
+SVM 各类别测试 F1：
+
+| 版本 | walk | bike | bus | car | train |
+|---|---:|---:|---:|---:|---:|
+| 不平滑 | 0.865 | 0.836 | 0.698 | 0.565 | 0.836 |
+| 平滑（k = 9） | 0.877 | 0.902 | 0.768 | 0.669 | 0.891 |
+
+最终模型（SVM + 平滑）主要混淆（占真实类别点数）：bus → walk 14.1%（29,809 点）、car → train 14.0%（8,546 点）、
+car → bus 11.3%（6,905 点）、bus → car 9.1%（19,136 点）、bike → walk 7.3%（14,077 点）。car 的精确率最低（0.651）。
+
+### 分段输出
+
+同一 block 内相邻且平滑后预测相同的窗口合并为一段，即单一出行方式子序列；
+字段为 user_id、trip_id、feature_block_id、start_time、end_time、n_points、predicted_mode、majority_true_mode、n_windows。
+真实段为多数真实类别相同的相邻窗口，评估以窗口为粒度。
+
+| SVM，测试用户 | 段数（真实 1,738） | 分段召回 (IoU ≥ 0.5) | 分段精确率 | 变化点精确率 (±1 窗口) | 变化点召回 | block 内预测变化次数（真实 529） |
+|---|---:|---:|---:|---:|---:|---:|
+| 不平滑 | 4,372 | 0.724 | 0.288 | 0.203 | 0.894 | 3,163 |
+| 平滑（k = 9） | 1,946 | 0.727 | 0.649 | 0.388 | 0.482 | 737 |
+
+1,946 段中 511 段类别错误，覆盖 12.3% 的测试点；多数很短（中位数 2 个窗口），但 56 段长度 ≥ 10 窗口的错误段
+共 43,655 点，几乎全部来自用户 167、052、126，平滑无法纠正这类整段误判。
+
+### 测试用户构成（SVM 点级准确率）
+
+| 用户 | 点数 | 占测试点数 | 重抽样组 | 不平滑 | 平滑 |
+|---|---:|---:|---|---:|---:|
+| 167 | 441,886 | 51.3% | 关联组 069/126/129/167 | 0.816 | 0.872 |
+| 126 | 229,055 | 26.6% | 关联组 069/126/129/167 | 0.807 | 0.844 |
+| 052 | 133,174 | 15.5% | 052 | 0.706 | 0.741 |
+| 082 | 18,077 | 2.1% | 082 | 0.877 | 0.879 |
+| 089 | 17,676 | 2.1% | 关联组 089/144 | 0.848 | 0.941 |
+| 144 | 9,622 | 1.1% | 关联组 089/144 | 0.779 | 0.884 |
+| 069 | 4,141 | 0.5% | 关联组 069/126/129/167 | 0.675 | 0.801 |
+| 129 | 4,080 | 0.5% | 关联组 069/126/129/167 | 0.660 | 0.787 |
+| 097 | 1,511 | 0.2% | 097 | 0.896 | 0.896 |
+| 058 | 911 | 0.1% | 058 | 0.573 | 0.573 |
+| 091 | 703 | 0.1% | 091 | 0.350 | 0.279 |
+| 087 | 119 | <0.1% | 087 | 1.000 | 1.000 |
+| 060 | 17 | <0.1% | 060 | 1.000 | 1.000 |
+
+按用户不加权平均准确率：不平滑 0.768，平滑 0.808。
+
+### 输出文件
+
+| 文件 | 内容 |
+|---|---|
+| results/basic_w50_no_dt/results.csv | 每个模型的点级/窗口级指标、CV 均值与标准差、选定超参数、是否被 CV 选中 |
+| results/basic_w50_no_dt/bootstrap_ci.csv、bootstrap_pairwise.csv | 测试置信区间、模型两两配对差值 |
+| results/basic_w50_no_dt/per_user_test.csv | 每个测试用户的点数、占比与各模型准确率 |
+| results/basic_w50_no_dt/smoothing/smoothing_cv.csv、smoothing_choice.json | 训练 out-of-fold 上每个 k 的得分与选定的 k |
+| results/basic_w50_no_dt/smoothing/smoothing_test.csv、segment_metrics_test.csv | 测试上平滑前后的点级与分段指标 |
+| results/basic_w50_no_dt/smoothing/segments_test.csv | **最终输出**：SVM 平滑后的单一出行方式分段 |
+| results/basic_w50/ | 含 dt 特征的消融运行 |
+| results/figures/ | 报告和海报用图 fig1–fig5（200 dpi）及 captions.md |
+
+窗口表和 `results/` 不提交版本管理，需与对应提交号一起另行打包共享（清单见 `docs/part2_handover.md`）。
+
+### 局限
+
+- 测试集由关联组 069/126/129/167 主导（78.9% 的点），只有 9 个独立组，测试成绩主要反映这几位用户，置信区间仅供参考。
+- 51 个训练用户中只有 49 个提供训练窗口。
+- SVM 在 20,000 个窗口的子样本上调参和训练（约占 70,000 个训练窗口），与其他模型的比较并非完全同等条件。
+- 平滑窗口 k = 9 约合 15 分钟出行，会抹掉真实的短段（变化点召回 0.91 → 0.48）。
+- 分段与变化点按窗口粒度评估，窗口内部的类别变化被归到最近的窗口边界。
+- 只评估了一种配置（W = 50、27 个特征）；窗口大小、采样率、噪声和特征组实验由 Part 3/4 负责。
 
 ## 环境故障排查
 
