@@ -12,7 +12,7 @@
 | 异常运动处理 | 已实施连接阻断 | 来源文件变化或速度 >100 m/s 时重启 feature_block；重算特征，不删点、不补值；剩余高加速度和 jerk 仅标记 |
 | train/test 划分 | 已完成 | 51 个训练用户、13 个测试用户；重复记录关联用户绑定；validation 由训练用户内部另分 |
 | 类别筛选 | 已完成 | 当前交付 walk、bus、bike、train、car 五类；其他类别从交付样本中移除 |
-| 模型训练与评估 | 尚未实施 | 模型和评估方案由后续阶段确定 |
+| 模型训练与评估 | Part 2 已完成 | 见下文 “Part 2: model training” 及 `src/model_training/README.md` |
 
 接手数据入口为 `data/processed/quality_features/`。feature_points 和 five_class_features 作为处理前中间版本保留。
 有效性标记表示数值可计算，不能保证所有噪声已消除。训练窗口不得跨 feature_block_id。
@@ -315,6 +315,32 @@ uv run quality-features
 上述命令生成当前训练入口，无需生成旧 feature_points 中间版本。复现后核对 quality_features/report.json 的数量与本文记录，并沿用仓库已有的 train/test 清单。仅在有意更新数据集版本时重新生成划分，并一起更新清单和统计。
 
 团队交接时应记录数据包对应的版本和校验值。目前仓库未配置自动下载，队友需从数据提供者取得数据包。
+
+## Part 2: model training
+
+Code in `src/model_training/` (details and commands: its `README.md`; handover for Parts 3/4:
+`docs/part2_handover.md`). It reads `data/processed/quality_features/` and `data/splits/`, cuts every
+feature block into 50-point windows (test windows cut without labels), computes 27 window features,
+and compares a majority baseline with logistic regression, decision tree, k-NN, RBF-SVM, random forest
+and gradient boosting. Hyperparameters and the model are chosen by user-grouped CV on the training
+users only; the final step smooths predictions over 9 consecutive windows inside each block, with k
+also chosen on training users only. Output: per-point modes and single-mode segments.
+
+Result on the 13 test users (selected model SVM, point level, 95% CI from resampling test users):
+macro-F1 0.821 (0.460–0.856), accuracy 0.845 (0.744–0.898).
+
+```powershell
+cd src\model_training
+pip install -r requirements.txt          # exact versions used (Python 3.12.6)
+python build_windows.py
+python build_windows.py --no-pure-train --out windows_w50_blind.csv
+python train_basic.py
+python tune_smoothing.py
+python evaluate_smoothing.py
+python make_figures.py
+```
+
+Window tables and `results/` are not in git; share them separately (see `docs/part2_handover.md`).
 
 ## 环境故障排查
 

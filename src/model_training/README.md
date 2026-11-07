@@ -25,7 +25,12 @@ python build_windows.py                 # ~4.35M points -> windows_w50.csv (+ _r
 python train_basic.py --no-tune         # quick check -> results/basic_w50_no_dt_notune/ (selects no model)
 python train_basic.py                   # full run with grid search -> results/basic_w50_no_dt/ (headline run)
 python train_basic.py --keep-dt         # ablation with dt_mean, dt_max -> results/basic_w50/
+python build_windows.py --no-pure-train --out windows_w50_blind.csv   # blind windows for all users
+python tune_smoothing.py                # choose smoothing k on training users (~10 min; --reuse-oof: seconds)
+python evaluate_smoothing.py            # apply the chosen k to test users, build segments
+python make_figures.py                  # report/poster figures -> results/figures/
 ```
+`requirements.txt` pins the exact versions used for the reported results.
 If memory runs short (16 GB machine, 20 CPU threads), limit the parallel workers with `$env:LOKY_MAX_CPU_COUNT = "8"` before training; a run with 8 workers reproduced the 20-worker scores exactly.
 
 Try a different window length: `python build_windows.py --window 100`, then
@@ -71,6 +76,21 @@ window is summarised into 29 features (27 go to the models, see below), classifi
 - **Model selection:** the selected model is the one with the highest CV macro-F1 on training users (`select_best`, marked `selected_by_cv` in `results.csv`). Test scores are reported for every model but never used to choose one. `results.csv` is sorted by test score for reading only, so its first row is not necessarily the selected model.
 - `--no-tune` has no CV scores, so it selects no model and writes no `best_model.joblib` or confusion matrix.
 
+**Temporal smoothing (final step of the model, `smoothing.py`):**
+- Each window's prediction is replaced by the majority vote over k consecutive windows centred on it, **within the same `feature_block_id` only**; near a block edge the vote uses only the windows inside the block. Ties keep the original prediction.
+- Why: without smoothing the SVM's predictions change mode 3,163 times inside test blocks while the true mode changes 529 times; 858 windows are isolated one-window flips, 82% of them wrong.
+- **k is chosen from training users only** (`tune_smoothing.py`). Training windows used for fitting are cut at label changes and do not look like real input, so the training users' windows are cut blind as well (`windows_w50_blind.csv`). With the same user-grouped 3 folds as the grid search, each model is refitted with its tuned parameters on two folds and predicts the blind windows of the third. This gives out-of-fold predictions, and every k in {1, 3, 5, 7, 9, 11, 13, 15, 21} is scored on them.
+- **Choice rule (paired one-SE):** best = the k with the highest mean fold macro-F1. For each k, take the per-fold difference to the best k; chosen = the smallest k whose mean difference is within one SE of that paired difference. The unpaired SE of the fold scores does not work here: fold difficulty differs a lot (SVM fold macro-F1 at k = 1: 0.639, 0.697, 0.556, a spread of 0.14). That spread is the same for every k, and with it even k = 1 counts as "within one SE", although k = 9 beats k = 1 in every fold by at least 0.033.
+- Chosen k: SVM 9, logistic regression 13, random forest 9, HGB 13, k-NN 7, decision tree 9 (`smoothing_choice.json`). `evaluate_smoothing.py` reads this file and applies k once to the test users.
+- **Trade-off (limitation):** smoothing removes real short segments too. On training out-of-fold predictions, SVM transition recall (true mode changes found within ±1 window) falls from 0.91 at k = 1 to 0.48 at k = 9, while transition precision rises from 0.14 to 0.25. Point F1 favours smoothing; detecting short trips or exact change points does not. A smarter final step (e.g. an HMM or change-point model) is future work.
+
+**Segment output (`segments.py`):** consecutive windows with the same (smoothed) predicted mode inside a block are merged into one segment, which is teammate A's output format. Segment metrics are kept simple and work at window granularity:
+- predicted vs true segment counts
+- segment recall: the share of true segments matched by a predicted segment of the same mode with point-overlap IoU >= 0.5 (segment precision is the same for predicted segments)
+- transition precision and recall: a predicted change counts as correct if a true change lies within ±1 window in the same block, and vice versa
+
+True segments are runs of windows with the same majority true mode, so a change inside a window is placed at the nearest window boundary.
+
 **Metrics:**
 - **Main:** point-level macro-F1 on test users. The confusion matrix is built from each window's per-class point counts, so mixed windows are scored correctly.
 - **Also reported:** point accuracy and balanced accuracy, plus window-level accuracy and macro-F1 (window label = majority mode).
@@ -92,6 +112,22 @@ window is summarised into 29 features (27 go to the models, see below), classifi
 | best_model.joblib | fitted CV-selected pipeline + feature list |
 | run_config.json | arguments, sizes, feature list |
 
+`results/basic_w50_no_dt/smoothing/`:
+| file | content |
+|---|---|
+| smoothing_cv.csv | training out-of-fold scores per model and k: per-fold and pooled macro-F1, paired difference to the best k and its SE, mode changes, segment metrics |
+| smoothing_choice.json | the rule and the chosen k per model (written by `tune_smoothing.py`, read by `evaluate_smoothing.py`) |
+| oof_predictions_train.csv | out-of-fold predictions on blind training windows |
+| smoothing_test.csv | test: baseline vs smoothed macro-F1 and accuracy with 95% CIs, mode changes, isolated flips |
+| smoothing_bootstrap_pairwise.csv | test: paired gain from smoothing with 95% CI per model |
+| smoothing_per_class_f1.csv | test: per-class F1, baseline and smoothed |
+| segment_metrics_test.csv | test: segment counts, segment recall/precision, transition precision/recall |
+| segments_test.csv | **final output**: single-mode segments of the selected model after smoothing |
+| segments_test_baseline.csv | the same without smoothing |
+| window_predictions_test_smoothed.csv, confusion_matrix_final_points.csv, per_user_test_smoothed.csv | smoothed window predictions, final confusion matrix, per-user accuracy |
+
+`results/figures/`: fig1–fig5 PNG at 200 dpi plus `captions.md` (see `make_figures.py`).
+
 ## Reuse in Part 3/4
 ```python
 from models import load_windows, prepare, cv_groups, train_and_evaluate, results_table
@@ -100,5 +136,13 @@ tr, te = df[(df.split == "train") & (df.n_points >= 10)], df[df.split == "test"]
 Xtr, ytr, utr, _ = prepare(tr); Xte, yte, _, mte = prepare(te)
 res = train_and_evaluate(Xtr, ytr, cv_groups(utr, "../../data/splits/report.json"), Xte, yte, mte)
 print(results_table(res))
+
+from models import select_best
+from smoothing import smooth_majority                      # final step; Part 2 chose k = 9 for SVM
+best = select_best(res)                                    # by CV macro-F1, never by test score
+smoothed = smooth_majority(best.y_pred, te["feature_block_id"], te["start_time"], k=9)
+# k = 9 belongs to the SVM; for another model or setting, rerun the training-only choice
+# (tune_smoothing.py) instead of reusing it.
 ```
 Same users, models, grids and metrics → results directly comparable with Part 2.
+See `docs/part2_handover.md` for the reference configuration and the proposed scope of Parts 3/4.
