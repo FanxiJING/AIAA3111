@@ -62,6 +62,34 @@ def smooth_majority(pred, blocks, times, k: int, labels=MODES) -> np.ndarray:
     return out
 
 
+def smooth_soft(scores, blocks, times, k: int, labels=MODES) -> np.ndarray:
+    """Soft voting: average the per-class score vectors (probabilities or decision values, columns
+    in `labels` order) over k consecutive windows centred on each window, within its block only,
+    and take the arg-max. Same window and block-edge rules as smooth_majority. k <= 1 returns the
+    arg-max of the raw scores. Returns labels in the same order as `scores`."""
+    scores = np.asarray(scores, dtype=float)
+    lab = np.asarray(labels, dtype=object)
+    if k <= 1:
+        return lab[scores.argmax(axis=1)]
+    if k % 2 == 0:
+        raise ValueError("k must be odd so the vote is centred on the window")
+    order = _block_order(blocks, times)
+    s, b = scores[order], np.asarray(blocks, dtype=object)[order]
+    n, h = len(s), k // 2
+    idx = np.arange(n)
+    cum = np.vstack([np.zeros((1, s.shape[1])), s.cumsum(axis=0)])
+    new_block = np.r_[True, b[1:] != b[:-1]]
+    block_no = np.cumsum(new_block) - 1
+    starts = np.flatnonzero(new_block)
+    ends = np.r_[starts[1:] - 1, n - 1]
+    lo = np.maximum(idx - h, starts[block_no])
+    hi = np.minimum(idx + h, ends[block_no])
+    mean = (cum[hi + 1] - cum[lo]) / (hi - lo + 1)[:, None]
+    out = np.empty(n, dtype=object)
+    out[order] = lab[mean.argmax(axis=1)]
+    return out
+
+
 def count_changes(seq, blocks, times) -> int:
     """Number of times the label changes between consecutive windows of the same block."""
     order = _block_order(blocks, times)
