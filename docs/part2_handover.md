@@ -2,7 +2,8 @@
 
 Part 2 (basic model training) is finished. The **reference version is v2** (`pipeline_v2.py`, branch
 `part2-fixes`, commit `93e50ac` or later; tag `part2-v2-reference` once created). v1
-(`train_basic.py` + `tune_smoothing.py`, branch `part2-model-training`) is kept for comparison only.
+(`train_basic.py` + `tune_smoothing.py`, tag `part2-v1`, commit `eca2ae6`) is kept for comparison only;
+its code and results are also included in `part2-fixes`.
 Results and conclusions: `docs/part2_v2_findings.md`. Things to watch in your experiments:
 `docs/part2_notes_for_teammates.md`. Code details: `src/model_training/README.md`.
 
