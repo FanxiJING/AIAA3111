@@ -1,0 +1,15 @@
+model,version,k,walk,bike,bus,car,train
+Majority (baseline),baseline,1,0.5284,0.0,0.0,0.0,0.0
+Majority (baseline),smoothed,1,0.5284,0.0,0.0,0.0,0.0
+Logistic Regression,baseline,1,0.8574,0.8275,0.6563,0.4531,0.7912
+Logistic Regression,smoothed,13,0.8651,0.9005,0.7307,0.5874,0.8392
+Decision Tree,baseline,1,0.8578,0.7626,0.6626,0.5211,0.7107
+Decision Tree,smoothed,9,0.8722,0.8597,0.7352,0.6247,0.841
+k-NN,baseline,1,0.8623,0.8207,0.7051,0.5105,0.8606
+k-NN,smoothed,7,0.8819,0.8933,0.7662,0.5635,0.9138
+SVM (RBF),baseline,1,0.8649,0.8359,0.6975,0.5652,0.8355
+SVM (RBF),smoothed,9,0.8766,0.9022,0.7677,0.669,0.8907
+Random Forest,baseline,1,0.87,0.8368,0.7166,0.6006,0.825
+Random Forest,smoothed,9,0.8789,0.9034,0.7771,0.677,0.9126
+Gradient Boosting (HGB),baseline,1,0.8617,0.8292,0.7159,0.5962,0.8339
+Gradient Boosting (HGB),smoothed,13,0.8704,0.911,0.7799,0.726,0.9334

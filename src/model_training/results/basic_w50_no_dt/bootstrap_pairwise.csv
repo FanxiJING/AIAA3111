@@ -1,0 +1,22 @@
+model_a,model_b,macro_f1_diff,macro_f1_diff_ci_low,macro_f1_diff_ci_high,macro_f1_ci_includes_0,accuracy_diff,accuracy_diff_ci_low,accuracy_diff_ci_high,accuracy_ci_includes_0
+Majority (baseline),Logistic Regression,-0.6114,-0.6554,-0.2431,False,-0.4101,-0.5069,-0.1588,False
+Majority (baseline),Decision Tree,-0.5973,-0.6247,-0.2318,False,-0.3921,-0.4324,-0.1323,False
+Majority (baseline),k-NN,-0.6462,-0.6608,-0.2626,False,-0.4347,-0.4712,-0.1189,False
+Majority (baseline),SVM (RBF),-0.6541,-0.6906,-0.2695,False,-0.4373,-0.5368,-0.1959,False
+Majority (baseline),Random Forest,-0.6641,-0.6896,-0.2749,False,-0.4437,-0.4877,-0.1765,False
+Majority (baseline),Gradient Boosting (HGB),-0.6617,-0.6945,-0.2669,False,-0.4381,-0.5424,-0.1931,False
+Logistic Regression,Decision Tree,0.0142,-0.0138,0.0391,True,0.018,-0.0265,0.1327,True
+Logistic Regression,k-NN,-0.0347,-0.0683,0.0434,True,-0.0246,-0.092,0.2051,True
+Logistic Regression,SVM (RBF),-0.0427,-0.0572,-0.0128,False,-0.0272,-0.0467,-0.0182,False
+Logistic Regression,Random Forest,-0.0527,-0.0747,0.0028,True,-0.0336,-0.0759,0.053,True
+Logistic Regression,Gradient Boosting (HGB),-0.0503,-0.0805,-0.012,False,-0.0279,-0.0692,0.0056,True
+Decision Tree,k-NN,-0.0489,-0.0674,0.0217,True,-0.0426,-0.0657,0.0707,True
+Decision Tree,SVM (RBF),-0.0569,-0.0783,-0.023,False,-0.0452,-0.1595,-0.0181,False
+Decision Tree,Random Forest,-0.0668,-0.0902,-0.0236,False,-0.0516,-0.0791,-0.0216,False
+Decision Tree,Gradient Boosting (HGB),-0.0644,-0.1011,-0.0231,False,-0.046,-0.1656,-0.0307,False
+k-NN,SVM (RBF),-0.008,-0.0717,0.0272,True,-0.0026,-0.235,0.0464,True
+k-NN,Random Forest,-0.0179,-0.0644,0.0048,True,-0.009,-0.1525,0.0167,True
+k-NN,Gradient Boosting (HGB),-0.0155,-0.1026,0.0267,True,-0.0034,-0.2358,0.026,True
+SVM (RBF),Random Forest,-0.01,-0.0269,0.0173,True,-0.0064,-0.03,0.0805,True
+SVM (RBF),Gradient Boosting (HGB),-0.0075,-0.035,0.0057,True,-0.0008,-0.0233,0.0254,True
+Random Forest,Gradient Boosting (HGB),0.0024,-0.0404,0.0253,True,0.0056,-0.0841,0.0097,True

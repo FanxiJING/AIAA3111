@@ -1,0 +1,5 @@
+{
+  "best_by_cv": "SVM (RBF, Nystroem, all data)",
+  "best_mean": 0.7003673409469512,
+  "selected": "SVM (RBF, Nystroem, all data)"
+}

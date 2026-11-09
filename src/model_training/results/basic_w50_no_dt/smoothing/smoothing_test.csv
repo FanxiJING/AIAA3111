@@ -1,0 +1,8 @@
+model,selected_by_cv,k,point_macro_f1_baseline,macro_f1_ci_low_baseline,macro_f1_ci_high_baseline,point_accuracy_baseline,accuracy_ci_low_baseline,accuracy_ci_high_baseline,point_macro_f1_smoothed,macro_f1_ci_low_smoothed,macro_f1_ci_high_smoothed,point_accuracy_smoothed,accuracy_ci_low_smoothed,accuracy_ci_high_smoothed,pred_changes_baseline,isolated_flips_baseline,isolated_flips_wrong_baseline,pred_changes_smoothed,isolated_flips_smoothed,isolated_flips_wrong_smoothed,true_changes
+Majority (baseline),False,1,0.1057,0.0941,0.1774,0.3591,0.2886,0.6115,0.1057,0.0941,0.1774,0.3591,0.2886,0.6115,0,0,0,0,0,0,529
+Logistic Regression,False,13,0.7171,0.375,0.7566,0.7692,0.6655,0.8257,0.7846,0.4615,0.829,0.8216,0.7149,0.9312,3539,948,742,707,75,45,529
+Decision Tree,False,9,0.703,0.3692,0.7249,0.7512,0.6589,0.7699,0.7866,0.4237,0.8111,0.8169,0.7282,0.8372,4200,1211,961,963,89,56,529
+k-NN,False,7,0.7519,0.3861,0.7611,0.7938,0.5844,0.812,0.8037,0.4172,0.8193,0.8407,0.5853,0.8623,3229,891,678,971,81,48,529
+SVM (RBF),True,9,0.7598,0.4039,0.7918,0.7964,0.7116,0.8468,0.8212,0.4598,0.8556,0.8447,0.7444,0.8981,3163,858,703,737,44,28,529
+Random Forest,False,9,0.7698,0.4151,0.7909,0.8028,0.732,0.8185,0.8298,0.4668,0.8534,0.8496,0.7792,0.8636,3058,805,643,747,56,37,529
+Gradient Boosting (HGB),False,13,0.7674,0.4001,0.7963,0.7972,0.7329,0.8316,0.8441,0.4742,0.8747,0.8536,0.7614,0.935,3374,1015,816,599,54,29,529

@@ -1,0 +1,105 @@
+user_id,group,points,accuracy,macro_f1,model
+052,052,133174,0.7219,0.7864,Decision Tree
+058,058,911,0.7453,0.6496,Decision Tree
+060,060,17,0.5294,0.6923,Decision Tree
+069,linked0,4141,0.8276,0.6155,Decision Tree
+082,082,18077,0.8494,0.7967,Decision Tree
+087,087,119,0.9496,0.9741,Decision Tree
+089,linked3,17676,0.9547,0.9413,Decision Tree
+091,091,703,0.5576,0.2678,Decision Tree
+097,097,1511,0.9159,0.8705,Decision Tree
+126,linked0,229055,0.8461,0.8409,Decision Tree
+129,linked0,4080,0.8314,0.6743,Decision Tree
+144,linked3,9622,0.9485,0.9364,Decision Tree
+167,linked0,441886,0.8729,0.8343,Decision Tree
+052,052,133174,0.7983,0.85,Gradient Boosting (HGB)
+058,058,911,0.6915,0.5653,Gradient Boosting (HGB)
+060,060,17,0.5294,0.6923,Gradient Boosting (HGB)
+069,linked0,4141,0.8208,0.7052,Gradient Boosting (HGB)
+082,082,18077,0.8284,0.7461,Gradient Boosting (HGB)
+087,087,119,1.0,1.0,Gradient Boosting (HGB)
+089,linked3,17676,0.9611,0.9318,Gradient Boosting (HGB)
+091,091,703,0.2674,0.1544,Gradient Boosting (HGB)
+097,097,1511,0.9305,0.902,Gradient Boosting (HGB)
+126,linked0,229055,0.8593,0.834,Gradient Boosting (HGB)
+129,linked0,4080,0.8272,0.701,Gradient Boosting (HGB)
+144,linked3,9622,0.9295,0.9208,Gradient Boosting (HGB)
+167,linked0,441886,0.8762,0.8133,Gradient Boosting (HGB)
+052,052,133174,0.7928,0.7461,k-NN
+058,058,911,0.5324,0.443,k-NN
+060,060,17,1.0,1.0,k-NN
+069,linked0,4141,0.6472,0.5168,k-NN
+082,082,18077,0.8572,0.7448,k-NN
+087,087,119,1.0,1.0,k-NN
+089,linked3,17676,0.5092,0.7655,k-NN
+091,091,703,0.2219,0.1225,k-NN
+097,097,1511,0.7353,0.623,k-NN
+126,linked0,229055,0.8349,0.775,k-NN
+129,linked0,4080,0.6426,0.4793,k-NN
+144,linked3,9622,0.4163,0.683,k-NN
+167,linked0,441886,0.8564,0.762,k-NN
+052,052,133174,0.7114,0.7105,Logistic Regression
+058,058,911,0.6531,0.4684,Logistic Regression
+060,060,17,1.0,1.0,Logistic Regression
+069,linked0,4141,0.6725,0.5734,Logistic Regression
+082,082,18077,0.8741,0.8076,Logistic Regression
+087,087,119,1.0,1.0,Logistic Regression
+089,linked3,17676,0.9762,0.9505,Logistic Regression
+091,091,703,0.4154,0.2071,Logistic Regression
+097,097,1511,0.9623,0.9839,Logistic Regression
+126,linked0,229055,0.8133,0.7645,Logistic Regression
+129,linked0,4080,0.6721,0.5692,Logistic Regression
+144,linked3,9622,0.9485,0.9477,Logistic Regression
+167,linked0,441886,0.863,0.7754,Logistic Regression
+052,052,133174,0.4355,0.2023,Majority (baseline)
+058,058,911,0.191,0.1069,Majority (baseline)
+060,060,17,1.0,1.0,Majority (baseline)
+069,linked0,4141,0.1628,0.07,Majority (baseline)
+082,082,18077,0.8677,0.4646,Majority (baseline)
+087,087,119,1.0,1.0,Majority (baseline)
+089,linked3,17676,0.1204,0.1075,Majority (baseline)
+091,091,703,0.8037,0.2971,Majority (baseline)
+097,097,1511,0.0893,0.082,Majority (baseline)
+126,linked0,229055,0.4282,0.1199,Majority (baseline)
+129,linked0,4080,0.1441,0.063,Majority (baseline)
+144,linked3,9622,0.223,0.1824,Majority (baseline)
+167,linked0,441886,0.2961,0.0914,Majority (baseline)
+052,052,133174,0.7748,0.8102,Random Forest
+058,058,911,0.6915,0.5627,Random Forest
+060,060,17,0.5294,0.6923,Random Forest
+069,linked0,4141,0.7914,0.5887,Random Forest
+082,082,18077,0.8491,0.7205,Random Forest
+087,087,119,0.9496,0.9741,Random Forest
+089,linked3,17676,0.883,0.9154,Random Forest
+091,091,703,0.1209,0.0866,Random Forest
+097,097,1511,0.9411,0.9796,Random Forest
+126,linked0,229055,0.8526,0.8362,Random Forest
+129,linked0,4080,0.7946,0.6461,Random Forest
+144,linked3,9622,0.7878,0.8756,Random Forest
+167,linked0,441886,0.8761,0.8264,Random Forest
+052,052,133174,0.7371,0.7535,SVM (RBF)
+058,058,911,0.5379,0.5507,SVM (RBF)
+060,060,17,1.0,1.0,SVM (RBF)
+069,linked0,4141,0.8375,0.7059,SVM (RBF)
+082,082,18077,0.879,0.8052,SVM (RBF)
+087,087,119,1.0,1.0,SVM (RBF)
+089,linked3,17676,0.9357,0.9302,SVM (RBF)
+091,091,703,0.2902,0.1663,SVM (RBF)
+097,097,1511,0.9338,0.8902,SVM (RBF)
+126,linked0,229055,0.8528,0.8438,SVM (RBF)
+129,linked0,4080,0.826,0.6588,SVM (RBF)
+144,linked3,9622,0.8811,0.9149,SVM (RBF)
+167,linked0,441886,0.8782,0.842,SVM (RBF)
+052,052,133174,0.7765,0.8024,"SVM (RBF, Nystroem, all data)"
+058,058,911,0.5291,0.4258,"SVM (RBF, Nystroem, all data)"
+060,060,17,0.5294,0.6923,"SVM (RBF, Nystroem, all data)"
+069,linked0,4141,0.7525,0.7628,"SVM (RBF, Nystroem, all data)"
+082,082,18077,0.8673,0.8031,"SVM (RBF, Nystroem, all data)"
+087,087,119,0.8487,0.9182,"SVM (RBF, Nystroem, all data)"
+089,linked3,17676,0.9512,0.9431,"SVM (RBF, Nystroem, all data)"
+091,091,703,0.0797,0.0543,"SVM (RBF, Nystroem, all data)"
+097,097,1511,0.9424,0.865,"SVM (RBF, Nystroem, all data)"
+126,linked0,229055,0.8456,0.8384,"SVM (RBF, Nystroem, all data)"
+129,linked0,4080,0.7475,0.6238,"SVM (RBF, Nystroem, all data)"
+144,linked3,9622,0.9046,0.9351,"SVM (RBF, Nystroem, all data)"
+167,linked0,441886,0.8779,0.8356,"SVM (RBF, Nystroem, all data)"

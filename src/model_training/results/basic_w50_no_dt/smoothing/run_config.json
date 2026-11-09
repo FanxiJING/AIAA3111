@@ -1,0 +1,29 @@
+{
+  "windows": "C:\\Users\\whliu\\Desktop\\AIAA3111\\src\\model_training\\windows_w50.csv",
+  "blind_windows": "C:\\Users\\whliu\\Desktop\\AIAA3111\\src\\model_training\\windows_w50_blind.csv",
+  "run": "C:\\Users\\whliu\\Desktop\\AIAA3111\\src\\model_training\\results\\basic_w50_no_dt",
+  "splits_report": "C:\\Users\\whliu\\Desktop\\AIAA3111\\data\\splits\\report.json",
+  "min_train_points": 10,
+  "cv_splits": 3,
+  "n_boot": 5000,
+  "seed": 42,
+  "ks": [
+    1,
+    3,
+    5,
+    7,
+    9
+  ],
+  "chosen_k": {
+    "Decision Tree": 9,
+    "Gradient Boosting (HGB)": 9,
+    "Logistic Regression": 9,
+    "Majority (baseline)": 1,
+    "Random Forest": 9,
+    "SVM (RBF)": 9,
+    "k-NN": 9
+  },
+  "selected_model": "SVM (RBF)",
+  "n_fold_users": 49,
+  "n_blind_train_windows": 70203
+}

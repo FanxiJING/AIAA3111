@@ -1,0 +1,8 @@
+model,k,macro_f1_gain,macro_f1_gain_ci_low,macro_f1_gain_ci_high,macro_f1_gain_ci_includes_0,accuracy_gain,accuracy_gain_ci_low,accuracy_gain_ci_high,accuracy_gain_ci_includes_0
+Majority (baseline),1,-0.0,-0.0,-0.0,True,-0.0,-0.0,-0.0,True
+Logistic Regression,13,0.0675,0.0334,0.1432,False,0.0524,0.02,0.1359,False
+Decision Tree,9,0.0836,0.0194,0.1051,False,0.0657,0.0046,0.0818,False
+k-NN,7,0.0519,0.0108,0.1011,False,0.0469,-0.0007,0.0508,True
+SVM (RBF),9,0.0614,0.0182,0.1078,False,0.0483,0.0017,0.0717,False
+Random Forest,9,0.06,0.0269,0.1219,False,0.0468,0.0195,0.097,False
+Gradient Boosting (HGB),13,0.0768,0.0314,0.1328,False,0.0565,0.0281,0.1064,False

@@ -9,7 +9,7 @@ The headline results now come from the hardened v2 pipeline; the sections below 
 (`train_basic.py`, `tune_smoothing.py`, `evaluate_smoothing.py`), kept for reference.
 - **Results and conclusions:** [`docs/part2_v2_findings.md`](../../docs/part2_v2_findings.md)
 - **Notes for Part 1 and Parts 3/4:** [`docs/part2_notes_for_teammates.md`](../../docs/part2_notes_for_teammates.md)
-- **Outputs:** `results/basic_w50_no_dt_v2/` (not in git), figures in its `figures/` with `captions.md`.
+- **Outputs:** `results/basic_w50_no_dt_v2/` (committed on `part2-fixes` with `git add -f`; window tables in the shared zip), figures in its `figures/` with `captions.md`.
 
 Final model: SVM (RBF, Nystroem 1,000 components, all training windows), balanced class weights,
 soft voting over k = 11 windows. Test point macro-F1 0.779 -> 0.844 (smoothing gain +0.065, 95% CI

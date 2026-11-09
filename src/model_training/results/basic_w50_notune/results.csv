@@ -1,0 +1,8 @@
+model,selected_by_cv,point_accuracy,point_balanced_acc,point_macro_f1,window_accuracy,window_macro_f1,cv_macro_f1,fit_seconds,best_params
+Gradient Boosting (HGB),False,0.7952,0.7591,0.7626,0.7956,0.7623,,115.2,{}
+SVM (RBF),False,0.7966,0.7712,0.76,0.7968,0.7595,,52.1,{}
+Random Forest,False,0.7938,0.7351,0.7553,0.7934,0.7543,,42.3,{}
+k-NN,False,0.77,0.7247,0.7308,0.7701,0.73,,1.6,{}
+Logistic Regression,False,0.769,0.7383,0.717,0.7691,0.7161,,5.4,{}
+Decision Tree,False,0.6687,0.6405,0.6383,0.6682,0.6377,,4.6,{}
+Majority (baseline),False,0.3591,0.2,0.1057,0.3598,0.1058,,0.8,{}

@@ -1,0 +1,29 @@
+model_a,model_b,macro_f1_diff,macro_f1_diff_ci_low,macro_f1_diff_ci_high,macro_f1_ci_includes_0,accuracy_diff,accuracy_diff_ci_low,accuracy_diff_ci_high,accuracy_ci_includes_0
+Decision Tree,Gradient Boosting (HGB),-0.0094,-0.0634,0.0274,True,-0.0162,-0.0709,0.0204,True
+Decision Tree,k-NN,0.0641,0.0141,0.2073,False,0.018,-0.0637,0.3532,True
+Decision Tree,Logistic Regression,0.0413,0.0007,0.0843,False,0.0161,-0.018,0.0192,True
+Decision Tree,Majority (baseline),0.7288,0.3462,0.7687,False,0.4846,0.2014,0.6345,False
+Decision Tree,Random Forest,-0.0001,-0.0222,0.0681,True,-0.0076,-0.0485,0.0873,True
+Decision Tree,SVM (RBF),-0.0035,-0.0102,0.0398,True,-0.006,-0.0158,0.0345,True
+Decision Tree,"SVM (RBF, Nystroem, all data)",-0.0098,-0.0278,0.0798,True,-0.0094,-0.05,0.0256,True
+Gradient Boosting (HGB),k-NN,0.0735,0.041,0.2138,False,0.0342,0.0016,0.3454,False
+Gradient Boosting (HGB),Logistic Regression,0.0507,-0.0101,0.1251,True,0.0323,-0.0368,0.0803,True
+Gradient Boosting (HGB),Majority (baseline),0.7382,0.3414,0.7686,False,0.5008,0.2369,0.6241,False
+Gradient Boosting (HGB),Random Forest,0.0093,-0.0082,0.0676,True,0.0086,0.0015,0.0752,False
+Gradient Boosting (HGB),SVM (RBF),0.0059,-0.0212,0.0764,True,0.0102,-0.0168,0.0591,True
+Gradient Boosting (HGB),"SVM (RBF, Nystroem, all data)",-0.0004,-0.0152,0.0764,True,0.0068,-0.011,0.0232,True
+k-NN,Logistic Regression,-0.0228,-0.1394,0.0231,True,-0.0019,-0.3693,0.0728,True
+k-NN,Majority (baseline),0.6647,0.2581,0.6759,False,0.4666,0.1128,0.5041,False
+k-NN,Random Forest,-0.0642,-0.159,-0.0303,False,-0.0256,-0.2767,0.0158,True
+k-NN,SVM (RBF),-0.0676,-0.1815,-0.0071,False,-0.0239,-0.3332,0.0496,True
+k-NN,"SVM (RBF, Nystroem, all data)",-0.0739,-0.1443,-0.0337,False,-0.0273,-0.344,0.0142,True
+Logistic Regression,Majority (baseline),0.6875,0.3265,0.7375,False,0.4685,0.2015,0.6468,False
+Logistic Regression,Random Forest,-0.0414,-0.0684,0.0237,True,-0.0237,-0.0577,0.0984,True
+Logistic Regression,SVM (RBF),-0.0448,-0.0706,0.0063,True,-0.0221,-0.025,0.0491,True
+Logistic Regression,"SVM (RBF, Nystroem, all data)",-0.0511,-0.0733,0.0207,True,-0.0255,-0.0592,0.0361,True
+Majority (baseline),Random Forest,-0.7289,-0.7563,-0.3287,False,-0.4922,-0.5514,-0.2195,False
+Majority (baseline),SVM (RBF),-0.7323,-0.7672,-0.3337,False,-0.4906,-0.6051,-0.2168,False
+Majority (baseline),"SVM (RBF, Nystroem, all data)",-0.7386,-0.7673,-0.3331,False,-0.494,-0.6134,-0.2359,False
+Random Forest,SVM (RBF),-0.0034,-0.0438,0.0343,True,0.0016,-0.055,0.0346,True
+Random Forest,"SVM (RBF, Nystroem, all data)",-0.0097,-0.016,0.0184,True,-0.0018,-0.0627,0.0018,True
+SVM (RBF),"SVM (RBF, Nystroem, all data)",-0.0063,-0.0326,0.0544,True,-0.0034,-0.0368,0.0072,True

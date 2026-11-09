@@ -1,6 +1,6 @@
 # Notes for Part 1 and Parts 3/4 (from Part 2 v2)
 
-Recorded 2026-11-09. Details and numbers: `docs/part2_v2_findings.md`. Results folder (not in Git, shared separately):
+Recorded 2026-11-09. Details and numbers: `docs/part2_v2_findings.md`. Results folder (committed on branch `part2-fixes`; window tables in the zip `part2_results_93e50ac_full.zip`):
 `src/model_training/results/basic_w50_no_dt_v2/`. Code on branch `part2-fixes`.
 
 ## Reference setup for your experiments

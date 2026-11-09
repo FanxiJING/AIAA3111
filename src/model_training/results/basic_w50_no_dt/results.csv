@@ -1,0 +1,8 @@
+model,selected_by_cv,point_accuracy,point_balanced_acc,point_macro_f1,window_accuracy,window_macro_f1,cv_macro_f1,cv_macro_f1_std,fit_seconds,best_params
+Random Forest,False,0.8028,0.7671,0.7698,0.8021,0.7684,0.6179,0.0488,194.7,"{'clf__max_features': 'sqrt', 'clf__min_samples_leaf': 5}"
+Gradient Boosting (HGB),False,0.7972,0.7678,0.7674,0.7977,0.7674,0.6072,0.0506,132.6,"{'clf__l2_regularization': 1.0, 'clf__learning_rate': 0.05, 'clf__max_leaf_nodes': 31}"
+SVM (RBF),True,0.7964,0.7722,0.7598,0.797,0.7597,0.6532,0.0601,83.7,"{'clf__C': 1.0, 'clf__gamma': 'scale'}"
+k-NN,False,0.7938,0.7431,0.7519,0.7944,0.7519,0.5845,0.062,61.0,"{'clf__n_neighbors': 15, 'clf__weights': 'distance'}"
+Logistic Regression,False,0.7692,0.7378,0.7171,0.7699,0.7174,0.6312,0.0521,24.0,{'clf__C': 0.1}
+Decision Tree,False,0.7512,0.7125,0.703,0.7509,0.702,0.5805,0.0404,21.6,"{'clf__max_depth': 8, 'clf__min_samples_leaf': 10}"
+Majority (baseline),False,0.3591,0.2,0.1057,0.3598,0.1058,,,0.4,{}

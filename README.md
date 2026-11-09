@@ -20,7 +20,7 @@
 
 **Part 2 当前结果与文档（v2）**：最新数字、结论与局限见 [docs/part2_v2_findings.md](docs/part2_v2_findings.md)；
 给 Part 1 与 Part 3/4 的注意事项（采样率经窗口时长残留、疑似标签噪声、过小用户）见 [docs/part2_notes_for_teammates.md](docs/part2_notes_for_teammates.md)；
-代码为 `src/model_training/pipeline_v2.py`，结果在 `src/model_training/results/basic_w50_no_dt_v2/`（不提交版本管理）。
+代码为 `src/model_training/pipeline_v2.py`，结果在 `src/model_training/results/basic_w50_no_dt_v2/`（已提交到 `part2-fixes` 分支；窗口表见共享 zip `part2_results_93e50ac_full.zip`）。
 
 接手数据入口为 `data/processed/quality_features/`。feature_points 和 five_class_features 作为处理前中间版本保留。
 有效性标记表示数值可计算，不能保证所有噪声已消除。训练窗口不得跨 feature_block_id。
@@ -56,7 +56,7 @@ uv run python -m unittest discover -s tests
 - `data/splits/`：固定的 train/test 用户清单、manifest.csv 和划分报告；这些小文件应提交版本管理。
 - `tests/`：标签匹配边界和重叠情况验证。
 - `src/model_training/`：Part 2 窗口构造、模型训练、时序平滑、分段输出与作图代码；说明见该目录 README.md。
-- `src/model_training/windows_w50*.csv`、`src/model_training/results/`：Part 2 生成的窗口表与结果，不提交版本管理。
+- `src/model_training/windows_w50*.csv`、`src/model_training/results/`：Part 2 生成的窗口表与结果；`results/` 已强制提交到 `part2-fixes` 分支，窗口表不提交，随 zip 共享。
 - `docs/`：Part 2 v2 结果与结论（part2_v2_findings.md）、给队友的注意事项（part2_notes_for_teammates.md）、交接说明（part2_handover.md，按 v1 编写）、报告草稿（part2_report_draft.md，按 v1 数字编写）与 AIGC 使用记录（aigc_log_part2.md）。
 
 `uv.lock` 提交版本管理；原始/生成数据、缓存和 `.venv` 不提交。
@@ -532,7 +532,7 @@ car → bus 11.3%（6,905 点）、bus → car 9.1%（19,136 点）、bike → w
 | results/basic_w50/ | 含 dt 特征的消融运行 |
 | results/figures/ | 报告和海报用图 fig1–fig5（200 dpi）及 captions.md |
 
-窗口表和 `results/` 不提交版本管理，需与对应提交号一起另行打包共享（清单见 `docs/part2_handover.md`）。
+`results/` 已提交到 `part2-fixes` 分支；窗口表不提交版本管理，与对应提交号一起打包共享（见 `docs/part2_handover.md`）。
 
 ### 局限
 
