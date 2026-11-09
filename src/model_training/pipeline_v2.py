@@ -400,7 +400,10 @@ def stage_final():
             columns={"point_macro_f1": "raw_macro_f1", "point_accuracy": "raw_accuracy"}), on="model")
     smooth_gain = []
     for f, r0 in zip(finals, raws):
-        _, p = user_bootstrap([r0, f], mte, gte, MODES, n_boot=N_BOOT, seed=SEED)
+        # user_bootstrap keys its scores by name, so the raw run needs its own name; with the
+        # shared name the final scores overwrote the raw ones and every gain came out as 0
+        raw_named = SimpleNamespace(name=f"{f.name} [raw]", y_pred=r0.y_pred)
+        _, p = user_bootstrap([raw_named, f], mte, gte, MODES, n_boot=N_BOOT, seed=SEED)
         p = p.iloc[0]
         smooth_gain.append({"model": f.name, "gain": -p.macro_f1_diff, "gain_ci_low": -p.macro_f1_diff_ci_high,
                             "gain_ci_high": -p.macro_f1_diff_ci_low})
