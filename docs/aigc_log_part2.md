@@ -74,3 +74,8 @@ again k = 9.
 - Add any later AI use, including for report or poster writing.
 - Name any external collaborators, or state that there were none.
 - Add teammates' AI use for their own parts.
+
+## 2026-11-08/09 – Part 2 v2 (hardening)
+- Claude (chat) reviewed Part 2 against the course guide and listed methodological risks (selection rule vs final pipeline, mixed k, unequal SVM subsample, validation-window cutting, bootstrap unit).
+- Claude Code wrote `pipeline_v2.py`, `notes_v2.py`, `make_figures_v2.py` and soft voting in `smoothing.py`, from a prompt with pre-declared adoption and selection rules. The student ran all stages on the real data.
+- Claude (chat) read the result files, found and fixed a bug in the smoothing-gain CI (commit `517bda2`), and wrote `docs/part2_v2_findings.md` and `docs/part2_notes_for_teammates.md` as notes. No report prose, no references.
