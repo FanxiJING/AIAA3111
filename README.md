@@ -14,9 +14,13 @@
 | train/test 划分 | 已完成 | 51 个训练用户、13 个测试用户；重复记录关联用户绑定；validation 由训练用户内部另分 |
 | 类别筛选 | 已完成 | 当前交付 walk、bus、bike、train、car 五类；其他类别从交付样本中移除 |
 | 窗口构造与窗口特征 | 已完成（Part 2） | 每个 feature_block 切成 50 点窗口，不跨 feature_block_id；测试窗口盲切；27 个窗口特征进入模型 |
-| 模型训练与评估 | 已完成（Part 2） | 7 个模型；仅用训练用户分组 CV 调参和选模型；选中 SVM (RBF)；测试点级 macro-F1 0.760 |
-| 时序平滑 | 已完成（Part 2） | block 内 k 窗口多数投票；k 仅由训练用户 out-of-fold 预测选定（SVM k = 9）；测试点级 macro-F1 0.821 |
+| 模型训练与评估 | 已完成（Part 2 v2） | 8 个模型（含全量数据的 Nystroem SVM）；盲切验证窗口、5 折用户分组 CV；在完整流程（模型 + 平滑）上选模型；选中 SVM (RBF, Nystroem, all data)；未平滑测试点级 macro-F1 0.779（v1：SVM (RBF) 0.760） |
+| 时序平滑 | 已完成（Part 2 v2） | block 内 k 窗口投票；每个模型的 k、软/硬投票与类别权重仅由训练用户 CV 选定；选中模型软投票 k = 11；测试点级 macro-F1 0.844，平滑增益 +0.065（95% CI 0.032–0.135）（v1：多数投票 k = 9，0.821） |
 | 分段输出 | 已完成（Part 2） | 同一 block 内相邻同类窗口合并为单一出行方式子序列；输出 segments_test.csv |
+
+**Part 2 当前结果与文档（v2）**：最新数字、结论与局限见 [docs/part2_v2_findings.md](docs/part2_v2_findings.md)；
+给 Part 1 与 Part 3/4 的注意事项（采样率经窗口时长残留、疑似标签噪声、过小用户）见 [docs/part2_notes_for_teammates.md](docs/part2_notes_for_teammates.md)；
+代码为 `src/model_training/pipeline_v2.py`，结果在 `src/model_training/results/basic_w50_no_dt_v2/`（不提交版本管理）。
 
 接手数据入口为 `data/processed/quality_features/`。feature_points 和 five_class_features 作为处理前中间版本保留。
 有效性标记表示数值可计算，不能保证所有噪声已消除。训练窗口不得跨 feature_block_id。
@@ -53,7 +57,7 @@ uv run python -m unittest discover -s tests
 - `tests/`：标签匹配边界和重叠情况验证。
 - `src/model_training/`：Part 2 窗口构造、模型训练、时序平滑、分段输出与作图代码；说明见该目录 README.md。
 - `src/model_training/windows_w50*.csv`、`src/model_training/results/`：Part 2 生成的窗口表与结果，不提交版本管理。
-- `docs/`：Part 2 交接说明（part2_handover.md）、报告草稿（part2_report_draft.md）与 AIGC 使用记录（aigc_log_part2.md）。
+- `docs/`：Part 2 v2 结果与结论（part2_v2_findings.md）、给队友的注意事项（part2_notes_for_teammates.md）、交接说明（part2_handover.md，按 v1 编写）、报告草稿（part2_report_draft.md，按 v1 数字编写）与 AIGC 使用记录（aigc_log_part2.md）。
 
 `uv.lock` 提交版本管理；原始/生成数据、缓存和 `.venv` 不提交。
 
@@ -324,6 +328,11 @@ uv run quality-features
 团队交接时应记录数据包对应的版本和校验值。目前仓库未配置自动下载，队友需从数据提供者取得数据包。
 
 ## 模型训练与评估（Part 2）
+
+> **注意：本节描述 v1 流程（`train_basic.py` + `tune_smoothing.py`），数字已被 v2 取代。**
+> v2（`pipeline_v2.py`）改为盲切验证窗口、5 折、所有模型同一 20k 子样本、按模型选择平滑方式并在完整流程上选模型，
+> 选中 SVM (RBF, Nystroem, all data) + 软投票 k = 11，测试点级 macro-F1 0.844。
+> 当前数字以 [docs/part2_v2_findings.md](docs/part2_v2_findings.md) 为准，给队友的说明见 [docs/part2_notes_for_teammates.md](docs/part2_notes_for_teammates.md)。
 
 代码位于 `src/model_training/`，细节见该目录 README.md；给 Part 3/4 的交接说明见 `docs/part2_handover.md`。
 输入为 `data/processed/quality_features/` 与 `data/splits/`，不修改 Part 1 的任何数据或清单。

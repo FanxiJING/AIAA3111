@@ -4,6 +4,31 @@ Input: teammate A's per-point data (`data/processed/quality_features/<user>.parq
 (`data/splits/train_users.json`, `test_users.json`, `report.json`).
 Classes: walk, bike, bus, car, train (Part 1 delivers these 5 and does **not** merge taxi/subway).
 
+## Current version: v2 (`pipeline_v2.py`)
+The headline results now come from the hardened v2 pipeline; the sections below describe v1
+(`train_basic.py`, `tune_smoothing.py`, `evaluate_smoothing.py`), kept for reference.
+- **Results and conclusions:** [`docs/part2_v2_findings.md`](../../docs/part2_v2_findings.md)
+- **Notes for Part 1 and Parts 3/4:** [`docs/part2_notes_for_teammates.md`](../../docs/part2_notes_for_teammates.md)
+- **Outputs:** `results/basic_w50_no_dt_v2/` (not in git), figures in its `figures/` with `captions.md`.
+
+Final model: SVM (RBF, Nystroem 1,000 components, all training windows), balanced class weights,
+soft voting over k = 11 windows. Test point macro-F1 0.779 -> 0.844 (smoothing gain +0.065, 95% CI
+0.032-0.135). Changes against v1: blind-cut validation windows, 5 user-grouped folds, all models on the
+same 20k subsample, per-model smoothing variant and k, selection on the full pipeline, bootstrap over
+the 9 independent test groups.
+
+```powershell
+python build_windows.py --no-pure-train --out windows_w50_blind.csv   # blind windows (once)
+python make_all_train_splits.py         # scratch split listing all 64 users as train (only for --stage allusers)
+python build_windows.py --splits scratch\splits_all_train --out windows_w50_pure_all.csv   # label-cut windows, all users
+python pipeline_v2.py --stage cv        # tune, choose variants and k, select the model (Nystroem SVM ~1 h)
+python pipeline_v2.py --stage final     # fit on all training users, evaluate test users once
+python pipeline_v2.py --stage allusers  # report-only grouped CV over all users with windows (61 of 64)
+python notes_v2.py                      # analyses behind docs/part2_notes_for_teammates.md
+python make_figures_v2.py               # fig1-fig5 (v2) -> results/basic_w50_no_dt_v2/figures/
+```
+`pipeline_v2.py --stage cv --resume` skips models whose CV result file already exists.
+
 ## Folder layout expected by the defaults
 ```
 AIAA3111/
