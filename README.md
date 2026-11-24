@@ -1,8 +1,14 @@
 # GPS 轨迹逐点出行方式识别
 
+**2026-11-24 默认分支整合**：保留 Part 1 与 Part 2 原提交历史，加入 GPS 降采样和固定点数/固定时长实验代码、测试、结果摘要及海报图。团队入口见 [实验结果包与复现说明](results/gps_window_experiments/README.md)。原始数据和大型中间文件仍通过本地数据包共享。
+
 本项目使用 GeoLife GPS 轨迹识别每个样本点的出行方式，允许同一 trip 内包含多种类别。
 当前已完成逐点标签匹配、基础清洗、trip 划分与第一批运动特征构造（Part 1），以及基础模型训练、时序平滑、分段输出与评估（Part 2）；
 窗口大小、采样率、噪声和特征组实验留给 Part 3/4。
+
+**2026-11-20 本地续做：GPS 降采样与窗口对比**：已完成固定参考模型下的四组降采样和三个可训练的 120 秒窗口组合。结果、同点配对比较及局限见 [实验结果](docs/sampling_findings_20261120.md)，协议与运行入口见 [本地实验说明](docs/local_sampling_experiments.md)。完整运行输出位于本地 `outputs/`；已整理的可共享产物见 [实验结果包](results/gps_window_experiments/README.md)。
+
+**2026-11-24 窗口独立对照完成**：原始 GPS 上匹配全部训练/测试点，比较固定 50 点和 120 秒窗口；统一 20 分钟物理时间平滑。未平滑 macro-F1 为 0.7824 / 0.7815，平滑后为 0.8501 / 0.8518，两项配对差值区间均包含 0。见 [完整结果与海报表述](docs/window_comparison_findings_20261124.md)；18 项测试及 30 项结果核验通过，完整输出在本地 `outputs/window_controlled_v1/`，可共享结果见 [结果包](results/gps_window_experiments/controlled_window_comparison/)。
 
 ## 项目状态与交接
 

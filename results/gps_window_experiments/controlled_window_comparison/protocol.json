@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-20",
+  "purpose": "Full-coverage window comparison, original GPS only",
+  "schemes": [
+    "50 points with original short-tail merge",
+    "120 seconds, partial tails retained"
+  ],
+  "min_training_points": 1,
+  "train_users": 51,
+  "train_points": 3486792,
+  "test_users": 13,
+  "test_points": 860972,
+  "model": "SVM (RBF, Nystroem, all data)",
+  "components": 1000,
+  "C": 1,
+  "class_weights": "balanced",
+  "primary_metric": "unsmoothed point macro-F1",
+  "secondary_smoothing": "Centered point-score average within +/-600 seconds inside original blocks",
+  "span_seconds": 1200,
+  "parameter_selection": "None; all parameters fixed before new evaluation",
+  "status": "Follow-up analysis designed after prior test results; not an independent confirmatory study",
+  "fold_extension": "Original 49 user assignments preserved; missing users assigned by SHA256(42:group) mod 5",
+  "python": "3.13.5",
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.1.1",
+    "pyarrow": "26.0.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  },
+  "file_sha256": {
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\src\\model_training\\window_controlled.py": "2d9013625f043c289f5c4d19d23f8205f69d74bff90f43efc345eb9368823fd9",
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\src\\model_training\\pipeline_v2.py": "72330c12ef50d617f05a8dde2839d679be59aa74388dc86d862678589f82a4bb",
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\src\\model_training\\models.py": "b81663a9b4404a2ee18a65ec0f05c501231dc518cd1a4a7e17984569c54379cc",
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\src\\model_training\\prepare_sampling.py": "d36f68ee5537b2ea73fd42c45206cf0a81df4794bad12d940a26417c6acdd71d",
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\outputs\\window_controlled_v1\\folds_51.json": "1b9e25f0b86308a4ff67ff2bb12b3ffa58acb5b940bb87e74bc37ba907705a4d",
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\outputs\\sampling_main_v1\\interval_0s_points_50\\windows.csv": "a865ee79b7b01b17457a78829317eca942580d24c962d6c4a63a1aa9fb527ad5",
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\outputs\\sampling_main_v1\\interval_0s_points_50\\windows_blind.csv": "52379d3d972337b1bd5d2366d4befe319fe7ab814cfb95dbdb2fb76d7cb622a6",
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\outputs\\sampling_main_v1\\interval_0s_points_50\\condition.json": "864ce8c91d410444bc2c844c7e73a9e086c143243993cc91b99088a567d5e522",
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\outputs\\sampling_duration_v1\\interval_0s_time_120s\\windows.csv": "025c9f759e3ab8646657c51e66242e91524ef29be5d18daef83d1b87d6b38b42",
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\outputs\\sampling_duration_v1\\interval_0s_time_120s\\windows_blind.csv": "160d664efdab5a43dc37d064ad4babcdccff9c167f7c990b366fe5904e0e16c4",
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\outputs\\sampling_duration_v1\\interval_0s_time_120s\\condition.json": "307735ef628e78fcd1aaed74bd3718fb253d4bd0679570c721ca63b731b8e0c4",
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\outputs\\window_controlled_v1\\points50\\train_members.parquet": "67d6bc6cdc9d5369cf3d0d17c483e5037249e8e33203d5c6544f13c7c71292d0",
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\outputs\\window_controlled_v1\\points50\\test_members.parquet": "5a27c5edb78b19d3191d834b162788b39494ac85e38845e0bb8751050499ff64",
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\outputs\\window_controlled_v1\\time120\\train_members.parquet": "d5ade80cff9fb5e9d0be5f8829a6ab814594db50ccbbdcdd79038b3e9b3ae497",
+    "E:\\HKUST(GZ)\\study\\26 fall\\Introduction to Data mining\\Project\\aiaa3111-review-20261111\\outputs\\window_controlled_v1\\time120\\test_members.parquet": "802b6fe6051ec4a53b476525773352c3fb528377abf71d99882f9a71ab18a131"
+  }
+}

@@ -1,0 +1,218 @@
+[
+  {
+    "published_file": "results/gps_window_experiments/gps_downsampling/retained_support_results.csv",
+    "local_source": "outputs/sampling_results_reference/summary/retained_support_results.csv",
+    "sha256": "b5d4c45a1dc601f37b51d912b9d946362b4515012ae13a8fae0adbd0663fb528",
+    "bytes": 1158
+  },
+  {
+    "published_file": "results/gps_window_experiments/gps_downsampling/common_support_results.csv",
+    "local_source": "outputs/sampling_results_reference/summary/common_support_results.csv",
+    "sha256": "587a38abb2c8c42254dc91156c740c05b378409be131420e6165c3a817e32561",
+    "bytes": 1247
+  },
+  {
+    "published_file": "results/gps_window_experiments/gps_downsampling/common_support_paired_differences.csv",
+    "local_source": "outputs/sampling_results_reference/summary/common_support_paired_differences.csv",
+    "sha256": "af1164dc0a3652d1823c31f98e099057bab76ad37709be696edb900bca9803c5",
+    "bytes": 5630
+  },
+  {
+    "published_file": "results/gps_window_experiments/gps_downsampling/common_support_by_user.csv",
+    "local_source": "outputs/sampling_results_reference/summary/common_support_by_user.csv",
+    "sha256": "75da2cf48598b5196a87fa1b2949ad242f49695c56080233994bfbd513fed671",
+    "bytes": 220
+  },
+  {
+    "published_file": "results/gps_window_experiments/gps_downsampling/support_verification.json",
+    "local_source": "outputs/sampling_results_reference/summary/support_verification.json",
+    "sha256": "d7db4c29c577b3a1000e83c2126aa59b927e9ab189ad0f555363839729a3e483",
+    "bytes": 577
+  },
+  {
+    "published_file": "results/gps_window_experiments/gps_downsampling/sampling_common_support.png",
+    "local_source": "outputs/sampling_results_reference/summary/sampling_common_support.png",
+    "sha256": "1174481cc712df20bfbcacd62a2d8c864f22055a9f2e82c8a1f2b62ae87a3bdf",
+    "bytes": 108058
+  },
+  {
+    "published_file": "results/gps_window_experiments/gps_downsampling/sampling_common_support.svg",
+    "local_source": "outputs/sampling_results_reference/summary/sampling_common_support.svg",
+    "sha256": "c9f08cfa2f980747fcd1fc5e7a382be45e9b842f5bbcd08b8dd5a99f05e44ad1",
+    "bytes": 45189
+  },
+  {
+    "published_file": "results/gps_window_experiments/gps_downsampling/sampling_retained_support.png",
+    "local_source": "outputs/sampling_results_reference/summary/sampling_retained_support.png",
+    "sha256": "464a469ffdcc4000b929c5879bf32e5d6add214c62bf86ee687b0180bb0aab91",
+    "bytes": 181096
+  },
+  {
+    "published_file": "results/gps_window_experiments/gps_downsampling/sampling_retained_support.svg",
+    "local_source": "outputs/sampling_results_reference/summary/sampling_retained_support.svg",
+    "sha256": "9c2aba5e92d32ff6deabf5286adf15b443c5a2089dcf7462f628616485afe595",
+    "bytes": 59258
+  },
+  {
+    "published_file": "results/gps_window_experiments/gps_downsampling/final_validation.json",
+    "local_source": "outputs/sampling_results_reference/final_validation.json",
+    "sha256": "accc11f6fa56178453b04bad14e21532b70546b6b864f27589bff0c03de5807e",
+    "bytes": 9852
+  },
+  {
+    "published_file": "results/gps_window_experiments/gps_downsampling/environment.json",
+    "local_source": "outputs/sampling_results_reference/environment.json",
+    "sha256": "7b4f32bc3d099cd783ebf8b07de953a58881674df11f3905057ca698ce64d730",
+    "bytes": 221
+  },
+  {
+    "published_file": "results/gps_window_experiments/gps_downsampling/all_seven_choices_frozen_before_test.json",
+    "local_source": "outputs/sampling_results_reference/all_seven_choices_frozen_before_test.json",
+    "sha256": "ab636eeba6e719db4d1042cf4820d9c533cc41f4f84262c865491947a4fe127c",
+    "bytes": 1674
+  },
+  {
+    "published_file": "results/gps_window_experiments/frozen_training_folds.json",
+    "local_source": "outputs/sampling_results_v1/frozen_training_folds.json",
+    "sha256": "0eeefd773eb1df842bcd42b7f16d7d76f0c467a6b3ff229af79d305ed7241cf7",
+    "bytes": 640
+  },
+  {
+    "published_file": "results/gps_window_experiments/initial_window_comparison/window_scheme_results.csv",
+    "local_source": "outputs/window_scheme_comparison_v1/window_scheme_results.csv",
+    "sha256": "5eef4cd85766deaff7702c10d345423ae39760ceb2efa656085e4906dd8e851f",
+    "bytes": 1791
+  },
+  {
+    "published_file": "results/gps_window_experiments/initial_window_comparison/window_scheme_paired_differences.csv",
+    "local_source": "outputs/window_scheme_comparison_v1/window_scheme_paired_differences.csv",
+    "sha256": "94711edd433667a4b9b1768d45d59c23d7c298aeb6afa687d4cd99b87d7b55a0",
+    "bytes": 3330
+  },
+  {
+    "published_file": "results/gps_window_experiments/initial_window_comparison/infeasible_conditions.json",
+    "local_source": "outputs/window_scheme_comparison_v1/infeasible_conditions.json",
+    "sha256": "fa84106f20b356e6eb239bbe87ed764660903d80faccf4e328823a58dfb2549c",
+    "bytes": 139
+  },
+  {
+    "published_file": "results/gps_window_experiments/initial_window_comparison/interpretation_notes.txt",
+    "local_source": "outputs/window_scheme_comparison_v1/interpretation_notes.txt",
+    "sha256": "f90eaae9bdf7e58cf04d194886d2308b612c15b4354c016045023b0989d50691",
+    "bytes": 616
+  },
+  {
+    "published_file": "results/gps_window_experiments/initial_window_comparison/window_scheme_comparison.png",
+    "local_source": "outputs/window_scheme_comparison_v1/window_scheme_comparison.png",
+    "sha256": "bc24f765c2545e87858f49e6b3f8f1df64ef0d25ad155ee87549e19c1f7ecfc9",
+    "bytes": 189313
+  },
+  {
+    "published_file": "results/gps_window_experiments/initial_window_comparison/window_scheme_comparison.svg",
+    "local_source": "outputs/window_scheme_comparison_v1/window_scheme_comparison.svg",
+    "sha256": "9af6f883013438c85c4344e881c7c972eccd82bce50cf8ce21241fbf0dc21e09",
+    "bytes": 62350
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/coverage.csv",
+    "local_source": "outputs/window_controlled_v1/coverage.csv",
+    "sha256": "f3bdb39a15736c8a3f10b47c61eef2b7bf24a2c6e8db5970cd340e429a9a8289",
+    "bytes": 147
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/cv_results.csv",
+    "local_source": "outputs/window_controlled_v1/cv_results.csv",
+    "sha256": "8b6731d5a54afad1c12f7bbd1b662b26aed4e7070cbb5889ebcf5dce05e018e7",
+    "bytes": 704
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/results.csv",
+    "local_source": "outputs/window_controlled_v1/results.csv",
+    "sha256": "e508eb162499ee134dd6cce5217cc70e0fe227ad001450938914e60041a13a7f",
+    "bytes": 815
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/paired_differences.csv",
+    "local_source": "outputs/window_controlled_v1/paired_differences.csv",
+    "sha256": "8ceca4d6e5ff153e5e3c2f9e01f62e40a9d4c283483be87f219968b523283d14",
+    "bytes": 1209
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/per_user_results.csv",
+    "local_source": "outputs/window_controlled_v1/per_user_results.csv",
+    "sha256": "57ea3e8ae43317d3e79032ae3835f6b184728bbc0b94b010a5ec98d4da041c37",
+    "bytes": 3525
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/per_class_results.csv",
+    "local_source": "outputs/window_controlled_v1/per_class_results.csv",
+    "sha256": "a9e817e0abbfd4fd17bf947546a92bdc7185840d422be51a54c8cf7b974fd50e",
+    "bytes": 973
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/validation.json",
+    "local_source": "outputs/window_controlled_v1/validation.json",
+    "sha256": "b9e696ded06c5950ac46edd93a149fedd3bd8bcaeb6a51eb859843b31561db50",
+    "bytes": 2880
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/protocol.json",
+    "local_source": "outputs/window_controlled_v1/protocol.json",
+    "sha256": "91a4c6372e6a2ef9dcc42f55b130e6d4c4123aa274e6ae42fa155aab997bd255",
+    "bytes": 4531
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/folds_51.json",
+    "local_source": "outputs/window_controlled_v1/folds_51.json",
+    "sha256": "1b9e25f0b86308a4ff67ff2bb12b3ffa58acb5b940bb87e74bc37ba907705a4d",
+    "bytes": 666
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/cv_frozen_before_test.json",
+    "local_source": "outputs/window_controlled_v1/cv_frozen_before_test.json",
+    "sha256": "0aa441d33aaf5c0c8f7b63f771c980399a16124c96898b9bf8529941477714f3",
+    "bytes": 168
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/window_descriptives.csv",
+    "local_source": "outputs/window_controlled_v1/window_descriptives.csv",
+    "sha256": "2b64506291093d911314f63feb5b74c1c566c5045f059142ec580217aca2b0a2",
+    "bytes": 326
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/window_controlled_comparison.png",
+    "local_source": "outputs/window_controlled_v1/window_controlled_comparison.png",
+    "sha256": "555abdedda7cc3c42d46b75b708ad4c880b6b04c66d5026bfccc5f0fdb392432",
+    "bytes": 178203
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/window_controlled_comparison.svg",
+    "local_source": "outputs/window_controlled_v1/window_controlled_comparison.svg",
+    "sha256": "b9b1564e8e4d1e84a90f833b9857770cee179f4614681736d914ec34f92116b2",
+    "bytes": 60642
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/points50/cv_metrics.json",
+    "local_source": "outputs/window_controlled_v1/points50/cv_metrics.json",
+    "sha256": "25b64f182555f362a9324c5d0868307fd6b743c67da660b4ac7670d82fcf8127",
+    "bytes": 2297
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/points50/test_metrics.json",
+    "local_source": "outputs/window_controlled_v1/points50/test_metrics.json",
+    "sha256": "55a1f44b9b00eaeadc7d01101ef8a9645ddbc11412d48e018b166c7c7271ebdf",
+    "bytes": 1839
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/time120/cv_metrics.json",
+    "local_source": "outputs/window_controlled_v1/time120/cv_metrics.json",
+    "sha256": "5e8797cbeadf6ba0d7bc0fe8b706563198236ad2d9eff4013acb1e91087e3f36",
+    "bytes": 2292
+  },
+  {
+    "published_file": "results/gps_window_experiments/controlled_window_comparison/time120/test_metrics.json",
+    "local_source": "outputs/window_controlled_v1/time120/test_metrics.json",
+    "sha256": "93dd0a5033146378ef98fd9bc33530ee96355f50469b5f0c4aa51f1a7075b86c",
+    "bytes": 1832
+  }
+]

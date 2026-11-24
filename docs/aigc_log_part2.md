@@ -79,3 +79,28 @@ again k = 9.
 - Claude (chat) reviewed Part 2 against the course guide and listed methodological risks (selection rule vs final pipeline, mixed k, unequal SVM subsample, validation-window cutting, bootstrap unit).
 - Claude Code wrote `pipeline_v2.py`, `notes_v2.py`, `make_figures_v2.py` and soft voting in `smoothing.py`, from a prompt with pre-declared adoption and selection rules. The student ran all stages on the real data.
 - Claude (chat) read the result files, found and fixed a bug in the smoothing-gain CI (commit `517bda2`), and wrote `docs/part2_v2_findings.md` and `docs/part2_notes_for_teammates.md` as notes. No report prose, no references.
+
+## 2026-11-19 – Local GPS downsampling experiment preparation
+- Codex checked GitHub branch heads and audited the committed v2 artifacts; reproduced selected-model F1 and accuracy from the saved confusion matrix. This was an artifact audit, not a new training run.
+- The user clarified their scope: GPS downsampling first, then fixed-point versus fixed-duration windows.
+- Codex added configurable pipeline paths, timestamp-based sampling with recomputed motion features, point/time window preparation, behavior tests and a local experiment protocol.
+- The local checkout lacks real point data and window bundles. No real downsampling condition has been trained or evaluated in this session; synthetic inputs are used only by tests.
+
+## 2026-11-20 – Real-data sampling experiments
+- The teammate supplied quality_features (69 Parquet files, 64 nonempty users, 4,347,764 points) and the reference window bundle. Codex rebuilt the original-sampling windows and verified that all window keys and 27 model features match the supplied reference exactly.
+- Codex created a project-local experiment environment with the reference dependency pins, fixing a PyArrow 19 reader incompatibility with the supplied files. All formal conditions share the same environment and frozen training-user folds.
+- Before viewing any new real test results, Codex stopped an expensive full C/weight/voting pilot and recorded a protocol amendment: freeze the existing C=1/balanced/soft reference model and select only smoothing k on training-user CV. Pilot logs are preserved and excluded from formal results.
+- Codex implemented checkpointed CV, test-point membership maps, common-support paired bootstrap, window-scheme comparison and plotting scripts. Formal CV covers four fixed-point conditions and three feasible fixed-duration conditions. The 30-second sampling / 120-second window combination has no training windows with at least 10 points and is recorded as infeasible.
+- Synthetic smoke checks verify interfaces and checkpoint recovery only; their scores are never included in real experiment tables.
+- All seven formal conditions completed training and test evaluation. Codex independently reconstructed confusion matrices and scores from saved predictions and window counts (78/78 checks passed), generated paired common-support/window-scheme comparisons and PNG/SVG figures, and wrote the local findings and shareable Chinese brief. No generated formal results have been pushed to GitHub.
+
+## 2026-11-20/24 – Full-coverage window follow-up
+- At the user's request, Codex implemented a separate original-GPS comparison of 50-point and 120-second windows, retaining all positive-length training windows to match all 51 training users and 3,486,792 points. Model settings and a common centered 20-minute point-score smoother were fixed before this follow-up evaluation.
+- The experiment paused at the user's request after five folds for 50 points and four folds for 120 seconds. On November 24, Codex resumed the remaining fold, froze both CV records, then completed both final fits and tests without changing the prepared training source or inputs.
+- Codex generated paired group-bootstrap comparisons, per-user/per-class tables and PNG/SVG figures. All 18 unit tests passed with PYTHONPATH=src; 30 independent artifact checks passed, including a pandas rolling reconstruction of every test smoothing prediction and frozen environment/source checks.
+- Codex drafted Chinese findings, a shareable brief and suggested English poster wording. No clear window advantage was detected; the findings explicitly retain the small-group, reused-test, offline-smoothing and non-equivalence limitations. The student should verify the figures and rewrite submitted prose in the team's own words. No outputs were pushed to GitHub.
+
+## 2026-11-24 – Default-branch integration
+- At the user's explicit request, Codex fetched the latest remote heads, recovered the shallow history, and confirmed main is an ancestor of part2-fixes. The integration preserves all original Part 1/2 commits and their authors.
+- Codex added the local experiment code/tests/documentation and a lightweight results package with hashes, tables and poster figures. Raw GPS, virtual environments, large models and intermediate point tables remain local. No existing teammate files were deleted; only the documented pipeline path/fold options and project documentation were extended.
+- All 18 tests passed in the integration checkout. The default branch is updated using a normal fast-forward push, without force or history rewriting.

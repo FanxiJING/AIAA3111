@@ -1,0 +1,30 @@
+固定点数 vs 固定时长窗口实验已完成（2026-11-24）
+
+这是原分工中 GPS 降采样之后的第二项实验，只用原始 GPS。
+两组相同：51 位训练用户、3,486,792 训练点；13 位测试用户、860,972 测试点。固定参考 SVM，不调参；保留所有正长度训练窗，最低点数 1。
+
+                         固定 50 点      固定 120 秒
+未平滑 macro-F1          0.7824          0.7815
+统一 20 分钟平滑后       0.8501          0.8518
+未平滑用户平均 F1        0.7380          0.7154
+平滑后用户平均 F1        0.7923          0.7932
+
+50 点减去 120 秒的配对 macro-F1 差值：
+未平滑 +0.000958，95% CI [−0.005989, +0.044395]。
+平滑后 −0.001637，95% CI [−0.009637, +0.019486]。
+两项区间都包含 0：当前数据未检测到明确的窗口优劣，不能写成“完全等效”。
+
+目的已达到：完成覆盖匹配、后处理匹配的窗口方案比较。海报建议以 GPS 降采样为主结果，本轮作为补充对照，报告未检测到明确差异。
+
+限制：只有 9 个独立测试关联组，且一个组占约 79% 点；属于复用测试集的探索性补充分析。20 分钟平滑使用未来点，仅限离线识别；本轮未评估短段/变化点质量。窗口数和尾窗规则仍不同，不能宣称只改变了时长因素。
+
+18 项单元测试、30 项结果核验全部通过；已保存模型、逐点预测、配对区间和可用于海报的 PNG/SVG 图，尚未推送 GitHub。
+仓库：aiaa3111-review-20261111
+详细说明：docs/window_comparison_findings_20261124.md
+结果与图：outputs/window_controlled_v1/
+海报图：window_controlled_comparison.png / .svg
+
+海报英文草稿（提交前请团队核对并用自己的语言改写）：
+With identical training and test observations, fixed 50-point and 120-second windows yielded macro-F1 scores of 0.7824 and 0.7815 without smoothing, and 0.8501 and 0.8518 with a common centered 20-minute smoother. Paired group-bootstrap intervals included zero for both window contrasts; no clear advantage was detected in this exploratory follow-up.
+
+2026-11-24 发布更新：代码、轻量结果与图片整合至默认分支。此简报上文关于尚未推送的描述是发布前状态；完整数据与大型运行输出仍在本地。

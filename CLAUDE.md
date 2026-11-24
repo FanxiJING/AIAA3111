@@ -2,9 +2,13 @@
 
 ## Project
 GeoLife GPS transportation-mode classification: walk, bike, bus, car, train (5 classes, no merging).
-Team split: Part 1 = pre-processing & feature engineering (teammate A, done, repo
-https://github.com/FanxiJING/AIAA3111), **Part 2 = basic model training (this user)**,
-Parts 3/4 = multi-variable experiments (other teammates, will reuse Part 2's code).
+Team split: Part 1 = pre-processing & feature engineering (done, repo
+https://github.com/FanxiJING/AIAA3111); Part 2 = completed basic-model reference pipeline.
+**The current local user's responsibility (confirmed 2026-11-19) is GPS downsampling experiments,
+then fixed-point versus fixed-duration window comparison.** The earlier "this user = Part 2"
+description referred to the original Part 2 context and does not apply to this local continuation.
+Local experiment protocol and status: `docs/local_sampling_experiments.md`;
+controlled experiment entrypoint: `src/model_training/run_reference_sampling.py`.
 Deadlines: poster 27 Nov, final zip (Report.pdf + code + README + data instructions) 11 Dec.
 The report needs an AIGC disclosure section, so keep a short log of what AI tools did.
 

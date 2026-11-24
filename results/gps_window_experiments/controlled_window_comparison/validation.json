@@ -1,0 +1,126 @@
+{
+  "passed": 30,
+  "total": 30,
+  "checks": [
+    {
+      "check": "Python version matches frozen protocol",
+      "passed": true
+    },
+    {
+      "check": "Package versions match frozen protocol",
+      "passed": true
+    },
+    {
+      "check": "All frozen source/input hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "Linked training users never cross CV folds",
+      "passed": true
+    },
+    {
+      "check": "points50: identical test observations",
+      "passed": true
+    },
+    {
+      "check": "points50: full test count",
+      "passed": true
+    },
+    {
+      "check": "points50: unique test points",
+      "passed": true
+    },
+    {
+      "check": "points50: CV frozen before test",
+      "passed": true
+    },
+    {
+      "check": "points50: full training coverage",
+      "passed": true
+    },
+    {
+      "check": "points50: training members complete",
+      "passed": true
+    },
+    {
+      "check": "points50: raw predictions reconstructed from window scores",
+      "passed": true
+    },
+    {
+      "check": "points50: physical smoothing independently reconstructed",
+      "passed": true
+    },
+    {
+      "check": "points50/raw: saved confusion matrix",
+      "passed": true
+    },
+    {
+      "check": "points50/raw: saved macro-F1",
+      "passed": true
+    },
+    {
+      "check": "points50/time20min: saved confusion matrix",
+      "passed": true
+    },
+    {
+      "check": "points50/time20min: saved macro-F1",
+      "passed": true
+    },
+    {
+      "check": "time120: identical test observations",
+      "passed": true
+    },
+    {
+      "check": "time120: full test count",
+      "passed": true
+    },
+    {
+      "check": "time120: unique test points",
+      "passed": true
+    },
+    {
+      "check": "time120: CV frozen before test",
+      "passed": true
+    },
+    {
+      "check": "time120: full training coverage",
+      "passed": true
+    },
+    {
+      "check": "time120: training members complete",
+      "passed": true
+    },
+    {
+      "check": "identical training observations across schemes",
+      "passed": true
+    },
+    {
+      "check": "time120: raw predictions reconstructed from window scores",
+      "passed": true
+    },
+    {
+      "check": "time120: physical smoothing independently reconstructed",
+      "passed": true
+    },
+    {
+      "check": "time120/raw: saved confusion matrix",
+      "passed": true
+    },
+    {
+      "check": "time120/raw: saved macro-F1",
+      "passed": true
+    },
+    {
+      "check": "time120/time20min: saved confusion matrix",
+      "passed": true
+    },
+    {
+      "check": "time120/time20min: saved macro-F1",
+      "passed": true
+    },
+    {
+      "check": "13 test users and 9 independent groups",
+      "passed": true
+    }
+  ]
+}

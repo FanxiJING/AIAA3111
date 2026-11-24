@@ -60,6 +60,10 @@ HERE = Path(__file__).resolve().parent
 PROJECT = HERE.parents[1]
 SPLITS_REPORT = PROJECT / "data" / "splits" / "report.json"
 OUT = HERE / "results" / "basic_w50_no_dt_v2"
+WINDOWS = HERE / "windows_w50.csv"
+BLIND_WINDOWS = HERE / "windows_w50_blind.csv"
+PURE_ALL_WINDOWS = HERE / "windows_w50_pure_all.csv"
+FOLD_MAP = None
 SEED, N_SUB, N_FOLDS, N_BOOT = 42, 20_000, 5, 5000
 KS = [1, 3, 5, 7, 9, 11, 13, 15, 21]
 SVM_NAMES = ("SVM (RBF)", "SVM (RBF, Nystroem, all data)")
@@ -143,11 +147,17 @@ def user_folds(pure: pd.DataFrame, n_folds: int = N_FOLDS) -> dict:
     """user -> fold from StratifiedGroupKFold on pure windows; linked users always share a fold."""
     X, y, u, _ = prepare(pure)
     g = cv_groups(u, SPLITS_REPORT)
-    cv = StratifiedGroupKFold(n_splits=n_folds, shuffle=True, random_state=SEED)
-    fold_of = {}
-    for f, (_, val) in enumerate(cv.split(X, y, groups=g)):
-        for user in u.iloc[val].unique():
-            fold_of[user] = f
+    if FOLD_MAP is not None:
+        fold_of = {str(k): int(v) for k, v in json.loads(Path(FOLD_MAP).read_text()).items()}
+        missing = set(u.unique()) - set(fold_of)
+        if missing or set(fold_of.values()) != set(range(n_folds)):
+            raise ValueError(f"Invalid frozen fold map, missing users: {sorted(missing)}")
+    else:
+        cv = StratifiedGroupKFold(n_splits=n_folds, shuffle=True, random_state=SEED)
+        fold_of = {}
+        for f, (_, val) in enumerate(cv.split(X, y, groups=g)):
+            for user in u.iloc[val].unique():
+                fold_of[user] = f
     pairs = pd.DataFrame({"user": u, "group": g}).drop_duplicates()
     assert pairs.groupby("group").user.apply(lambda s: len({fold_of[x] for x in s})).max() == 1
     return fold_of
@@ -187,8 +197,8 @@ def paired_gain(new: np.ndarray, old: np.ndarray) -> dict:
 # Data
 # --------------------------------------------------------------------------------------
 def load_cv_data():
-    pure = load_windows(HERE / "windows_w50.csv")
-    blind = load_windows(HERE / "windows_w50_blind.csv")
+    pure = load_windows(WINDOWS)
+    blind = load_windows(BLIND_WINDOWS)
     tr = pure[(pure.split == "train") & (pure.n_points >= 10)].reset_index(drop=True)
     fold_of = user_folds(tr)
     bl = blind[(blind.split == "train") & blind.user_id.isin(fold_of)].reset_index(drop=True)
@@ -216,6 +226,8 @@ def stage_cv(models: list[str] | None, resume: bool):
         scores = np.zeros((len(bl), len(MODES)))
         for f in range(N_FOLDS):
             fit, ev = fold_tr != f, fold_bl == f
+            print(f"  [fit] cw={cw}, params={params}, fold={f + 1}/{N_FOLDS}, "
+                  f"fit={int(fit.sum())}, eval={int(ev.sum())}", flush=True)
             p, s, _ = fit_predict(spec, cw, params, Xtr[fit], ytr[fit], utr[fit], Xbl[ev])
             pred[ev], scores[ev] = p, s
         return pred, scores
@@ -356,7 +368,7 @@ def per_user_scores(meta, users, groups, pred) -> pd.DataFrame:
 def stage_final():
     res = load_cv_results()
     sel = json.loads((OUT / "selection.json").read_text())["selected"]
-    pure = load_windows(HERE / "windows_w50.csv")
+    pure = load_windows(WINDOWS)
     tr = pure[(pure.split == "train") & (pure.n_points >= 10)].reset_index(drop=True)
     te = pure[pure.split == "test"].reset_index(drop=True)
     Xtr, ytr, utr, _ = prepare(tr)
@@ -431,6 +443,9 @@ def run_config(selected):
     (OUT / "run_config.json").write_text(json.dumps({
         "selected_model": selected, "seed": SEED, "n_subsample": N_SUB, "n_folds": N_FOLDS, "n_boot": N_BOOT,
         "ks": KS, "nystroem_components": NYSTROEM_COMPONENTS, "splits_report": str(SPLITS_REPORT),
+        "windows": str(WINDOWS), "blind_windows": str(BLIND_WINDOWS),
+        "pure_all_windows": str(PURE_ALL_WINDOWS), "output": str(OUT),
+        "fold_map": str(FOLD_MAP) if FOLD_MAP else None,
         "versions": {"python": platform.python_version(), "pandas": pd.__version__, "numpy": np.__version__,
                      "scikit-learn": sklearn.__version__, "pyarrow": pyarrow.__version__,
                      "matplotlib": matplotlib.__version__, "joblib": joblib.__version__}}, indent=2))
@@ -441,8 +456,8 @@ def run_config(selected):
 # --------------------------------------------------------------------------------------
 def stage_allusers():
     res = load_cv_results()
-    pure = load_windows(HERE / "windows_w50_pure_all.csv")
-    blind = load_windows(HERE / "windows_w50_blind.csv")
+    pure = load_windows(PURE_ALL_WINDOWS)
+    blind = load_windows(BLIND_WINDOWS)
     tr = pure[pure.n_points >= 10].reset_index(drop=True)
     fold_of = user_folds(tr)
     bl = blind[blind.user_id.isin(fold_of)].reset_index(drop=True)
@@ -471,11 +486,34 @@ def stage_allusers():
 
 
 def main():
+    global WINDOWS, BLIND_WINDOWS, PURE_ALL_WINDOWS, SPLITS_REPORT, OUT, FOLD_MAP
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--stage", choices=["cv", "select", "final", "allusers"], required=True)
     ap.add_argument("--models", nargs="*", default=None, help="cv stage: only these models")
     ap.add_argument("--resume", action="store_true", help="cv stage: skip models whose result file exists")
+    ap.add_argument("--windows", type=Path, default=WINDOWS, help="label-cut train / blind test table")
+    ap.add_argument("--blind-windows", type=Path, default=BLIND_WINDOWS, help="blind table for CV scoring")
+    ap.add_argument("--pure-all-windows", type=Path, default=PURE_ALL_WINDOWS, help="all-user label-cut table")
+    ap.add_argument("--splits-report", type=Path, default=SPLITS_REPORT)
+    ap.add_argument("--fold-map", type=Path, help="frozen user-to-fold JSON shared by all sampling conditions")
+    ap.add_argument("--out", type=Path, default=OUT, help="separate output directory for this experiment")
     a = ap.parse_args()
+    WINDOWS, BLIND_WINDOWS, PURE_ALL_WINDOWS = (p.resolve() for p in
+                                               (a.windows, a.blind_windows, a.pure_all_windows))
+    SPLITS_REPORT, OUT = a.splits_report.resolve(), a.out.resolve()
+    FOLD_MAP = a.fold_map.resolve() if a.fold_map else None
+    changed_input = (WINDOWS != (HERE / "windows_w50.csv").resolve()
+                     or BLIND_WINDOWS != (HERE / "windows_w50_blind.csv").resolve()
+                     or PURE_ALL_WINDOWS != (HERE / "windows_w50_pure_all.csv").resolve()
+                     or SPLITS_REPORT != (PROJECT / "data/splits/report.json").resolve())
+    if changed_input and OUT == (HERE / "results/basic_w50_no_dt_v2").resolve():
+        ap.error("Changed inputs require --out pointing to a separate experiment directory.")
+    inputs = {"cv": [WINDOWS, BLIND_WINDOWS, SPLITS_REPORT],
+              "select": [], "final": [WINDOWS, SPLITS_REPORT, OUT / "selection.json"],
+              "allusers": [PURE_ALL_WINDOWS, BLIND_WINDOWS, SPLITS_REPORT]}[a.stage]
+    missing = [str(p) for p in inputs if not p.is_file()]
+    if missing:
+        ap.error("Missing input files (restore the real data bundle first):\n" + "\n".join(missing))
     OUT.mkdir(parents=True, exist_ok=True)
     {"cv": lambda: stage_cv(a.models, a.resume), "select": select, "final": stage_final,
      "allusers": stage_allusers}[a.stage]()

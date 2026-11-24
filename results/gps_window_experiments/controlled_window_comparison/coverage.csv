@@ -1,0 +1,3 @@
+scheme,train_users,train_points,train_windows,min_train_points,test_points
+points50,51,3486792,70441,1,860972
+time120,51,3486792,93785,1,860972

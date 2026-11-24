@@ -1,0 +1,4 @@
+# Keep published audit snapshots byte-for-byte identical to their SHA256 manifest.
+results/gps_window_experiments/** -text whitespace=cr-at-eol
+# Matplotlib-generated SVG paths contain intentional spaces before line breaks.
+results/gps_window_experiments/**/*.svg -whitespace

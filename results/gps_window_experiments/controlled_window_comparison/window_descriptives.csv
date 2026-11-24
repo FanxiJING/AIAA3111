@@ -1,0 +1,5 @@
+scheme,split,windows,points,median_points,windows_under_10,median_duration_s,duration_p10_s,duration_p90_s
+points50,train,70441,3486792,50.0,355,98.0,54.0,289.0
+points50,test,17380,860972,50.0,76,98.0,49.0,245.0
+time120,train,93785,3486792,30.0,18513,115.0,31.0,118.0
+time120,test,19597,860972,38.0,2740,115.0,27.0,119.0

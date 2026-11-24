@@ -1,4 +1,7 @@
 .venv/
+.venv-experiments/
+*_setup.log
+sampling_*.log
 .uv-cache/
 __pycache__/
 *.pyc

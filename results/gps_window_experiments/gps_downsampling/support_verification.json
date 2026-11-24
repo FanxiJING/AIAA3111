@@ -1,0 +1,27 @@
+{
+  "checks": [
+    {
+      "condition": "interval_0s_points_50",
+      "mapped_points": 860972,
+      "counts_match": true
+    },
+    {
+      "condition": "interval_5s_points_50",
+      "mapped_points": 338220,
+      "counts_match": true
+    },
+    {
+      "condition": "interval_10s_points_50",
+      "mapped_points": 185843,
+      "counts_match": true
+    },
+    {
+      "condition": "interval_30s_points_50",
+      "mapped_points": 65316,
+      "counts_match": true
+    }
+  ],
+  "common_points": 46714,
+  "common_users": 13,
+  "common_groups": 9
+}

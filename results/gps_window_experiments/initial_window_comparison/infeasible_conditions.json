@@ -1,0 +1,6 @@
+[
+  {
+    "interval_s": 30,
+    "reason": "120 s time windows contain at most 4 points; no training window passes min_points=10"
+  }
+]

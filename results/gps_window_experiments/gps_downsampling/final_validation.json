@@ -1,0 +1,396 @@
+{
+  "checks": [
+    {
+      "condition": "interval_0s_points_50",
+      "check": "window_alignment",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_points_50",
+      "check": "confusion_matches_independent_reconstruction",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_points_50",
+      "check": "test_point_conservation",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_points_50",
+      "check": "final_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_points_50",
+      "check": "final_accuracy",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_points_50",
+      "check": "raw_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_points_50",
+      "check": "smoothing_k_frozen_before_test",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_points_50",
+      "check": "cv_choice_file_unchanged_after_test",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_points_50",
+      "check": "per_user_point_counts",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_points_50",
+      "check": "user_average_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_points_50",
+      "check": "weighted_user_accuracy",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_points_50",
+      "check": "window_alignment",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_points_50",
+      "check": "confusion_matches_independent_reconstruction",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_points_50",
+      "check": "test_point_conservation",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_points_50",
+      "check": "final_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_points_50",
+      "check": "final_accuracy",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_points_50",
+      "check": "raw_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_points_50",
+      "check": "smoothing_k_frozen_before_test",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_points_50",
+      "check": "cv_choice_file_unchanged_after_test",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_points_50",
+      "check": "per_user_point_counts",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_points_50",
+      "check": "user_average_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_points_50",
+      "check": "weighted_user_accuracy",
+      "passed": true
+    },
+    {
+      "condition": "interval_30s_points_50",
+      "check": "window_alignment",
+      "passed": true
+    },
+    {
+      "condition": "interval_30s_points_50",
+      "check": "confusion_matches_independent_reconstruction",
+      "passed": true
+    },
+    {
+      "condition": "interval_30s_points_50",
+      "check": "test_point_conservation",
+      "passed": true
+    },
+    {
+      "condition": "interval_30s_points_50",
+      "check": "final_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_30s_points_50",
+      "check": "final_accuracy",
+      "passed": true
+    },
+    {
+      "condition": "interval_30s_points_50",
+      "check": "raw_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_30s_points_50",
+      "check": "smoothing_k_frozen_before_test",
+      "passed": true
+    },
+    {
+      "condition": "interval_30s_points_50",
+      "check": "cv_choice_file_unchanged_after_test",
+      "passed": true
+    },
+    {
+      "condition": "interval_30s_points_50",
+      "check": "per_user_point_counts",
+      "passed": true
+    },
+    {
+      "condition": "interval_30s_points_50",
+      "check": "user_average_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_30s_points_50",
+      "check": "weighted_user_accuracy",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_points_50",
+      "check": "window_alignment",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_points_50",
+      "check": "confusion_matches_independent_reconstruction",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_points_50",
+      "check": "test_point_conservation",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_points_50",
+      "check": "final_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_points_50",
+      "check": "final_accuracy",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_points_50",
+      "check": "raw_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_points_50",
+      "check": "smoothing_k_frozen_before_test",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_points_50",
+      "check": "cv_choice_file_unchanged_after_test",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_points_50",
+      "check": "per_user_point_counts",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_points_50",
+      "check": "user_average_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_points_50",
+      "check": "weighted_user_accuracy",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_time_120s",
+      "check": "window_alignment",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_time_120s",
+      "check": "confusion_matches_independent_reconstruction",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_time_120s",
+      "check": "test_point_conservation",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_time_120s",
+      "check": "final_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_time_120s",
+      "check": "final_accuracy",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_time_120s",
+      "check": "raw_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_time_120s",
+      "check": "smoothing_k_frozen_before_test",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_time_120s",
+      "check": "cv_choice_file_unchanged_after_test",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_time_120s",
+      "check": "per_user_point_counts",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_time_120s",
+      "check": "user_average_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_0s_time_120s",
+      "check": "weighted_user_accuracy",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_time_120s",
+      "check": "window_alignment",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_time_120s",
+      "check": "confusion_matches_independent_reconstruction",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_time_120s",
+      "check": "test_point_conservation",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_time_120s",
+      "check": "final_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_time_120s",
+      "check": "final_accuracy",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_time_120s",
+      "check": "raw_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_time_120s",
+      "check": "smoothing_k_frozen_before_test",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_time_120s",
+      "check": "cv_choice_file_unchanged_after_test",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_time_120s",
+      "check": "per_user_point_counts",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_time_120s",
+      "check": "user_average_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_10s_time_120s",
+      "check": "weighted_user_accuracy",
+      "passed": true
+    },
+    {
+      "condition": "interval_30s_time_120s",
+      "check": "infeasible_combination_has_no_test_results",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_time_120s",
+      "check": "window_alignment",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_time_120s",
+      "check": "confusion_matches_independent_reconstruction",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_time_120s",
+      "check": "test_point_conservation",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_time_120s",
+      "check": "final_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_time_120s",
+      "check": "final_accuracy",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_time_120s",
+      "check": "raw_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_time_120s",
+      "check": "smoothing_k_frozen_before_test",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_time_120s",
+      "check": "cv_choice_file_unchanged_after_test",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_time_120s",
+      "check": "per_user_point_counts",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_time_120s",
+      "check": "user_average_macro_f1",
+      "passed": true
+    },
+    {
+      "condition": "interval_5s_time_120s",
+      "check": "weighted_user_accuracy",
+      "passed": true
+    }
+  ],
+  "passed": 78,
+  "total": 78
+}

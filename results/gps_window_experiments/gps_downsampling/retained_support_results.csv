@@ -1,0 +1,5 @@
+selected,class_weights,voting,k,cv_macro_f1,cv_se,user_avg_accuracy,user_avg_macro_f1,isolated_flips,isolated_flips_wrong,point_macro_f1,macro_f1_ci_low,macro_f1_ci_high,point_accuracy,accuracy_ci_low,accuracy_ci_high,raw_macro_f1,raw_accuracy,gain,gain_ci_low,gain_ci_high,condition,interval_s,retained_train_points,retained_test_points,test_point_fraction,test_median_window_seconds
+True,balanced,soft,11,0.7003,0.034,0.7425,0.7308,25,20,0.8442,0.4711,0.8682,0.853,0.7764,0.9035,0.7788,0.8089,0.0654,0.0318,0.1349,interval_0s_points_50,0.0,3486792,860972,1.0,98.0
+True,balanced,soft,3,0.7284,0.0405,0.8133,0.7677,17,13,0.8146,0.4848,0.8459,0.8434,0.8067,0.906,0.7815,0.8261,0.0331,-0.0,0.095,interval_5s_points_50,5.0,1403580,338220,0.3928350747759509,294.0
+True,balanced,soft,3,0.7317,0.0382,0.792,0.7772,10,8,0.7991,0.5047,0.8258,0.8252,0.7973,0.895,0.7842,0.8197,0.0149,0.0051,0.0687,interval_10s_points_50,10.0,822109,185843,0.2158525480503431,507.0
+True,balanced,soft,3,0.7301,0.0432,0.7322,0.7358,6,6,0.7424,0.482,0.7574,0.7442,0.7061,0.8338,0.746,0.7619,-0.0035,-0.0106,0.052,interval_30s_points_50,30.0,303106,65316,0.07586309427019694,1470.0
