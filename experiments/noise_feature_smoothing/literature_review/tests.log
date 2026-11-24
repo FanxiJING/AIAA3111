@@ -1,0 +1,14 @@
+test_constant_reference_fixed_five_classes (test_checks.CheckTests.test_constant_reference_fixed_five_classes) ... ok
+test_coordinate_stencil_variances (test_checks.CheckTests.test_coordinate_stencil_variances) ... ok
+test_differenced_iid_errors_are_dependent (test_checks.CheckTests.test_differenced_iid_errors_are_dependent) ... ok
+test_invalid_support (test_checks.CheckTests.test_invalid_support) ... ok
+test_mixed_label_points (test_checks.CheckTests.test_mixed_label_points) ... ok
+test_stationary_scale (test_checks.CheckTests.test_stationary_scale) ... ok
+test_threshold_probability (test_checks.CheckTests.test_threshold_probability) ... ok
+test_unknown_labels_rejected (test_checks.CheckTests.test_unknown_labels_rejected) ... ok
+test_zero_noise_limit (test_checks.CheckTests.test_zero_noise_limit) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.151s
+
+OK

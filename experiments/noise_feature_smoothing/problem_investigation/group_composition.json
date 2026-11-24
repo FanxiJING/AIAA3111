@@ -1,0 +1,26 @@
+{
+  "clusters": [
+    "052",
+    "058",
+    "060",
+    "linked0",
+    "082",
+    "087",
+    "linked3",
+    "091",
+    "097"
+  ],
+  "point_weights": [
+    0.154678665508286,
+    0.0010581064192563753,
+    1.9745125277012493e-05,
+    0.7888316925521387,
+    0.02099603703720911,
+    0.00013821587693908744,
+    0.03170602528305218,
+    0.0008165190041023401,
+    0.0017549931937391693
+  ],
+  "inverse_squared_weight_sum": 1.5440869557363175,
+  "weight_concentration_note": "Kish-style descriptive concentration, NOT number of independent groups"
+}

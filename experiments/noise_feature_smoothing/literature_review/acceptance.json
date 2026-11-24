@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "completed_at": "2026-11-23T12:28:53+0800",
+  "elapsed_seconds": 6.811971900053322,
+  "protected_files": 506,
+  "changed_protected_files": [],
+  "code_sha256": {
+    "build_checks.py": "0661845f79757f776ce6d19426180464d5bf6d46886b22958e36581dd7a1f6b9",
+    "collect_sources.py": "a7cb4c41ec1f93dc5b2a291b6219ec5ad5f5ebd8f00d3287ceaf41a9d36f2736",
+    "test_checks.py": "13b7039941bca6feb35194fec3237ce5dc997fcae651905b64c10fddba3b0a3e",
+    "verify_review.py": "2da7afbcefc61b5cf15fba20505d744b11e4e328c71ecca87873ae09a3a3707e"
+  },
+  "metric_rows_reconstructed": 144,
+  "constant_reference_contrasts": 720,
+  "points": 860972,
+  "windows": 17380,
+  "valid_original_intervals": 859763,
+  "intervals_without_dt": 1209,
+  "original_dt_reconstructed_exactly": true,
+  "training_performed": false,
+  "new_noise_generated": false,
+  "new_random_numbers_generated": false,
+  "protocol_changed": false,
+  "analysis_status": "post_hoc_descriptive_not_model_selection",
+  "bootstrap_recalculated": false
+}

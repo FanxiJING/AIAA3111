@@ -1,0 +1,12 @@
+{
+  "raw_macro_f1": 0.778830530700073,
+  "final_macro_f1": 0.8442686045614772,
+  "raw_accuracy": 0.8088857709658386,
+  "final_accuracy": 0.8530800072476225,
+  "reference_raw_macro_f1": 0.7789,
+  "reference_final_macro_f1": 0.8443,
+  "raw_label_diff": 1,
+  "final_label_diff": 0,
+  "reference_row_count": 17380,
+  "new_row_count": 17380
+}

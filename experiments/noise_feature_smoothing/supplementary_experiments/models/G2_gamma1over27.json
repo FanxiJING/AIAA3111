@@ -1,0 +1,90 @@
+{
+  "feature_columns": [
+    "speed_mean",
+    "speed_std",
+    "speed_min",
+    "speed_max",
+    "speed_p10",
+    "speed_p50",
+    "speed_p90",
+    "speed_p95",
+    "stop_rate",
+    "slow_rate",
+    "acc_mean",
+    "acc_std",
+    "acc_p90",
+    "acc_max",
+    "big_acc_rate"
+  ],
+  "classes": [
+    "walk",
+    "bike",
+    "bus",
+    "car",
+    "train"
+  ],
+  "fitting_windows": 70086,
+  "fitting_users": 49,
+  "gamma": 0.037037037037037035,
+  "fit_seconds": 123.21900000004098,
+  "file_sha256": "9fcdcf5c4ab196a7674f5f137aae6a79772d83a573974913cf279eab5cca13b2",
+  "code_sha256": "9f2e74ac95c2dc8fa270ef8f2f52f96e81415b885b77037e488ecc649ca121be",
+  "protocol_sha256": "61032da2e0d5aa08667322da0eace8b3199328c065451ea7eefe53262ecf09ee",
+  "input_manifest_sha256": "273872e41a3a5d5c9619ebbc6df1aa581e5ed7f9825c630ccb31b00b835e4768",
+  "pipeline_parameters": {
+    "memory": null,
+    "steps": [
+      [
+        "impute",
+        "SimpleImputer(strategy='median')"
+      ],
+      [
+        "scale",
+        "StandardScaler()"
+      ],
+      [
+        "rbf",
+        "Nystroem(gamma=0.037037037037037035, n_components=1000, random_state=42)"
+      ],
+      [
+        "clf",
+        "LinearSVC(class_weight='balanced', dual=False, max_iter=5000, random_state=42)"
+      ]
+    ],
+    "transform_input": null,
+    "verbose": false,
+    "impute": "SimpleImputer(strategy='median')",
+    "scale": "StandardScaler()",
+    "rbf": "Nystroem(gamma=0.037037037037037035, n_components=1000, random_state=42)",
+    "clf": "LinearSVC(class_weight='balanced', dual=False, max_iter=5000, random_state=42)",
+    "impute__add_indicator": false,
+    "impute__copy": true,
+    "impute__fill_value": null,
+    "impute__keep_empty_features": false,
+    "impute__missing_values": NaN,
+    "impute__strategy": "median",
+    "scale__copy": true,
+    "scale__with_mean": true,
+    "scale__with_std": true,
+    "rbf__coef0": null,
+    "rbf__degree": null,
+    "rbf__gamma": 0.037037037037037035,
+    "rbf__kernel": "rbf",
+    "rbf__kernel_params": null,
+    "rbf__n_components": 1000,
+    "rbf__n_jobs": null,
+    "rbf__random_state": 42,
+    "clf__C": 1.0,
+    "clf__class_weight": "balanced",
+    "clf__dual": false,
+    "clf__fit_intercept": true,
+    "clf__intercept_scaling": 1,
+    "clf__loss": "squared_hinge",
+    "clf__max_iter": 5000,
+    "clf__multi_class": "ovr",
+    "clf__penalty": "l2",
+    "clf__random_state": 42,
+    "clf__tol": 0.0001,
+    "clf__verbose": 0
+  }
+}

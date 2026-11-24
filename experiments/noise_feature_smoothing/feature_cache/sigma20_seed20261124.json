@@ -1,0 +1,161 @@
+{
+  "sigma": 20,
+  "seed": 20261124,
+  "users": 13,
+  "points": 860972,
+  "windows": 17380,
+  "speed_gt100": 1136,
+  "user_diagnostics": [
+    {
+      "user_id": "052",
+      "points": 133174,
+      "east_std_m": 19.98973073211325,
+      "north_std_m": 20.073576592883143,
+      "radial_rms_m": 28.32921961599825,
+      "speed_gt100": 0,
+      "missing_speed": 177
+    },
+    {
+      "user_id": "058",
+      "points": 911,
+      "east_std_m": 20.015405723169934,
+      "north_std_m": 19.78997043012636,
+      "radial_rms_m": 28.152602061558024,
+      "speed_gt100": 0,
+      "missing_speed": 18
+    },
+    {
+      "user_id": "060",
+      "points": 17,
+      "east_std_m": 20.658710565672283,
+      "north_std_m": 24.04927541749005,
+      "radial_rms_m": 31.756188858699517,
+      "speed_gt100": 0,
+      "missing_speed": 2
+    },
+    {
+      "user_id": "069",
+      "points": 4141,
+      "east_std_m": 20.018504334403378,
+      "north_std_m": 19.7942524555779,
+      "radial_rms_m": 28.15782966704917,
+      "speed_gt100": 7,
+      "missing_speed": 18
+    },
+    {
+      "user_id": "082",
+      "points": 18077,
+      "east_std_m": 19.9385130006299,
+      "north_std_m": 20.02829382760638,
+      "radial_rms_m": 28.262396808237774,
+      "speed_gt100": 2,
+      "missing_speed": 75
+    },
+    {
+      "user_id": "087",
+      "points": 119,
+      "east_std_m": 19.797450561694173,
+      "north_std_m": 18.471365995215198,
+      "radial_rms_m": 27.18196534761719,
+      "speed_gt100": 0,
+      "missing_speed": 7
+    },
+    {
+      "user_id": "089",
+      "points": 17676,
+      "east_std_m": 20.026577973780153,
+      "north_std_m": 20.069309508543494,
+      "radial_rms_m": 28.353494412678582,
+      "speed_gt100": 0,
+      "missing_speed": 44
+    },
+    {
+      "user_id": "091",
+      "points": 703,
+      "east_std_m": 20.194669786273643,
+      "north_std_m": 19.955777512944646,
+      "radial_rms_m": 28.401269234880186,
+      "speed_gt100": 0,
+      "missing_speed": 32
+    },
+    {
+      "user_id": "097",
+      "points": 1511,
+      "east_std_m": 20.124019400403643,
+      "north_std_m": 20.38794534780827,
+      "radial_rms_m": 28.649809239322853,
+      "speed_gt100": 0,
+      "missing_speed": 47
+    },
+    {
+      "user_id": "126",
+      "points": 229055,
+      "east_std_m": 20.020355395424538,
+      "north_std_m": 19.94046924334633,
+      "radial_rms_m": 28.256637947883103,
+      "speed_gt100": 312,
+      "missing_speed": 245
+    },
+    {
+      "user_id": "129",
+      "points": 4080,
+      "east_std_m": 20.21571302035582,
+      "north_std_m": 19.666259430238256,
+      "radial_rms_m": 28.203790493725542,
+      "speed_gt100": 11,
+      "missing_speed": 14
+    },
+    {
+      "user_id": "144",
+      "points": 9622,
+      "east_std_m": 20.02492981464309,
+      "north_std_m": 19.957500680459084,
+      "radial_rms_m": 28.27198623186787,
+      "speed_gt100": 0,
+      "missing_speed": 20
+    },
+    {
+      "user_id": "167",
+      "points": 441886,
+      "east_std_m": 19.985691404900717,
+      "north_std_m": 20.010043942806785,
+      "radial_rms_m": 28.28127662177929,
+      "speed_gt100": 804,
+      "missing_speed": 510
+    }
+  ],
+  "feature_hash": "8048ebb78aa6a5fc085b15ec3f9e977e17c808fb384e5eb5e20c082f13529146",
+  "feature_missing_fraction": {
+    "speed_mean": 0.0009781357882623705,
+    "speed_std": 0.0014384349827387803,
+    "speed_min": 0.0009781357882623705,
+    "speed_max": 0.0009781357882623705,
+    "speed_p10": 0.0009781357882623705,
+    "speed_p50": 0.0009781357882623705,
+    "speed_p90": 0.0009781357882623705,
+    "speed_p95": 0.0009781357882623705,
+    "acc_mean": 0.0014384349827387803,
+    "acc_std": 0.0017261219792865361,
+    "acc_p90": 0.0014384349827387803,
+    "acc_max": 0.0014384349827387803,
+    "jerk_mean": 0.0017261219792865361,
+    "jerk_p90": 0.0017261219792865361,
+    "hcr_mean": 0.0014384349827387803,
+    "hcr_p50": 0.0014384349827387803,
+    "hcr_p90": 0.0014384349827387803,
+    "heading_change_mean": 0.0014384349827387803,
+    "stop_rate": 0.0009781357882623705,
+    "slow_rate": 0.0009781357882623705,
+    "sharp_turn_rate": 0.0014384349827387803,
+    "big_acc_rate": 0.0014384349827387803,
+    "path_length_m": 0.0009781357882623705,
+    "valid_speed_frac": 0.0,
+    "duration_s": 0.0,
+    "straightness": 0.0009781357882623705,
+    "avg_speed_overall": 0.0009781357882623705
+  },
+  "created_at": "2026-11-23T02:42:01+0800",
+  "code_sha256": "b80669bda523cc07cf33a36bf21003a66a78176e50b4f438d99314f09b203232",
+  "input_manifest_sha256": "f3de7dafdb336ebeeabf2250d5602bab093634a094b585e33989a887e0def271",
+  "file_sha256": "a068f8d23963ae6fe1c76d7f5bf41346763cada985b20d7a807865bbdf09b511"
+}

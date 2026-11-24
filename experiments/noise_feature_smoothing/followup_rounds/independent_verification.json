@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "conditions": 80,
+  "independent_group_confusions": 720,
+  "per_class_error_flows": 400,
+  "pipeline_score_samples": 5120,
+  "bootstrap_summary_rows": 20,
+  "paired_contrast_rows": 24,
+  "group_omission_rows": 240,
+  "protected_file_hashes": 794,
+  "distance_decomposition_samples": 5120,
+  "manual_visual_review": "not_completed_image_tool_unavailable"
+}

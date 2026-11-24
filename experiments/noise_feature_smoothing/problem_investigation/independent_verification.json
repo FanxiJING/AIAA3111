@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "independent_weighted_sklearn_group_confusions": 341,
+  "independent_primary_boundary_counts": 93,
+  "binary_sequence_matching_checks": 1024,
+  "protected_input_hashes": 755
+}

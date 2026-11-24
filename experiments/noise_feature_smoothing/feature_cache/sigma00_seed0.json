@@ -1,0 +1,162 @@
+{
+  "sigma": 0,
+  "seed": 0,
+  "users": 13,
+  "points": 860972,
+  "windows": 17380,
+  "speed_gt100": 0,
+  "user_diagnostics": [
+    {
+      "user_id": "052",
+      "points": 133174,
+      "east_std_m": 0.0,
+      "north_std_m": 0.0,
+      "radial_rms_m": 0.0,
+      "speed_gt100": 0,
+      "missing_speed": 177
+    },
+    {
+      "user_id": "058",
+      "points": 911,
+      "east_std_m": 0.0,
+      "north_std_m": 0.0,
+      "radial_rms_m": 0.0,
+      "speed_gt100": 0,
+      "missing_speed": 18
+    },
+    {
+      "user_id": "060",
+      "points": 17,
+      "east_std_m": 0.0,
+      "north_std_m": 0.0,
+      "radial_rms_m": 0.0,
+      "speed_gt100": 0,
+      "missing_speed": 2
+    },
+    {
+      "user_id": "069",
+      "points": 4141,
+      "east_std_m": 0.0,
+      "north_std_m": 0.0,
+      "radial_rms_m": 0.0,
+      "speed_gt100": 0,
+      "missing_speed": 18
+    },
+    {
+      "user_id": "082",
+      "points": 18077,
+      "east_std_m": 0.0,
+      "north_std_m": 0.0,
+      "radial_rms_m": 0.0,
+      "speed_gt100": 0,
+      "missing_speed": 75
+    },
+    {
+      "user_id": "087",
+      "points": 119,
+      "east_std_m": 0.0,
+      "north_std_m": 0.0,
+      "radial_rms_m": 0.0,
+      "speed_gt100": 0,
+      "missing_speed": 7
+    },
+    {
+      "user_id": "089",
+      "points": 17676,
+      "east_std_m": 0.0,
+      "north_std_m": 0.0,
+      "radial_rms_m": 0.0,
+      "speed_gt100": 0,
+      "missing_speed": 44
+    },
+    {
+      "user_id": "091",
+      "points": 703,
+      "east_std_m": 0.0,
+      "north_std_m": 0.0,
+      "radial_rms_m": 0.0,
+      "speed_gt100": 0,
+      "missing_speed": 32
+    },
+    {
+      "user_id": "097",
+      "points": 1511,
+      "east_std_m": 0.0,
+      "north_std_m": 0.0,
+      "radial_rms_m": 0.0,
+      "speed_gt100": 0,
+      "missing_speed": 47
+    },
+    {
+      "user_id": "126",
+      "points": 229055,
+      "east_std_m": 0.0,
+      "north_std_m": 0.0,
+      "radial_rms_m": 0.0,
+      "speed_gt100": 0,
+      "missing_speed": 245
+    },
+    {
+      "user_id": "129",
+      "points": 4080,
+      "east_std_m": 0.0,
+      "north_std_m": 0.0,
+      "radial_rms_m": 0.0,
+      "speed_gt100": 0,
+      "missing_speed": 14
+    },
+    {
+      "user_id": "144",
+      "points": 9622,
+      "east_std_m": 0.0,
+      "north_std_m": 0.0,
+      "radial_rms_m": 0.0,
+      "speed_gt100": 0,
+      "missing_speed": 20
+    },
+    {
+      "user_id": "167",
+      "points": 441886,
+      "east_std_m": 0.0,
+      "north_std_m": 0.0,
+      "radial_rms_m": 0.0,
+      "speed_gt100": 0,
+      "missing_speed": 510
+    }
+  ],
+  "feature_hash": "6cc3efc16b984fc6eaba1b8e07b88d169840801d49ff6e1c472c4b03052d8774",
+  "feature_missing_fraction": {
+    "speed_mean": 0.0009781357882623705,
+    "speed_std": 0.0014384349827387803,
+    "speed_min": 0.0009781357882623705,
+    "speed_max": 0.0009781357882623705,
+    "speed_p10": 0.0009781357882623705,
+    "speed_p50": 0.0009781357882623705,
+    "speed_p90": 0.0009781357882623705,
+    "speed_p95": 0.0009781357882623705,
+    "acc_mean": 0.0014384349827387803,
+    "acc_std": 0.0017261219792865361,
+    "acc_p90": 0.0014384349827387803,
+    "acc_max": 0.0014384349827387803,
+    "jerk_mean": 0.0017261219792865361,
+    "jerk_p90": 0.0017261219792865361,
+    "hcr_mean": 0.003222094361334868,
+    "hcr_p50": 0.003222094361334868,
+    "hcr_p90": 0.003222094361334868,
+    "heading_change_mean": 0.003222094361334868,
+    "stop_rate": 0.0009781357882623705,
+    "slow_rate": 0.0009781357882623705,
+    "sharp_turn_rate": 0.003222094361334868,
+    "big_acc_rate": 0.0014384349827387803,
+    "path_length_m": 0.0009781357882623705,
+    "valid_speed_frac": 0.0,
+    "duration_s": 0.0,
+    "straightness": 0.0015535097813578827,
+    "avg_speed_overall": 0.0009781357882623705
+  },
+  "created_at": "2026-11-23T02:41:24+0800",
+  "code_sha256": "b60e8075a38c2588546dd0eec962feb24bd59e1b89dc464a7046317530e3974a",
+  "input_manifest_sha256": "f3de7dafdb336ebeeabf2250d5602bab093634a094b585e33989a887e0def271",
+  "zero_feature_max_absolute_error": 0.0,
+  "file_sha256": "6ec1dd2c74a06e6a8f72e4f792289975eefff553fade93ed6cefd0d81ba689f4"
+}

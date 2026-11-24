@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "metric_rows_reconstructed": 288,
+  "per_class_f1_values": 1440,
+  "boundary_rows_greedy_verified": 288,
+  "summary_rows_all_metrics_and_CIs": 72,
+  "paired_contrast_rows": 504,
+  "LOO_seed_rows_reconstructed": 2880,
+  "smoothing_sequences_independently_recomputed": 90,
+  "new_models_score_smoke_files": 47,
+  "sampled_windows_per_score_file": 19,
+  "OU_cache_metadata_and_shared_field_hashes": 15,
+  "protected_files_unchanged": 572,
+  "elapsed_seconds": 341.73400000005495,
+  "verifier_sha256": "af129666a436499c2dbb2e5fc1b60c102de6b07c18db61672637a3719facc17b",
+  "manual_visual_review": "pending"
+}

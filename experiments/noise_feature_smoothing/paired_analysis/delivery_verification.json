@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "verified_at": "2026-11-23T11:31:36.686326+08:00",
+  "protected_files_rehashed": 494,
+  "changed_original_files": [],
+  "unit_tests_passed": 12,
+  "independent_point_flows_checked": 96,
+  "independent_boundary_group_rows_checked": 54,
+  "independent_boundary_conditions": "G3 sigma0 and sigma20 seed20261123, all 3 smoothers",
+  "bootstrap_summary_rows_checked": 36,
+  "report_links_checked": 9,
+  "scope": "post-hoc delivery checks; not new experimental results",
+  "manual_visual_review_completed": false
+}

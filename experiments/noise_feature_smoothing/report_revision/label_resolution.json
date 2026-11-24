@@ -1,0 +1,9 @@
+{
+  "all_windows": 17380,
+  "all_points": 860972,
+  "mixed_label_windows": 632,
+  "points_in_mixed_label_windows": 31253,
+  "points_not_in_window_majority": 8109,
+  "window_majority_boundaries": 529,
+  "definition": "counts_only_no_predictions_or_primary_metric_changed"
+}

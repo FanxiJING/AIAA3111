@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "completed_at": "2026-11-23T09:39:11.184070+08:00",
+  "elapsed_seconds": 308.8280000000959,
+  "conditions": 16,
+  "frozen_models": 3,
+  "kernel_window_rows": 834240,
+  "kernel_parquet_files": 48,
+  "reconciled_primary_metric_rows": 144,
+  "reconciled_boundary_rows": 48,
+  "reproduced_bootstrap_rows": 36,
+  "bootstrap_draws": 5000,
+  "protected_files": 282,
+  "protected_files_changed": [],
+  "training_performed": false,
+  "protocol_changed": false,
+  "figures_png": 6,
+  "figure_visual_review": "pending"
+}

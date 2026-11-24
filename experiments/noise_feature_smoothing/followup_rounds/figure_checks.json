@@ -1,0 +1,32 @@
+[
+  {
+    "figure": "figure1_feature_recipe",
+    "layout_and_nonblank": true,
+    "shape": [
+      720,
+      1760,
+      4
+    ],
+    "manual_visual_review": "not_completed_image_tool_unavailable"
+  },
+  {
+    "figure": "figure2_kernel_and_predictions",
+    "layout_and_nonblank": true,
+    "shape": [
+      720,
+      1760,
+      4
+    ],
+    "manual_visual_review": "not_completed_image_tool_unavailable"
+  },
+  {
+    "figure": "figure3_distance_and_error_flows",
+    "layout_and_nonblank": true,
+    "shape": [
+      736,
+      1840,
+      4
+    ],
+    "manual_visual_review": "not_completed_image_tool_unavailable"
+  }
+]

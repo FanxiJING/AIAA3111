@@ -1,0 +1,66 @@
+{
+  "acceptance.json": {
+    "sha256": "383cde80ae75a39046ebccb772a4d12a3890bfdbd64548fd4dc9fe8253d7918f",
+    "bytes": 716
+  },
+  "build_analysis.py": {
+    "sha256": "e36ac8d24bf24e2098545c650b03ed7b8ad363a099787a1d83cab1bafd4f60dc",
+    "bytes": 28327
+  },
+  "delivery_verification.json": {
+    "sha256": "be0cf00e7d40797879db3c9b8b11b9c863ecf115822492f56e1007da379c7e55",
+    "bytes": 543
+  },
+  "input_manifest.json": {
+    "sha256": "fd1a0d3175cf1fb39fdad1d728cbfb11dc986d5b28c69154839f637895eba4e5",
+    "bytes": 72814
+  },
+  "NOISE_HANDOVER.md": {
+    "sha256": "ee222b5d9509240110712c0258302c99103f945c39f4d1240a20ceac921125e0",
+    "bytes": 10163
+  },
+  "README.md": {
+    "sha256": "be282d8b643f1a1e4c22ac418dd0ef433f451a9b7a843ceba090a39babde21ba",
+    "bytes": 3332
+  },
+  "tables\\independent_boundary_reconstruction.csv": {
+    "sha256": "074f2be45b6481c0d1911cd4cbcaca60a1959170187d1dfce2acb7c9c43a4c48",
+    "bytes": 2163
+  },
+  "tables\\linked_group_sizes.csv": {
+    "sha256": "1b9e2e7f30fd8cbd4bf70ceb2d1c08ab0f8c4ca90041c0a5980d5f9d9e5992d1",
+    "bytes": 426
+  },
+  "tables\\paired_feature_contrasts.csv": {
+    "sha256": "2e6892ed8e59d586f22ae47cc26a054c65413d69b5433bf8f2c0e24bd2121ce9",
+    "bytes": 3853
+  },
+  "tables\\paired_smoothing_contrasts.csv": {
+    "sha256": "2301baaf28ff8cd3e5aeddeaee96d8ce19df7fda50a905271d453e8be2624ecc",
+    "bytes": 7415
+  },
+  "tables\\paired_smoothing_interactions.csv": {
+    "sha256": "26562e02c5d2426323fc0a75bc6925bdf35166ee034cca9a000c0b0b9ee5f9fb",
+    "bytes": 1556
+  },
+  "tables\\paired_summary_reproduction.csv": {
+    "sha256": "4afc6ccbd8be79b113e498054d30581865c41aa6b4e0604d9d98ed9d1322aadf",
+    "bytes": 10085
+  },
+  "tables\\smoothing_point_flows.csv": {
+    "sha256": "d9ae71e1a2fd62d4bfef8e36360c5b9596945d80ee23a1ba6bad6a6d36ae0a79",
+    "bytes": 11242
+  },
+  "tables\\smoothing_point_flows_summary.csv": {
+    "sha256": "5976e9106b41c1f8444701640e46a9da6e3f843256307f610a3b115756142659",
+    "bytes": 6027
+  },
+  "test_paired_analysis.py": {
+    "sha256": "8e66497a967c62abe6640f3982781ad0e6a56d52126f7d88f103f93568959a2f",
+    "bytes": 4034
+  },
+  "verify_analysis.py": {
+    "sha256": "382ddbaf1243839cf5385211ff11f11213b8cc9b574e1406491fa6b22b573905",
+    "bytes": 7357
+  }
+}

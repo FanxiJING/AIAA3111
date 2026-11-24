@@ -1,0 +1,20 @@
+{
+  "intercept_class": "train",
+  "intercept_estimator_order": [
+    "bike",
+    "bus",
+    "car",
+    "train",
+    "walk"
+  ],
+  "intercept": [
+    -0.6777291843137105,
+    -0.7407832815443163,
+    -0.776332047177139,
+    -0.20475028192540887,
+    -0.3906689473918395
+  ],
+  "formula": "K(X,landmarks) @ normalization.T @ coef.T + intercept",
+  "gamma": 0.037037037037037035,
+  "landmarks": 1000
+}

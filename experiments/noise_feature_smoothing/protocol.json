@@ -1,0 +1,71 @@
+{
+  "protocol_version": "noise-feature-smoothing-fixed-v1",
+  "clean_training_noisy_test": true,
+  "window_points": 50,
+  "sigmas_m": [
+    0,
+    5,
+    10,
+    20
+  ],
+  "seeds": [
+    20261123,
+    20261124,
+    20261125,
+    20261126,
+    20261127
+  ],
+  "noise_axes": "independent east/north Gaussian standard deviation in metres",
+  "horizontal_rms": "sigma * sqrt(2)",
+  "feature_groups": {
+    "G1": [
+      "speed_mean",
+      "speed_std",
+      "speed_min",
+      "speed_max",
+      "speed_p10",
+      "speed_p50",
+      "speed_p90",
+      "speed_p95",
+      "stop_rate",
+      "slow_rate"
+    ],
+    "G2": [
+      "speed_mean",
+      "speed_std",
+      "speed_min",
+      "speed_max",
+      "speed_p10",
+      "speed_p50",
+      "speed_p90",
+      "speed_p95",
+      "stop_rate",
+      "slow_rate",
+      "acc_mean",
+      "acc_std",
+      "acc_p90",
+      "acc_max",
+      "big_acc_rate"
+    ],
+    "G3": "all original v2 27 features"
+  },
+  "model": {
+    "recipe": "SVM (RBF, Nystroem, all data)",
+    "C": 1.0,
+    "balanced": true,
+    "seed": 42,
+    "nystroem_components": 1000,
+    "gamma": "1 / feature dimension"
+  },
+  "smoothing": [
+    "S0_raw_k1",
+    "S1_centered_soft_k11",
+    "S2_trailing_soft_k11"
+  ],
+  "bootstrap": {
+    "clusters": 9,
+    "n_boot": 5000,
+    "seed": 42
+  },
+  "g4": "skipped by protocol"
+}

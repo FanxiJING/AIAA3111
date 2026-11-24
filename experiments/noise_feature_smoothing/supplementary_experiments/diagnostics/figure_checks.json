@@ -1,0 +1,46 @@
+{
+  "automated_nonblank": [
+    {
+      "file": "figure1_temporal_noise.png",
+      "shape": [
+        816,
+        2040,
+        3
+      ],
+      "pixel_std": 32.0784318219119,
+      "nonblank": true
+    },
+    {
+      "file": "figure2_fixed_gamma.png",
+      "shape": [
+        765,
+        2380,
+        3
+      ],
+      "pixel_std": 33.79286211239855,
+      "nonblank": true
+    },
+    {
+      "file": "figure3_group_influence.png",
+      "shape": [
+        850,
+        2210,
+        3
+      ],
+      "pixel_std": 40.06704341415666,
+      "nonblank": true
+    },
+    {
+      "file": "figure4_OU_smoothing.png",
+      "shape": [
+        816,
+        2040,
+        3
+      ],
+      "pixel_std": 33.31011595264365,
+      "nonblank": true
+    }
+  ],
+  "manual_visual_review": "pending",
+  "caption": "Error bars are perturbation-seed SD, not user generalisation intervals."
+}

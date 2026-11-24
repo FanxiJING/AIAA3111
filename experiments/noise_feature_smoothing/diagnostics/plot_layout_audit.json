@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "figures": [
+    {
+      "figure": "01_feature_drift",
+      "text_items_checked": 40,
+      "canvas_width": 800,
+      "canvas_height": 1000,
+      "clipped_text": [],
+      "subplot_title_overlaps": []
+    },
+    {
+      "figure": "02_sampling_interval",
+      "text_items_checked": 36,
+      "canvas_width": 1200,
+      "canvas_height": 550,
+      "clipped_text": [],
+      "subplot_title_overlaps": []
+    },
+    {
+      "figure": "03_rbf_collapse",
+      "text_items_checked": 46,
+      "canvas_width": 1400,
+      "canvas_height": 550,
+      "clipped_text": [],
+      "subplot_title_overlaps": []
+    },
+    {
+      "figure": "04_short_mode_loss",
+      "text_items_checked": 31,
+      "canvas_width": 1200,
+      "canvas_height": 600,
+      "clipped_text": [],
+      "subplot_title_overlaps": []
+    },
+    {
+      "figure": "05_user_group_heterogeneity",
+      "text_items_checked": 43,
+      "canvas_width": 1300,
+      "canvas_height": 600,
+      "clipped_text": [],
+      "subplot_title_overlaps": []
+    },
+    {
+      "figure": "06_boundary_latency_and_recall",
+      "text_items_checked": 31,
+      "canvas_width": 1200,
+      "canvas_height": 600,
+      "clipped_text": [],
+      "subplot_title_overlaps": []
+    }
+  ],
+  "manual_visual_review": false
+}

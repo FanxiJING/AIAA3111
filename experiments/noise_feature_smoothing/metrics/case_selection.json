@@ -1,0 +1,9 @@
+{
+  "rule": "First ordered clean-correct/noisy-wrong G3 window at 20m seed20261123; first interior truth run of <=5 windows with raw correct >=1 window and centered wrong throughout, sigma0.",
+  "noise_case_index": 0,
+  "short_run_indices": [
+    1379,
+    1381
+  ],
+  "scope": "explanatory test examples; not representative frequencies"
+}

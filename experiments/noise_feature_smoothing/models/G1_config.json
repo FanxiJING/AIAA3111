@@ -1,0 +1,90 @@
+{
+  "group": "G1",
+  "feature_columns": [
+    "speed_mean",
+    "speed_std",
+    "speed_min",
+    "speed_max",
+    "speed_p10",
+    "speed_p50",
+    "speed_p90",
+    "speed_p95",
+    "stop_rate",
+    "slow_rate"
+  ],
+  "n_features": 10,
+  "model": "SVM (RBF, Nystroem, all data)",
+  "class_weight": "balanced",
+  "seed": 42,
+  "C": 1.0,
+  "classes": [
+    "walk",
+    "bike",
+    "bus",
+    "car",
+    "train"
+  ],
+  "estimator_classes": [
+    "bike",
+    "bus",
+    "car",
+    "train",
+    "walk"
+  ],
+  "pipeline_parameters": {
+    "memory": null,
+    "steps": [
+      [
+        "impute",
+        "SimpleImputer(strategy='median')"
+      ],
+      [
+        "scale",
+        "StandardScaler()"
+      ],
+      [
+        "rbf",
+        "Nystroem(gamma=0.1, n_components=1000, random_state=42)"
+      ],
+      [
+        "clf",
+        "LinearSVC(class_weight='balanced', dual=False, max_iter=5000, random_state=42)"
+      ]
+    ],
+    "transform_input": null,
+    "verbose": false,
+    "impute": "SimpleImputer(strategy='median')",
+    "scale": "StandardScaler()",
+    "rbf": "Nystroem(gamma=0.1, n_components=1000, random_state=42)",
+    "clf": "LinearSVC(class_weight='balanced', dual=False, max_iter=5000, random_state=42)",
+    "impute__add_indicator": false,
+    "impute__copy": true,
+    "impute__fill_value": null,
+    "impute__keep_empty_features": false,
+    "impute__missing_values": NaN,
+    "impute__strategy": "median",
+    "scale__copy": true,
+    "scale__with_mean": true,
+    "scale__with_std": true,
+    "rbf__coef0": null,
+    "rbf__degree": null,
+    "rbf__gamma": 0.1,
+    "rbf__kernel": "rbf",
+    "rbf__kernel_params": null,
+    "rbf__n_components": 1000,
+    "rbf__n_jobs": null,
+    "rbf__random_state": 42,
+    "clf__C": 1.0,
+    "clf__class_weight": "balanced",
+    "clf__dual": false,
+    "clf__fit_intercept": true,
+    "clf__intercept_scaling": 1,
+    "clf__loss": "squared_hinge",
+    "clf__max_iter": 5000,
+    "clf__multi_class": "ovr",
+    "clf__penalty": "l2",
+    "clf__random_state": 42,
+    "clf__tol": 0.0001,
+    "clf__verbose": 0
+  }
+}

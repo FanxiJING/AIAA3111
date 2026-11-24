@@ -1,0 +1,56 @@
+[
+  {
+    "name": "ranacher",
+    "requested_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4786863/",
+    "retrieved_at": "2026-11-23T20:48:27.077007+08:00",
+    "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4786863/",
+    "status": 200,
+    "ok": true,
+    "sha256": "602bf385a5817f4f6f5f3feb3474b435a5c02852eb47e8346ad10fcdd46d2b9f",
+    "bytes": 21404,
+    "expected_content_present": false,
+    "reading_fallback": "experiments\\noise_feature_smoothing\\literature_review\\sources\\ranacher_primary.txt",
+    "fallback_sha256": "362c6bdfb3ca85837394a189131eb144c5901f3157f2ef966afff44a63f16b6a",
+    "note": "HTTP 200 browser challenge is not article retrieval"
+  },
+  {
+    "name": "rbf",
+    "requested_url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.rbf_kernel.html",
+    "retrieved_at": "2026-11-23T20:48:28.358575+08:00",
+    "resolved_url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.rbf_kernel.html",
+    "status": 200,
+    "ok": true,
+    "sha256": "df152441794048d9eb20533d36192a10a77124b2664200dd4f0d0c02223e27c1",
+    "bytes": 116981,
+    "expected_content_present": true
+  },
+  {
+    "name": "nystroem",
+    "requested_url": "https://scikit-learn.org/stable/modules/generated/sklearn.kernel_approximation.Nystroem.html",
+    "retrieved_at": "2026-11-23T20:48:29.605235+08:00",
+    "resolved_url": "https://scikit-learn.org/stable/modules/generated/sklearn.kernel_approximation.Nystroem.html",
+    "status": 200,
+    "ok": true,
+    "sha256": "02081a714e5b8df951e52dd082e4c2a0a11a12a651d3930afc523b1ed063ef1d",
+    "bytes": 147929,
+    "expected_content_present": true
+  },
+  {
+    "name": "farha",
+    "requested_url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Abu_Farha_MS-TCN_Multi-Stage_Temporal_Convolutional_Network_for_Action_Segmentation_CVPR_2019_paper.html",
+    "retrieved_at": "2026-11-23T20:48:30.744370+08:00",
+    "resolved_url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Abu_Farha_MS-TCN_Multi-Stage_Temporal_Convolutional_Network_for_Action_Segmentation_CVPR_2019_paper.html",
+    "status": 200,
+    "ok": true,
+    "sha256": "1086b81af4f098add034e8f0d1b1645388450a953fa5a150d290e994a4464b0a",
+    "bytes": 4564,
+    "expected_content_present": true
+  },
+  {
+    "name": "skill",
+    "requested_url": "https://arxiv.org/abs/2609.00065",
+    "retrieved_at": "2026-11-23T20:48:35.671988+08:00",
+    "ok": false,
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+  }
+]

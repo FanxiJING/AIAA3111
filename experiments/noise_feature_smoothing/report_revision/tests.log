@@ -1,0 +1,14 @@
+test_duplicate_or_missing_join_rejected (test_revision.ReportingTests.test_duplicate_or_missing_join_rejected) ... ok
+test_incomplete_seed_conditions_rejected (test_revision.ReportingTests.test_incomplete_seed_conditions_rejected) ... ok
+test_irregular_boundary_tolerance (test_revision.ReportingTests.test_irregular_boundary_tolerance) ... ok
+test_mixed_truth_is_point_weighted (test_revision.ReportingTests.test_mixed_truth_is_point_weighted) ... ok
+test_no_boundary_across_blocks (test_revision.ReportingTests.test_no_boundary_across_blocks) ... ok
+test_sd_is_sample_sd_and_clean_n_one (test_revision.ReportingTests.test_sd_is_sample_sd_and_clean_n_one) ... ok
+test_timestamp_resolution_does_not_change_seconds (test_revision.ReportingTests.test_timestamp_resolution_does_not_change_seconds) ... ok
+test_two_window_block_has_exact_position_only (test_revision.ReportingTests.test_two_window_block_has_exact_position_only) ... ok
+test_unknown_predictions_rejected (test_revision.ReportingTests.test_unknown_predictions_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.158s
+
+OK

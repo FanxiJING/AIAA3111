@@ -1,0 +1,15 @@
+{
+  "family": "fixed_gamma",
+  "group": "G2",
+  "noise": "iid",
+  "sigma": 5,
+  "seed": 20261125,
+  "feature_source": "experiments\\noise_feature_smoothing\\feature_cache\\sigma05_seed20261125.csv",
+  "feature_sha256": "fd0ee5a252ca44515bed165b50d9aa77791d3aabe7ebd02242766c8c992b0071",
+  "model_sha256": "9fcdcf5c4ab196a7674f5f137aae6a79772d83a573974913cf279eab5cca13b2",
+  "file_sha256": "1c2636709481813234e86f94548e020217ba49689d333037a20ec403908af8e2",
+  "code_sha256": "9f2e74ac95c2dc8fa270ef8f2f52f96e81415b885b77037e488ecc649ca121be",
+  "protocol_sha256": "61032da2e0d5aa08667322da0eace8b3199328c065451ea7eefe53262ecf09ee",
+  "input_manifest_sha256": "273872e41a3a5d5c9619ebbc6df1aa581e5ed7f9825c630ccb31b00b835e4768",
+  "created_at": "2026-11-23T19:09:13.259462+08:00"
+}

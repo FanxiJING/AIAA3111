@@ -1,0 +1,17 @@
+{
+  "completed": [
+    "round1",
+    "round2",
+    "round3"
+  ],
+  "retries": {
+    "round1": 0,
+    "round2": 0,
+    "round3": 0
+  },
+  "current": "all_rounds",
+  "updated_at": "2026-11-23T23:46:46.750738+08:00",
+  "elapsed_seconds": 87.82799999997951,
+  "attempt": 0,
+  "status": "complete"
+}

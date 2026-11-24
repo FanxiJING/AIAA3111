@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "model_conditions": 80,
+  "actual_pipeline_sample_windows": 5120,
+  "maximum_saved_score_error": 1.3554922517755585e-08
+}

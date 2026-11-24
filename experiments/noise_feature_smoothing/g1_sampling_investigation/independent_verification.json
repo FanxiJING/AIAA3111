@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "joint_confusion_and_flow_rows": 9600,
+  "pooled_nonempty_weighted_sklearn_f1": 624,
+  "actual_pipeline_and_distance_samples": 1536,
+  "landmark_response_transitions": 400,
+  "summary_values": 76000,
+  "landmark_model_responses": 1000,
+  "protected_files": 910,
+  "protected_content_and_membership_unchanged": true,
+  "verifier_sha256": "65831cb5638c6281700504eba08e49d16e0267ac32c28be6a9bba86bc0733fa6",
+  "verified_at": "2026-11-24T00:11:05.077024+08:00"
+}

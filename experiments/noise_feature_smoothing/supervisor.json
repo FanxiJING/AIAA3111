@@ -1,0 +1,28 @@
+{
+  "started_at_epoch": 1795371981.493845,
+  "deadline_epoch": 1795397181.493845,
+  "completed": [
+    "stage0",
+    "stage1",
+    "stage2",
+    "stage3",
+    "stage4",
+    "stage5"
+  ],
+  "retries": {
+    "stage0": 0,
+    "stage1": 0,
+    "stage2": 0,
+    "stage3": 0,
+    "stage4": 0,
+    "stage5": 0
+  },
+  "pid": 108060,
+  "status": "complete",
+  "stage": 5,
+  "updated_at": "2026-11-23T02:49:31.686656+08:00",
+  "remaining_seconds": 23809.807188749313,
+  "retry": 0,
+  "child_pid": 125096,
+  "child_exitcode": 0
+}

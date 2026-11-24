@@ -1,0 +1,98 @@
+[
+  {
+    "path": "experiments\\noise_feature_smoothing\\figures\\figure1_raw_macro_f1_vs_sigma.png",
+    "width": 1440,
+    "height": 900,
+    "nonwhite_fraction": 0.07096682098765432,
+    "sha256": "c63db94571731f6a495d717b68fe0206a008db90e62f9895a0d5d83e10ad3d2c",
+    "manual_review": "pending_tool_cannot_view_images"
+  },
+  {
+    "path": "experiments\\noise_feature_smoothing\\figures\\figure2_G3_smoothing_tradeoff.png",
+    "width": 2340,
+    "height": 900,
+    "nonwhite_fraction": 0.1813366571699905,
+    "sha256": "acb5f13a43dd56684e31ab340e640413756a8bbe4320eb7abdc4fa95db8f08d8",
+    "manual_review": "pending_tool_cannot_view_images"
+  },
+  {
+    "path": "experiments\\noise_feature_smoothing\\figures\\figure3_case_timeline.png",
+    "width": 2340,
+    "height": 1980,
+    "nonwhite_fraction": 0.09369830786497453,
+    "sha256": "07705cc2f0d443744c8bf019791f4813946afae46c99fd2399f304f05de76e69",
+    "manual_review": "pending_tool_cannot_view_images"
+  },
+  {
+    "path": "experiments\\noise_feature_smoothing\\diagnostics\\figures\\01_feature_drift.png",
+    "width": 1440,
+    "height": 1800,
+    "nonwhite_fraction": 0.4140875771604938,
+    "sha256": "9c07f9fc43fa7b623767128048933cde95601afccb14e0b66b8d6af4aff5d5f3",
+    "manual_review": "pending_tool_cannot_view_images"
+  },
+  {
+    "path": "experiments\\noise_feature_smoothing\\diagnostics\\figures\\02_sampling_interval.png",
+    "width": 2160,
+    "height": 990,
+    "nonwhite_fraction": 0.05965768799102132,
+    "sha256": "d36d238f1aa310d4db6dee0e8bf1a12c547e4be4652f45026f6da8d45b2542db",
+    "manual_review": "pending_tool_cannot_view_images"
+  },
+  {
+    "path": "experiments\\noise_feature_smoothing\\diagnostics\\figures\\03_rbf_collapse.png",
+    "width": 2520,
+    "height": 990,
+    "nonwhite_fraction": 0.053968654801988133,
+    "sha256": "5f17cfd9463079be3501f150cf94511a2ce967c1933be7e778e54c5133c0e98a",
+    "manual_review": "pending_tool_cannot_view_images"
+  },
+  {
+    "path": "experiments\\noise_feature_smoothing\\diagnostics\\figures\\04_short_mode_loss.png",
+    "width": 2160,
+    "height": 1080,
+    "nonwhite_fraction": 0.17175497256515776,
+    "sha256": "7e50c4f6323e4275e3bc6983cf0a8a0a6dcca237b9c361fbafc6d714b095916e",
+    "manual_review": "pending_tool_cannot_view_images"
+  },
+  {
+    "path": "experiments\\noise_feature_smoothing\\diagnostics\\figures\\05_user_group_heterogeneity.png",
+    "width": 2340,
+    "height": 1080,
+    "nonwhite_fraction": 0.07935620449509338,
+    "sha256": "c5ed7182fa03a7d9b7c15f089564c8c88f5eb815e698928bd11f836f14d19884",
+    "manual_review": "pending_tool_cannot_view_images"
+  },
+  {
+    "path": "experiments\\noise_feature_smoothing\\diagnostics\\figures\\06_boundary_latency_and_recall.png",
+    "width": 2160,
+    "height": 1080,
+    "nonwhite_fraction": 0.04734567901234568,
+    "sha256": "5cdbcf0a76dbe719f7e81ff5c63a80a91815d23239f207812b5c22a2ed0e5e79",
+    "manual_review": "pending_tool_cannot_view_images"
+  },
+  {
+    "path": "experiments\\noise_feature_smoothing\\report_revision\\figures\\figure1_performance_and_uncertainty.png",
+    "width": 2880,
+    "height": 972,
+    "nonwhite_fraction": 0.05631608653406493,
+    "sha256": "5a168b42712efed19e19bf2af1f74bef2af3fce846e3f9fcc4812fcb5706b3ba",
+    "manual_review": "pending_tool_cannot_view_images"
+  },
+  {
+    "path": "experiments\\noise_feature_smoothing\\report_revision\\figures\\figure2_smoothing_tradeoffs.png",
+    "width": 2880,
+    "height": 1620,
+    "nonwhite_fraction": 0.13246527777777778,
+    "sha256": "8f8526b4c545fd67fd22cdee860050207eae6406a742e87a97abcd1344485135",
+    "manual_review": "pending_tool_cannot_view_images"
+  },
+  {
+    "path": "experiments\\noise_feature_smoothing\\report_revision\\figures\\figure3_saved_cases_actual_time.png",
+    "width": 2880,
+    "height": 1080,
+    "nonwhite_fraction": 0.2270087448559671,
+    "sha256": "041e8841933fff3f8694fbaea1f70cefb7af38bfb2f9436044a19b4cdbc1b4e6",
+    "manual_review": "pending_tool_cannot_view_images"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://gaussianprocess.org/gpml/chapters/RW4.pdf",
+    "file": "gpml_chapter4.pdf",
+    "bytes": 691362,
+    "sha256": "86008036a346076ff07f8f0a3a94725ad12c572e6bf62bd16ee7f057a42d4175",
+    "retrieved": true
+  },
+  {
+    "url": "https://scikit-learn.org/stable/modules/generated/sklearn.kernel_approximation.Nystroem.html",
+    "file": "nystroem.html",
+    "bytes": 147929,
+    "sha256": "02081a714e5b8df951e52dd082e4c2a0a11a12a651d3930afc523b1ed063ef1d",
+    "retrieved": true
+  },
+  {
+    "url": "https://arxiv.org/abs/2609.00065",
+    "file": "scientific_skills.html",
+    "bytes": 42868,
+    "sha256": "87e5d6378d900a1a9299aaf8c9e13ea37db5de5bebd0c7f7af29255b457402d7",
+    "retrieved": true
+  }
+]

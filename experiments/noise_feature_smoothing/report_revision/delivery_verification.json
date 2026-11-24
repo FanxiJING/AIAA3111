@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "completed_at": "2026-11-23T13:41:54.183094+08:00",
+  "protected_file_count": 543,
+  "changed_protected_files": [],
+  "independent_point_metric_rows": 144,
+  "per_class_metrics_checked": 720,
+  "independent_summary_rows": 36,
+  "boundary_seconds_rows_checked": 529,
+  "local_markdown_links_checked": 30,
+  "unit_tests": "passed_see_tests.log",
+  "manual_visual_review": "pending_image_tool_unavailable",
+  "training_or_noise_or_bootstrap_generation": false
+}

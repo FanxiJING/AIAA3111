@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "completed_at": "2026-11-23T12:29:44+0800",
+  "protected_file_count": 506,
+  "changed_protected_files": [],
+  "independent_diagnostic_confusion_comparisons": 144,
+  "known_answer_tests_passed": 9,
+  "doi_title_pairs_verified": 7,
+  "bibliographic_records": 8,
+  "source_scope": "selected_R1_sections_R2_R3_R5_R6_abstracts_R4_R7_metadata_skill_record",
+  "full_text_review_claimed_for_all_sources": false,
+  "manual_figure_review_completed": false,
+  "new_training_or_noise_runs": false,
+  "docs_aigc_log_append_is_outside_protected_numerical_inputs": true
+}

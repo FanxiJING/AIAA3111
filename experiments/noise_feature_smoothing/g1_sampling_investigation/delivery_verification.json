@@ -1,0 +1,107 @@
+{
+  "status": "passed",
+  "derived_class_rows": 4800,
+  "local_links": 17,
+  "report_numeric_claim_checks": 7,
+  "protected_files": 910,
+  "protected_content_and_membership_unchanged": true,
+  "package_sha256": {
+    "acceptance.json": "4fe8a847e9d8f6a680b5257a13bf28baab2fc197cc7327956a7bc8ec5ebf43e8",
+    "ANALYSIS_SPEC.md": "1c8dd21c216668a347ccbb276fac6d494e1b79d3a00ba746add415eb8a23d0e5",
+    "build_findings.py": "fab3d9fcd6673e28f3083096b5763d3446f942c009139d8f159d28164c8fa8e8",
+    "checkpoint.json": "59b8a4556ee85086e8c90a44ae9b90c3e6a2c04cd794ce0694360c9a3bcd3c73",
+    "FINDINGS.md": "90164f12ae8a33e76c5fd1e671be6199484310716a828679f176225b6863c338",
+    "independent_verification.json": "6d901f254afcfa1bef97425c7873b81802b6b87d264dd9671cc1f78b1a0d0476",
+    "input_manifest.json": "f61816b59d4df7c326ff5e3c5e84ae7c404aae4826e034fea55d92d99f83f553",
+    "joint_confusions.npz": "09161dd5016b4bb82ef2fc23f0888cefb73fec448d9a959218c516a343b44aee",
+    "membership.parquet": "014f0f639fddd2177fbddaa869af6b91d844015156ad9d3ce2ec97d28bf7e332",
+    "README.md": "6877055a9e89c41203e1ab080c400370d5ce4f7fc7cf8e8d3206f500faaf9045",
+    "run_analysis.py": "8d5760cb2df3d745b21a734a0014ee43911982e3713d24b2b480396cc3c550d4",
+    "verify_analysis.py": "65831cb5638c6281700504eba08e49d16e0267ac32c28be6a9bba86bc0733fa6",
+    "verify_delivery.py": "01ebeaa176d83d11f53e0b15104ec31915a8d7c24b0419d605a6a709df44db97",
+    "tables/composition.csv": "8b048fbf9cf84a93b310179444b88d498f761a88cc3e78eaad2c7ee409e59af8",
+    "tables/condition_checks.csv": "f725593e719d85532506376ee54e3656db56c5900b1f98140ef8c08e7bf3b8a5",
+    "tables/g1_feature_shifts_by_seed.csv": "84b0b0e3314785741ebce73a5c16edfb8bd8a219276fe36ebc7f8d0987ca406a",
+    "tables/g1_feature_shifts_summary.csv": "343bcc9a370f300bcc2dd4a379d4115e0531631d4b86df63e3bc3a9fba19497b",
+    "tables/g1_kernel_bins_by_seed.csv": "feeec2946e4b21b00f30c3a86391385ca68e33ea85413bd127bc95867b9a077c",
+    "tables/g1_kernel_bins_summary.csv": "64912086bca58152bf77deb9e38573d23586ed7ad5dffcde7466bb14e520f453",
+    "tables/g1_landmark_responses.csv": "300850ca27eb53e653467065884e31f0908c4266a97ce653241d8f1c711afdc1",
+    "tables/g1_landmark_transitions_by_seed.csv": "2cc3ddb8ec1b6fbc6599cc0b7d4a717c88350f52889a4fb81ea09e37a51b0c3b",
+    "tables/g1_landmark_transitions_summary.csv": "dfb3c1588aa2f7b36a35871c3ad434383e86dff55b6fc1a01f6a15a35313a97c",
+    "tables/g1_score_gaps_by_seed.csv": "37d962c0bee5f93d1d07f7da30b86f40355888a6395a635c8241f45355730c52",
+    "tables/joint_class_metrics_by_seed.csv": "044570bd2e61ebc8884b470c47876c818d3b7cdc394e49d452206edb4f4235b1",
+    "tables/joint_metrics_by_seed.csv": "ffb0841d7edd007dbc798dca20144d409ba7192cadacf0d85949d704b41a3999",
+    "tables/joint_summary.csv": "3855ebe7e83546a1e9c2e4c58d9c1e24127638f62e1c254785fad521bb37feca"
+  },
+  "links": [
+    [
+      "FINDINGS.md",
+      "tables/g1_landmark_responses.csv"
+    ],
+    [
+      "FINDINGS.md",
+      "tables/g1_landmark_transitions_summary.csv"
+    ],
+    [
+      "FINDINGS.md",
+      "tables/g1_feature_shifts_summary.csv"
+    ],
+    [
+      "FINDINGS.md",
+      "tables/joint_summary.csv"
+    ],
+    [
+      "FINDINGS.md",
+      "tables/composition.csv"
+    ],
+    [
+      "FINDINGS.md",
+      "tables/joint_class_metrics_by_seed.csv"
+    ],
+    [
+      "FINDINGS.md",
+      "acceptance.json"
+    ],
+    [
+      "FINDINGS.md",
+      "independent_verification.json"
+    ],
+    [
+      "FINDINGS.md",
+      "ANALYSIS_SPEC.md"
+    ],
+    [
+      "FINDINGS.md",
+      "../problem_investigation/SOURCES.md"
+    ],
+    [
+      "README.md",
+      "FINDINGS.md"
+    ],
+    [
+      "README.md",
+      "ANALYSIS_SPEC.md"
+    ],
+    [
+      "README.md",
+      "membership.parquet"
+    ],
+    [
+      "README.md",
+      "tables"
+    ],
+    [
+      "README.md",
+      "acceptance.json"
+    ],
+    [
+      "README.md",
+      "independent_verification.json"
+    ],
+    [
+      "README.md",
+      "input_manifest.json"
+    ]
+  ],
+  "verified_at": "2026-11-24T00:14:30.152691+08:00"
+}

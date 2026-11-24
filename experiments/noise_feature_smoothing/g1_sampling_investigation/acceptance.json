@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "model_conditions": 48,
+  "joint_rows": 9600,
+  "protected_files": 910,
+  "protected_content_and_membership_unchanged": true,
+  "new_fitting_or_noise_or_bootstrap": false,
+  "elapsed_seconds": 14.077999999979511,
+  "completed_at": "2026-11-24T00:09:17.665166+08:00"
+}

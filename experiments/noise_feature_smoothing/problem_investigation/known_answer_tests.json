@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "one-to-one count and class-pair separation",
+    "equal-score five-window erasure versus six-window retention",
+    "causal five-window lag and no future read",
+    "metres, irregular dt, derivatives and block reset",
+    "spherical E/N displacement and identical iid innovations",
+    "OU irregular transition and stationary block reset"
+  ]
+}

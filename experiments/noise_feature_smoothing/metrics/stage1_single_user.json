@@ -1,0 +1,57 @@
+{
+  "user_id": "052",
+  "sigma": 20,
+  "seed": 20261123,
+  "points": 133174,
+  "windows": 2676,
+  "speed_gt100": 1,
+  "noise": {
+    "east_std_m": 20.01824371012759,
+    "north_std_m": 19.97181438974587,
+    "radial_rms_m": 28.27731868884615
+  },
+  "rows": [
+    {
+      "smoother": "S0_raw_k1",
+      "accuracy": 0.3394055896796672,
+      "macro_f1": 0.16890094654633542,
+      "true_transitions": 107,
+      "pred_transitions": 281,
+      "matched_transitions": 36,
+      "transition_precision": 0.12811387900355872,
+      "transition_recall": 0.3364485981308411,
+      "transition_f1": 0.18556701030927836,
+      "isolated_flips": 104
+    },
+    {
+      "smoother": "S1_centered_soft_k11",
+      "accuracy": 0.3314085331971706,
+      "macro_f1": 0.16287082185936594,
+      "true_transitions": 107,
+      "pred_transitions": 39,
+      "matched_transitions": 3,
+      "transition_precision": 0.07692307692307693,
+      "transition_recall": 0.028037383177570093,
+      "transition_f1": 0.04109589041095891,
+      "isolated_flips": 1
+    },
+    {
+      "smoother": "S2_trailing_soft_k11",
+      "accuracy": 0.3327601483773109,
+      "macro_f1": 0.16438933189957933,
+      "true_transitions": 107,
+      "pred_transitions": 83,
+      "matched_transitions": 12,
+      "transition_precision": 0.14457831325301204,
+      "transition_recall": 0.11214953271028037,
+      "transition_f1": 0.12631578947368421,
+      "isolated_flips": 10
+    }
+  ],
+  "elapsed_seconds": 0.6720000000204891,
+  "seconds_per_point": 5.046030006010852e-06,
+  "process_rss_bytes": 428412928,
+  "estimated_full_condition_seconds": 4.344490546335175,
+  "estimated_16_conditions_seconds": 69.5118487413628,
+  "invariance_and_derivative_recompute": "passed"
+}

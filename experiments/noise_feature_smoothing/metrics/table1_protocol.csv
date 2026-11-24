@@ -1,0 +1,12 @@
+item,setting,details
+dataset,GeoLife processed quality_features,860972 test points; 17380 windows
+split,fixed user split,49 train / 13 test / 9 linked groups
+window,blind W=50 points,inside original block; original tail merging
+noise,"E,N iid Gaussian; sigma is per-axis SD",0/5/10/20 m; RMS=sqrt(2)*sigma; paired 5 seeds
+G1,"speed_mean, speed_std, speed_min, speed_max, speed_p10, speed_p50, speed_p90, speed_p95, stop_rate, slow_rate",10 features
+G2,"speed_mean, speed_std, speed_min, speed_max, speed_p10, speed_p50, speed_p90, speed_p95, stop_rate, slow_rate, acc_mean, acc_std, acc_p90, acc_max, big_acc_rate",15 features
+G3,"speed_mean, speed_std, speed_min, speed_max, speed_p10, speed_p50, speed_p90, speed_p95, acc_mean, acc_std, acc_p90, acc_max, jerk_mean, jerk_p90, hcr_mean, hcr_p50, hcr_p90, heading_change_mean, stop_rate, slow_rate, sharp_turn_rate, big_acc_rate, path_length_m, valid_speed_frac, duration_s, straightness, avg_speed_overall",27 original v2 features
+model,median impute; standardize; Nystroem RBF; LinearSVC,1000 components; C=1; balanced; seed42; gamma=1/d
+smoothing,decision score domain: raw / centered / trailing,k=1 / 11 / 11; centered uses future
+transition,window-majority truth; max one-to-one boundary matching,"+/-1 window, same user and block"
+uncertainty,9 linked user groups; 5000 paired bootstrap draws,Seed mean/SD reported separately; fixed 5-class F1

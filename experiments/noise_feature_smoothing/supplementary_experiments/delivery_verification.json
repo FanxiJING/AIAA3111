@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "protected_original_files_content_and_membership": 572,
+  "runner_and_protocol_unchanged": true,
+  "independent_numeric_verification_passed": true,
+  "table_row_counts": {
+    "all_seed_metrics.csv": 288,
+    "summary.csv": 72,
+    "paired_contrasts.csv": 504,
+    "per_user_metrics.csv": 3744,
+    "per_class_f1.csv": 1440,
+    "leave_one_group_out_seed.csv": 2880,
+    "noise_structure_by_omitted_group.csv": 40,
+    "noise_increment_summary.csv": 6,
+    "G3_clean_and_20m_class_summary.csv": 20
+  },
+  "local_markdown_links_checked": 53,
+  "key_findings_and_noise_increment_text_checked": true,
+  "figures_automated_nonblank": [
+    {
+      "file": "figure1_temporal_noise.png",
+      "shape": [
+        816,
+        2040,
+        3
+      ],
+      "nonblank": true
+    },
+    {
+      "file": "figure2_fixed_gamma.png",
+      "shape": [
+        765,
+        2380,
+        3
+      ],
+      "nonblank": true
+    },
+    {
+      "file": "figure3_group_influence.png",
+      "shape": [
+        850,
+        2210,
+        3
+      ],
+      "nonblank": true
+    },
+    {
+      "file": "figure4_OU_smoothing.png",
+      "shape": [
+        816,
+        2040,
+        3
+      ],
+      "nonblank": true
+    }
+  ],
+  "manual_visual_review": "not_completed",
+  "delivery_verifier_sha256": "498ed5ddc66c2a3cdbb7191ea4c475ddbcefaed106a3ff75fe9444c6137487a8"
+}

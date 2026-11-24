@@ -1,0 +1,15 @@
+{
+  "logic_checks": "causality, order, block edges, k1, 256 matchings, fixed-five F1",
+  "original_inputs_and_reference_code_unchanged": true,
+  "feature_cache_conditions": 16,
+  "paired_noise_diagnostics": "all 5 seeds / 13 users / 3 positive sigmas",
+  "frozen_models": 3,
+  "decision_score_files": 48,
+  "metric_rows": 144,
+  "user_rows": 1872,
+  "bootstrap_draws": 5000,
+  "independent_user_groups": 9,
+  "passed": true,
+  "audited_at": 1795373392.0574834,
+  "primary_paired_bootstrap_independent_recalculation": true
+}

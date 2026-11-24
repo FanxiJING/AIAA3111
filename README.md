@@ -2,7 +2,7 @@
 
 本项目使用 GeoLife GPS 轨迹识别每个样本点的出行方式，允许同一 trip 内包含多种类别。
 当前已完成逐点标签匹配、基础清洗、trip 划分与第一批运动特征构造（Part 1），以及基础模型训练、时序平滑、分段输出与评估（Part 2）；
-窗口大小、采样率、噪声和特征组实验留给 Part 3/4。
+Part 3 已完成定位噪声与特征组鲁棒性实验，以及采样间隔、窗口大小与分数平滑实验。报告、结果图表与复现说明见 [Part 3 实验索引](experiments/README.md)。
 
 ## 项目状态与交接
 
@@ -17,6 +17,7 @@
 | 模型训练与评估 | 已完成（Part 2 v2） | 8 个模型（含全量数据的 Nystroem SVM）；盲切验证窗口、5 折用户分组 CV；在完整流程（模型 + 平滑）上选模型；选中 SVM (RBF, Nystroem, all data)；未平滑测试点级 macro-F1 0.779（v1：SVM (RBF) 0.760） |
 | 时序平滑 | 已完成（Part 2 v2） | block 内 k 窗口投票；每个模型的 k、软/硬投票与类别权重仅由训练用户 CV 选定；选中模型软投票 k = 11；测试点级 macro-F1 0.844，平滑增益 +0.065（95% CI 0.032–0.135）（v1：多数投票 k = 9，0.821） |
 | 分段输出 | 已完成（Part 2） | 同一 block 内相邻同类窗口合并为单一出行方式子序列；输出 segments_test.csv |
+| 鲁棒性与时序实验 | 已完成（Part 3） | 同一用户划分下分别评估定位噪声、特征组、采样间隔、窗口和因果平滑，见 [实验索引](experiments/README.md) |
 
 **Part 2 当前结果与文档（v2）**：最新数字、结论与局限见 [docs/part2_v2_findings.md](docs/part2_v2_findings.md)；
 给 Part 1 与 Part 3/4 的注意事项（采样率经窗口时长残留、疑似标签噪声、过小用户）见 [docs/part2_notes_for_teammates.md](docs/part2_notes_for_teammates.md)；
@@ -57,6 +58,7 @@ uv run python -m unittest discover -s tests
 - `tests/`：标签匹配边界和重叠情况验证。
 - `src/model_training/`：Part 2 窗口构造、模型训练、时序平滑、分段输出与作图代码；说明见该目录 README.md。
 - `src/model_training/windows_w50*.csv`、`src/model_training/results/`：Part 2 生成的窗口表与结果；`results/` 已强制提交到 `part2-fixes` 分支，窗口表不提交，随 zip 共享。
+- [`experiments/`](experiments/README.md) 收录 Part 3 的实验代码、报告、汇总结果、图表与复核记录。
 - `docs/`：Part 2 v2 结果与结论（part2_v2_findings.md）、给队友的注意事项（part2_notes_for_teammates.md）、交接说明（part2_handover.md，按 v1 编写）、报告草稿（part2_report_draft.md，按 v1 数字编写）与 AIGC 使用记录（aigc_log_part2.md）。
 
 `uv.lock` 提交版本管理；原始/生成数据、缓存和 `.venv` 不提交。
@@ -541,7 +543,7 @@ car → bus 11.3%（6,905 点）、bus → car 9.1%（19,136 点）、bike → w
 - SVM 在 20,000 个窗口的子样本上调参和训练（约占 70,000 个训练窗口），与其他模型的比较并非完全同等条件。
 - 平滑窗口 k = 9 约合 15 分钟出行，会抹掉真实的短段（变化点召回 0.91 → 0.48）。
 - 分段与变化点按窗口粒度评估，窗口内部的类别变化被归到最近的窗口边界。
-- 只评估了一种配置（W = 50、27 个特征）；窗口大小、采样率、噪声和特征组实验由 Part 3/4 负责。
+- 本节的 Part 2 对比基于 W = 50、27 个特征。其他窗口配置、采样率、噪声与特征组结果见 [Part 3 实验索引](experiments/README.md)。
 
 ## 环境故障排查
 

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "figures": 3,
+  "formats": [
+    "png",
+    "pdf"
+  ],
+  "manual_visual_review": "not_completed_image_tool_unavailable"
+}

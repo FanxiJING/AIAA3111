@@ -1,0 +1,6 @@
+constant_mode,points,true_class_points,true_class_fraction,macro_f1,accuracy,predicted_class_fraction,interpretation
+walk,860972,309175,0.35909994750119634,0.10568757600540786,0.35909994750119634,1.0,descriptive_reference_not_a_fitted_or_selected_model
+bike,860972,192185,0.22321864125662624,0.07299386511222923,0.22321864125662624,1.0,descriptive_reference_not_a_fitted_or_selected_model
+bus,860972,211313,0.2454353916271377,0.0788271774761374,0.2454353916271377,1.0,descriptive_reference_not_a_fitted_or_selected_model
+car,860972,61011,0.07086293166328289,0.026469468525992346,0.07086293166328289,1.0,descriptive_reference_not_a_fitted_or_selected_model
+train,860972,87288,0.10138308795175685,0.036820281357433614,0.10138308795175685,1.0,descriptive_reference_not_a_fitted_or_selected_model

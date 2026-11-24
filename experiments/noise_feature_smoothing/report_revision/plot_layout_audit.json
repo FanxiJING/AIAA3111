@@ -1,0 +1,23 @@
+[
+  {
+    "figure": "figure1_performance_and_uncertainty",
+    "visible_text_count": 54,
+    "outside_canvas": [],
+    "subplot_title_overlaps": [],
+    "scope": "canvas_bounds_and_subplot_titles_not_full_visual_review"
+  },
+  {
+    "figure": "figure2_smoothing_tradeoffs",
+    "visible_text_count": 56,
+    "outside_canvas": [],
+    "subplot_title_overlaps": [],
+    "scope": "canvas_bounds_and_subplot_titles_not_full_visual_review"
+  },
+  {
+    "figure": "figure3_saved_cases_actual_time",
+    "visible_text_count": 36,
+    "outside_canvas": [],
+    "subplot_title_overlaps": [],
+    "scope": "canvas_bounds_and_subplot_titles_not_full_visual_review"
+  }
+]

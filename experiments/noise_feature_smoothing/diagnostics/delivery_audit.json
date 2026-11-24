@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "checked_at": "2026-11-23T09:45:03.943551+08:00",
+  "primary_files_rehashed": 282,
+  "changed_primary_files": [],
+  "parquet_files": 48,
+  "parquet_rows": 834240,
+  "reconciled_metric_rows": 144,
+  "boundary_rows": 25392,
+  "bootstrap_rows": 36,
+  "tests_run": 7,
+  "images": [
+    {
+      "file": "01_feature_drift.png",
+      "width": 1440,
+      "height": 1800,
+      "nonwhite_fraction": 0.41367013888888887,
+      "sha256": "9c07f9fc43fa7b623767128048933cde95601afccb14e0b66b8d6af4aff5d5f3"
+    },
+    {
+      "file": "02_sampling_interval.png",
+      "width": 2160,
+      "height": 990,
+      "nonwhite_fraction": 0.058937991021324354,
+      "sha256": "d36d238f1aa310d4db6dee0e8bf1a12c547e4be4652f45026f6da8d45b2542db"
+    },
+    {
+      "file": "03_rbf_collapse.png",
+      "width": 2520,
+      "height": 990,
+      "nonwhite_fraction": 0.05326158409491743,
+      "sha256": "5f17cfd9463079be3501f150cf94511a2ce967c1933be7e778e54c5133c0e98a"
+    },
+    {
+      "file": "04_short_mode_loss.png",
+      "width": 2160,
+      "height": 1080,
+      "nonwhite_fraction": 0.1713014403292181,
+      "sha256": "7e50c4f6323e4275e3bc6983cf0a8a0a6dcca237b9c361fbafc6d714b095916e"
+    },
+    {
+      "file": "05_user_group_heterogeneity.png",
+      "width": 2340,
+      "height": 1080,
+      "nonwhite_fraction": 0.07899335232668565,
+      "sha256": "c5ed7182fa03a7d9b7c15f089564c8c88f5eb815e698928bd11f836f14d19884"
+    },
+    {
+      "file": "06_boundary_latency_and_recall.png",
+      "width": 2160,
+      "height": 1080,
+      "nonwhite_fraction": 0.04676011659807956,
+      "sha256": "5cdbcf0a76dbe719f7e81ff5c63a80a91815d23239f207812b5c22a2ed0e5e79"
+    }
+  ],
+  "rendered_text_boundary_check_passed": true,
+  "manual_visual_review_completed": false,
+  "visual_review": "See VISUAL_QA.md; pixel checks alone do not verify layout.",
+  "report_present": true
+}

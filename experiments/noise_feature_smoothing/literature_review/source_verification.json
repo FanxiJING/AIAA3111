@@ -1,0 +1,956 @@
+[
+  {
+    "key": "ranacher",
+    "doi": "10.1080/13658816.2015.1086924",
+    "requests": [
+      {
+        "kind": "crossref",
+        "requested_url": "https://api.crossref.org/works/10.1080/13658816.2015.1086924",
+        "fetched_at": "2026-11-23T12:23:30+0800",
+        "ok": true,
+        "resolved_url": "https://api.crossref.org/works/10.1080/13658816.2015.1086924",
+        "path": "sources\\ranacher_crossref.json",
+        "sha256": "0ef2749dba23b00af78543bd7db5a3c39360f4a145e549a5361735ad4701502c",
+        "bytes": 7227,
+        "content_type": "application/json"
+      },
+      {
+        "kind": "primary",
+        "requested_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4786863/",
+        "fetched_at": "2026-11-23T12:23:31+0800",
+        "ok": true,
+        "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4786863/",
+        "path": "sources\\ranacher_primary.html",
+        "sha256": "107cf2e9e91437b7e42c7532510578df4de710b14baf7cf9667d839d0b33ea7d",
+        "bytes": 227317,
+        "content_type": "text/html"
+      }
+    ],
+    "title_verified": true,
+    "metadata": {
+      "title": [
+        "Why GPS makes distances bigger than they are"
+      ],
+      "author": [
+        {
+          "given": "Peter",
+          "family": "Ranacher",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Richard",
+          "family": "Brunauer",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Wolfgang",
+          "family": "Trutschnig",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Stefan",
+          "family": "Van der Spek",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Siegfried",
+          "family": "Reich",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2015,
+            9,
+            30
+          ]
+        ]
+      },
+      "published-online": {
+        "date-parts": [
+          [
+            2015,
+            9,
+            30
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2016,
+            2
+          ]
+        ]
+      },
+      "container-title": [
+        "International Journal of Geographical Information Science"
+      ],
+      "URL": "https://doi.org/10.1080/13658816.2015.1086924"
+    }
+  },
+  {
+    "key": "zeng",
+    "doi": "10.1049/itr2.12243",
+    "requests": [
+      {
+        "kind": "crossref",
+        "requested_url": "https://api.crossref.org/works/10.1049/itr2.12243",
+        "fetched_at": "2026-11-23T12:23:32+0800",
+        "ok": true,
+        "resolved_url": "https://api.crossref.org/works/10.1049/itr2.12243",
+        "path": "sources\\zeng_crossref.json",
+        "sha256": "678589d177c14c3b5a5d76bf75647edd8a987b30bfff9f0620db15bc20da4dbc",
+        "bytes": 15081,
+        "content_type": "application/json"
+      }
+    ],
+    "title_verified": true,
+    "metadata": {
+      "title": [
+        "Addressing robust travel mode identification with individual trip‐chain trajectory noise reduction"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-6967-5394",
+          "authenticated-orcid": false,
+          "given": "Jiaqi",
+          "family": "Zeng",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "College of civil engineering and architecture Zhejiang University  Hangzhou China"
+            },
+            {
+              "name": "Center for Balance Architecture Zhejiang University  Hangzhou China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-3809-4404",
+          "authenticated-orcid": false,
+          "given": "Guozheng",
+          "family": "Zhang",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "College of civil engineering and architecture Zhejiang University  Hangzhou China"
+            },
+            {
+              "name": "Architectural Design &amp; Research Institute of Zhejiang University Co., Ltd  Hangzhou China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Youwei",
+          "family": "Hu",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "College of civil engineering and architecture Zhejiang University  Hangzhou China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-6066-2274",
+          "authenticated-orcid": false,
+          "given": "Dianhai",
+          "family": "Wang",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "College of civil engineering and architecture Zhejiang University  Hangzhou China"
+            },
+            {
+              "name": "Alibaba‐Zhejiang University Joint Research Institute of Frontier Technologies  Hangzhou China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2022,
+            7,
+            24
+          ]
+        ]
+      },
+      "published-online": {
+        "date-parts": [
+          [
+            2022,
+            7,
+            24
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2023,
+            1
+          ]
+        ]
+      },
+      "container-title": [
+        "IET Intelligent Transport Systems"
+      ],
+      "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Identifying travel modes from Global Navigation Satellite System (GNSS) trajectories is helpful for traffic management. In mode identification, the motion features are extracted from trajectories to train the classifiers. However, features would be distorted by the positioning noise when migrating existing frameworks to poor‐quality tracks. This study aims to answer how to eliminate the impact of positioning error on mode identification. Specifically, six widely used Trajectory Noise Reduction (TNR) methods were tested. Representative motion features were calculated and sent to several classical classifiers to evaluate the effect of TNR. Then, the extent to which TNR restores motion features is analysed by information gain. To verify the robustness of these methods, multiple noise scenarios are designed to simulate possible positioning noise. The results show that the trajectory smoothing methods perform better than the outlier elimination methods regardless of the type and magnitude of noise. In particular, the Gaussian kernel smoothing can achieve the highest effect in almost all noise scenarios. For untested TNR methods that require a time window radius parameter, a 30‐s time window is a good candidate. Moreover, the visualisation verification cannot ensure the best TNR method for travel mode identification.</jats:p>",
+      "URL": "https://doi.org/10.1049/itr2.12243"
+    }
+  },
+  {
+    "key": "dabiri",
+    "doi": "10.1016/j.trc.2017.11.021",
+    "requests": [
+      {
+        "kind": "crossref",
+        "requested_url": "https://api.crossref.org/works/10.1016/j.trc.2017.11.021",
+        "fetched_at": "2026-11-23T12:23:33+0800",
+        "ok": true,
+        "resolved_url": "https://api.crossref.org/works/10.1016/j.trc.2017.11.021",
+        "path": "sources\\dabiri_crossref.json",
+        "sha256": "4c39a6acbd022ee4f7f74d8730368fe37525b8335947f1e1c6855703e8615c64",
+        "bytes": 12144,
+        "content_type": "application/json"
+      },
+      {
+        "kind": "primary",
+        "requested_url": "https://arxiv.org/abs/1804.02386",
+        "fetched_at": "2026-11-23T12:23:34+0800",
+        "ok": true,
+        "resolved_url": "https://arxiv.org/abs/1804.02386",
+        "path": "sources\\dabiri_primary.html",
+        "sha256": "7b43cb7ceb64c3d566676ed21457a2962895d149d01720819ea7d8e51d299b96",
+        "bytes": 45533,
+        "content_type": "text/html"
+      }
+    ],
+    "title_verified": true,
+    "metadata": {
+      "title": [
+        "Inferring transportation modes from GPS trajectories using a convolutional neural network"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0003-4404-5449",
+          "authenticated-orcid": false,
+          "given": "Sina",
+          "family": "Dabiri",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Kevin",
+          "family": "Heaslip",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2018,
+            1
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2018,
+            1
+          ]
+        ]
+      },
+      "container-title": [
+        "Transportation Research Part C: Emerging Technologies"
+      ],
+      "URL": "https://doi.org/10.1016/j.trc.2017.11.021"
+    }
+  },
+  {
+    "key": "endo",
+    "doi": "10.1007/978-3-319-31750-2_5",
+    "requests": [
+      {
+        "kind": "crossref",
+        "requested_url": "https://api.crossref.org/works/10.1007/978-3-319-31750-2_5",
+        "fetched_at": "2026-11-23T12:23:35+0800",
+        "ok": true,
+        "resolved_url": "https://api.crossref.org/works/10.1007/978-3-319-31750-2_5",
+        "path": "sources\\endo_crossref.json",
+        "sha256": "f229d701b9dd487140bafe9acaace6297ea52aa2dddabff2cbcfc0b0df0bb2ba",
+        "bytes": 9227,
+        "content_type": "application/json"
+      }
+    ],
+    "title_verified": true,
+    "metadata": {
+      "title": [
+        "Deep Feature Extraction from Trajectories for Transportation Mode Estimation"
+      ],
+      "author": [
+        {
+          "given": "Yuki",
+          "family": "Endo",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Hiroyuki",
+          "family": "Toda",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Kyosuke",
+          "family": "Nishida",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Akihisa",
+          "family": "Kawanobe",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2016
+          ]
+        ]
+      },
+      "published-online": {
+        "date-parts": [
+          [
+            2016,
+            4,
+            12
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2016
+          ]
+        ]
+      },
+      "container-title": [
+        "Lecture Notes in Computer Science",
+        "Advances in Knowledge Discovery and Data Mining"
+      ],
+      "URL": "https://doi.org/10.1007/978-3-319-31750-2_5"
+    }
+  },
+  {
+    "key": "lu",
+    "doi": "10.1016/j.trc.2025.105388",
+    "requests": [
+      {
+        "kind": "crossref",
+        "requested_url": "https://api.crossref.org/works/10.1016/j.trc.2025.105388",
+        "fetched_at": "2026-11-23T12:23:36+0800",
+        "ok": true,
+        "resolved_url": "https://api.crossref.org/works/10.1016/j.trc.2025.105388",
+        "path": "sources\\lu_crossref.json",
+        "sha256": "6a475777d6a43991eb485cfd5576fc1f82c7951df0db73e5489a6bfddf93bff5",
+        "bytes": 19393,
+        "content_type": "application/json"
+      },
+      {
+        "kind": "primary",
+        "requested_url": "https://www.sciencedirect.com/science/article/abs/pii/S0968090X25003924",
+        "fetched_at": "2026-11-23T12:23:37+0800",
+        "ok": false,
+        "error": "HTTPError: HTTP Error 403: Forbidden"
+      }
+    ],
+    "title_verified": true,
+    "metadata": {
+      "title": [
+        "Enhancing applicable travel mode identification under real-world noise: A transformer-based framework with hybrid data and behavior-indication masks"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-5293-9656",
+          "authenticated-orcid": false,
+          "given": "Sichong",
+          "family": "Lu",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-8628-1215",
+          "authenticated-orcid": false,
+          "given": "Yi",
+          "family": "Su",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-1621-6119",
+          "authenticated-orcid": false,
+          "given": "Jiahui",
+          "family": "Chai",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-8035-4938",
+          "authenticated-orcid": false,
+          "given": "Lean",
+          "family": "Yu",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2026,
+            1
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2026,
+            1
+          ]
+        ]
+      },
+      "container-title": [
+        "Transportation Research Part C: Emerging Technologies"
+      ],
+      "URL": "https://doi.org/10.1016/j.trc.2025.105388"
+    }
+  },
+  {
+    "key": "roberts",
+    "doi": "10.1111/ecog.02881",
+    "requests": [
+      {
+        "kind": "crossref",
+        "requested_url": "https://api.crossref.org/works/10.1111/ecog.02881",
+        "fetched_at": "2026-11-23T12:23:38+0800",
+        "ok": true,
+        "resolved_url": "https://api.crossref.org/works/10.1111/ecog.02881",
+        "path": "sources\\roberts_crossref.json",
+        "sha256": "149e934e139034b77b6ea4e42afdc954bc1288ed1a32d0b874d3a971987cc37d",
+        "bytes": 18194,
+        "content_type": "application/json"
+      },
+      {
+        "kind": "primary",
+        "requested_url": "https://nsojournals.onlinelibrary.wiley.com/doi/10.1111/ecog.02881",
+        "fetched_at": "2026-11-23T12:23:39+0800",
+        "ok": false,
+        "error": "HTTPError: HTTP Error 403: Forbidden"
+      }
+    ],
+    "title_verified": true,
+    "metadata": {
+      "title": [
+        "Cross‐validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure"
+      ],
+      "author": [
+        {
+          "given": "David R.",
+          "family": "Roberts",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Dept of Biometry and Environmental System Analysis Univ. of Freiburg Freiburg Germany"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Volker",
+          "family": "Bahn",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Dept of Biological Sciences Wright State Univ. Dayton OH USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Simone",
+          "family": "Ciuti",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Dept of Biometry and Environmental System Analysis Univ. of Freiburg Freiburg Germany"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Mark S.",
+          "family": "Boyce",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Dept of Biological Sciences Univ. of Alberta Edmonton AB Canada"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jane",
+          "family": "Elith",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "School of BioSciences, Univ. of Melbourne Melbourne Australia"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Gurutzeta",
+          "family": "Guillera‐Arroita",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "School of BioSciences, Univ. of Melbourne Melbourne Australia"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Severin",
+          "family": "Hauenstein",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Dept of Biometry and Environmental System Analysis Univ. of Freiburg Freiburg Germany"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "José J.",
+          "family": "Lahoz‐Monfort",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "School of BioSciences, Univ. of Melbourne Melbourne Australia"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Boris",
+          "family": "Schröder",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Inst. of Geoecology, Div. of Landscape Ecology and Environmental Systems Analysis, Technische Univ. Braunschweig, Braunschweig, Germany, and: Berlin‐Brandenburg Inst. of Advanced Biodiversity Research (BBIB) Berlin Germany"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Wilfried",
+          "family": "Thuiller",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Lab. d’Écologie Alpine, Univ. Joseph Fourier Grenoble France"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "David I.",
+          "family": "Warton",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "School of Mathematics and Statistics and Evolution and Ecology Research Centre, The Univ. of New South Wales Sydney Australia"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Brendan A.",
+          "family": "Wintle",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "School of BioSciences, Univ. of Melbourne Melbourne Australia"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Florian",
+          "family": "Hartig",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Dept of Biometry and Environmental System Analysis Univ. of Freiburg Freiburg Germany"
+            },
+            {
+              "name": "Theoretical Ecology, Univ. of Regensburg Regensburg Germany"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Carsten F.",
+          "family": "Dormann",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Dept of Biometry and Environmental System Analysis Univ. of Freiburg Freiburg Germany"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2017,
+            3,
+            3
+          ]
+        ]
+      },
+      "published-online": {
+        "date-parts": [
+          [
+            2017,
+            3,
+            3
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2017,
+            8
+          ]
+        ]
+      },
+      "container-title": [
+        "Ecography"
+      ],
+      "abstract": "<jats:p>Ecological data often show temporal, spatial, hierarchical (random effects), or phylogenetic structure. Modern statistical approaches are increasingly accounting for such dependencies. However, when performing cross‐validation, these structures are regularly ignored, resulting in serious underestimation of predictive error. One cause for the poor performance of uncorrected (random) cross‐validation, noted often by modellers, are dependence structures in the data that persist as dependence structures in model residuals, violating the assumption of independence. Even more concerning, because often overlooked, is that structured data also provides ample opportunity for overfitting with non‐causal predictors. This problem can persist even if remedies such as autoregressive models, generalized least squares, or mixed models are used. Block cross‐validation, where data are split strategically rather than randomly, can address these issues. However, the blocking strategy must be carefully considered. Blocking in space, time, random effects or phylogenetic distance, while accounting for dependencies in the data, may also unwittingly induce extrapolations by restricting the ranges or combinations of predictor variables available for model training, thus overestimating interpolation errors. On the other hand, deliberate blocking in predictor space may also improve error estimates when extrapolation is the modelling goal. Here, we review the ecological literature on non‐random and blocked cross‐validation approaches. We also provide a series of simulations and case studies, in which we show that, for all instances tested, block cross‐validation is nearly universally more appropriate than random cross‐validation if the goal is predicting to new data or predictor space, or for selecting causal predictors. We recommend that block cross‐validation be used wherever dependence structures exist in a dataset, even if no correlation structure is visible in the fitted model residuals, or if the fitted models account for such correlations.</jats:p>",
+      "URL": "https://doi.org/10.1111/ecog.02881"
+    }
+  },
+  {
+    "key": "farha",
+    "doi": "10.1109/CVPR.2019.00369",
+    "requests": [
+      {
+        "kind": "crossref",
+        "requested_url": "https://api.crossref.org/works/10.1109/CVPR.2019.00369",
+        "fetched_at": "2026-11-23T12:23:39+0800",
+        "ok": true,
+        "resolved_url": "https://api.crossref.org/works/10.1109/CVPR.2019.00369",
+        "path": "sources\\farha_crossref.json",
+        "sha256": "77c0d48b54eececc0ee763398d695de647525bef6835f8a63207a664fd067ce0",
+        "bytes": 5610,
+        "content_type": "application/json"
+      },
+      {
+        "kind": "primary",
+        "requested_url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Abu_Farha_MS-TCN_Multi-Stage_Temporal_Convolutional_Network_for_Action_Segmentation_CVPR_2019_paper.html",
+        "fetched_at": "2026-11-23T12:23:40+0800",
+        "ok": true,
+        "resolved_url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Abu_Farha_MS-TCN_Multi-Stage_Temporal_Convolutional_Network_for_Action_Segmentation_CVPR_2019_paper.html",
+        "path": "sources\\farha_primary.html",
+        "sha256": "1086b81af4f098add034e8f0d1b1645388450a953fa5a150d290e994a4464b0a",
+        "bytes": 4564,
+        "content_type": "text/html"
+      }
+    ],
+    "title_verified": true,
+    "metadata": {
+      "title": [
+        "MS-TCN: Multi-Stage Temporal Convolutional Network for Action Segmentation"
+      ],
+      "author": [
+        {
+          "given": "Yazan Abu",
+          "family": "Farha",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Univ. of Bonn"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jürgen",
+          "family": "Gall",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Univ. of Bonn"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2019,
+            6
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2019,
+            6
+          ]
+        ]
+      },
+      "container-title": [
+        "2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"
+      ],
+      "URL": "https://doi.org/10.1109/cvpr.2019.00369"
+    }
+  },
+  {
+    "key": "skill",
+    "doi": "10.48550/arXiv.2609.00065",
+    "requests": [
+      {
+        "kind": "crossref",
+        "requested_url": "https://api.crossref.org/works/10.48550/arXiv.2609.00065",
+        "fetched_at": "2026-11-23T12:23:41+0800",
+        "ok": false,
+        "error": "HTTPError: HTTP Error 404: Not Found"
+      },
+      {
+        "kind": "primary",
+        "requested_url": "https://arxiv.org/abs/2609.00065",
+        "fetched_at": "2026-11-23T12:23:42+0800",
+        "ok": true,
+        "resolved_url": "https://arxiv.org/abs/2609.00065",
+        "path": "sources\\skill_primary.html",
+        "sha256": "87e5d6378d900a1a9299aaf8c9e13ea37db5de5bebd0c7f7af29255b457402d7",
+        "bytes": 42868,
+        "content_type": "text/html"
+      }
+    ]
+  }
+]

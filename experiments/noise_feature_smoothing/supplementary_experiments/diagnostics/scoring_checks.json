@@ -1,0 +1,23 @@
+{
+  "original_metric_rows_reproduced": 144,
+  "seed_metric_rows": 288,
+  "user_metric_rows": 3744,
+  "summary_rows": 72,
+  "paired_contrast_rows": 504,
+  "loo_seed_rows": 2880,
+  "bootstrap_draws": 5000,
+  "clusters": [
+    "052",
+    "058",
+    "060",
+    "linked0",
+    "082",
+    "087",
+    "linked3",
+    "091",
+    "097"
+  ],
+  "zero_boundary_bootstrap_draws": 133,
+  "fixed_five_class": true,
+  "bootstrap_seedwise_then_average": true
+}

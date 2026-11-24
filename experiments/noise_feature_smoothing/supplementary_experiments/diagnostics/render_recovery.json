@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "repair": "Ignore tick labels outside the axis view interval in canvas QA.",
+  "data_axis_limits_ticks_and_experimental_results_modified": false,
+  "runner_file_modified": false,
+  "runner_sha256": "9f2e74ac95c2dc8fa270ef8f2f52f96e81415b885b77037e488ecc649ca121be",
+  "recovery_script_sha256": "4b2880ef61b0170bc12c3c13ccce1a3dd97d3d4611085ccf7fbd408ae85a2dc6",
+  "figure_layout_checks": [
+    {
+      "figure": "figure1_temporal_noise",
+      "rendered_text_and_legend_items_checked": 31,
+      "out_of_view_ticks_excluded_from_QA": [
+        {
+          "text": "0.1",
+          "position": 0.1
+        },
+        {
+          "text": "0.9",
+          "position": 0.9
+        },
+        {
+          "text": "−0.7",
+          "position": -0.7000000000000001
+        },
+        {
+          "text": "0.1",
+          "position": 0.09999999999999998
+        }
+      ],
+      "rendered_clipping": []
+    },
+    {
+      "figure": "figure2_fixed_gamma",
+      "rendered_text_and_legend_items_checked": 55,
+      "out_of_view_ticks_excluded_from_QA": [],
+      "rendered_clipping": []
+    },
+    {
+      "figure": "figure3_group_influence",
+      "rendered_text_and_legend_items_checked": 42,
+      "out_of_view_ticks_excluded_from_QA": [
+        {
+          "text": "0.40",
+          "position": 0.4
+        },
+        {
+          "text": "0.85",
+          "position": 0.8500000000000001
+        },
+        {
+          "text": "0.05",
+          "position": 0.05
+        },
+        {
+          "text": "0.35",
+          "position": 0.35000000000000003
+        }
+      ],
+      "rendered_clipping": []
+    },
+    {
+      "figure": "figure4_OU_smoothing",
+      "rendered_text_and_legend_items_checked": 31,
+      "out_of_view_ticks_excluded_from_QA": [
+        {
+          "text": "0.2",
+          "position": 0.2
+        },
+        {
+          "text": "0.9",
+          "position": 0.9000000000000001
+        },
+        {
+          "text": "0.1",
+          "position": 0.1
+        },
+        {
+          "text": "1.0",
+          "position": 1.0
+        }
+      ],
+      "rendered_clipping": []
+    }
+  ],
+  "manual_visual_review": "pending",
+  "elapsed_seconds": 7.952999999979511
+}

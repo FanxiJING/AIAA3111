@@ -1,0 +1,159 @@
+[
+  {
+    "family": "original",
+    "group": "G1",
+    "model": "experiments\\noise_feature_smoothing\\models\\G1.joblib",
+    "feature_columns": [
+      "speed_mean",
+      "speed_std",
+      "speed_min",
+      "speed_max",
+      "speed_p10",
+      "speed_p50",
+      "speed_p90",
+      "speed_p95",
+      "stop_rate",
+      "slow_rate"
+    ],
+    "gamma": 0.1,
+    "intercept_class": "train",
+    "intercept": {
+      "bike": -0.727076771575077,
+      "bus": -0.6453647620919134,
+      "car": -0.727054364377699,
+      "train": -0.1339434163106284,
+      "walk": -0.6035775850893007
+    }
+  },
+  {
+    "family": "original",
+    "group": "G2",
+    "model": "experiments\\noise_feature_smoothing\\models\\G2.joblib",
+    "feature_columns": [
+      "speed_mean",
+      "speed_std",
+      "speed_min",
+      "speed_max",
+      "speed_p10",
+      "speed_p50",
+      "speed_p90",
+      "speed_p95",
+      "stop_rate",
+      "slow_rate",
+      "acc_mean",
+      "acc_std",
+      "acc_p90",
+      "acc_max",
+      "big_acc_rate"
+    ],
+    "gamma": 0.06666666666666667,
+    "intercept_class": "walk",
+    "intercept": {
+      "bike": -0.524469911565995,
+      "bus": -0.5985273472569819,
+      "car": -1.0106041181254553,
+      "train": -0.48830636226146396,
+      "walk": -0.4126238697724343
+    }
+  },
+  {
+    "family": "original",
+    "group": "G3",
+    "model": "experiments\\noise_feature_smoothing\\models\\full.joblib",
+    "feature_columns": [
+      "speed_mean",
+      "speed_std",
+      "speed_min",
+      "speed_max",
+      "speed_p10",
+      "speed_p50",
+      "speed_p90",
+      "speed_p95",
+      "acc_mean",
+      "acc_std",
+      "acc_p90",
+      "acc_max",
+      "jerk_mean",
+      "jerk_p90",
+      "hcr_mean",
+      "hcr_p50",
+      "hcr_p90",
+      "heading_change_mean",
+      "stop_rate",
+      "slow_rate",
+      "sharp_turn_rate",
+      "big_acc_rate",
+      "path_length_m",
+      "valid_speed_frac",
+      "duration_s",
+      "straightness",
+      "avg_speed_overall"
+    ],
+    "gamma": 0.037037037037037035,
+    "intercept_class": "train",
+    "intercept": {
+      "bike": -0.6777291843137105,
+      "bus": -0.7407832815443163,
+      "car": -0.776332047177139,
+      "train": -0.20475028192540887,
+      "walk": -0.3906689473918395
+    }
+  },
+  {
+    "family": "fixed_gamma",
+    "group": "G1",
+    "model": "experiments\\noise_feature_smoothing\\supplementary_experiments\\models\\G1_gamma1over27.joblib",
+    "feature_columns": [
+      "speed_mean",
+      "speed_std",
+      "speed_min",
+      "speed_max",
+      "speed_p10",
+      "speed_p50",
+      "speed_p90",
+      "speed_p95",
+      "stop_rate",
+      "slow_rate"
+    ],
+    "gamma": 0.037037037037037035,
+    "intercept_class": "train",
+    "intercept": {
+      "bike": -0.14627778476607473,
+      "bus": -0.889847614755839,
+      "car": -2.069126084254163,
+      "train": -0.09079213389501385,
+      "walk": -0.6038363663668154
+    }
+  },
+  {
+    "family": "fixed_gamma",
+    "group": "G2",
+    "model": "experiments\\noise_feature_smoothing\\supplementary_experiments\\models\\G2_gamma1over27.joblib",
+    "feature_columns": [
+      "speed_mean",
+      "speed_std",
+      "speed_min",
+      "speed_max",
+      "speed_p10",
+      "speed_p50",
+      "speed_p90",
+      "speed_p95",
+      "stop_rate",
+      "slow_rate",
+      "acc_mean",
+      "acc_std",
+      "acc_p90",
+      "acc_max",
+      "big_acc_rate"
+    ],
+    "gamma": 0.037037037037037035,
+    "intercept_class": "walk",
+    "intercept": {
+      "bike": -0.4265113721825921,
+      "bus": -0.612675842326833,
+      "car": -1.5296386071302348,
+      "train": -0.5161597326967262,
+      "walk": -0.42320890786467363
+    }
+  }
+]

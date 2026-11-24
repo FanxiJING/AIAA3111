@@ -1,0 +1,16 @@
+{
+  "family": "correlated_noise",
+  "group": "G3",
+  "noise": "OU30",
+  "sigma": 5,
+  "seed": 20261124,
+  "tau_seconds": 30.0,
+  "feature_source": "experiments\\noise_feature_smoothing\\supplementary_experiments\\feature_cache\\OU30_sigma05_seed20261124.csv",
+  "feature_sha256": "927f6bef3d58de664ddca14a2811819b40f584afe29b04bc93ef900cceb654d5",
+  "model_sha256": "328692f6ae7201144216fddd2f032812c405438f1338f6c1ac416fe149d57866",
+  "file_sha256": "9c165b278172b26849957f1bed7a145ff0838fdad1da111598df0aaf06c2d21d",
+  "code_sha256": "9f2e74ac95c2dc8fa270ef8f2f52f96e81415b885b77037e488ecc649ca121be",
+  "protocol_sha256": "61032da2e0d5aa08667322da0eace8b3199328c065451ea7eefe53262ecf09ee",
+  "input_manifest_sha256": "273872e41a3a5d5c9619ebbc6df1aa581e5ed7f9825c630ccb31b00b835e4768",
+  "created_at": "2026-11-23T19:09:11.206443+08:00"
+}

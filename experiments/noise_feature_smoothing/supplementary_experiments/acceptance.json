@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "protected_files_unchanged": 572,
+  "protocol_unchanged": true,
+  "new_models": 2,
+  "OU_feature_caches": 15,
+  "new_score_files": 47,
+  "all_metric_rows_including_reused": 288,
+  "summary_rows": 72,
+  "manual_visual_review": "pending",
+  "completed_at": "2026-11-23T19:14:23.367577+08:00",
+  "elapsed_seconds": 7.952999999979511
+}

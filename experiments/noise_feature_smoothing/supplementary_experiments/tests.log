@@ -1,0 +1,12 @@
+test_actual_seconds_and_seed_pairing (__main__.SupplementalTests.test_actual_seconds_and_seed_pairing) ... ok
+test_duplicate_and_invalid_time (__main__.SupplementalTests.test_duplicate_and_invalid_time) ... ok
+test_exact_irregular_recurrence_and_block_reset (__main__.SupplementalTests.test_exact_irregular_recurrence_and_block_reset) ... ok
+test_loo_confusion_additivity (__main__.SupplementalTests.test_loo_confusion_additivity) ... ok
+test_mixed_window_point_scoring (__main__.SupplementalTests.test_mixed_window_point_scoring) ... ok
+test_stationary_marginal_and_covariance (__main__.SupplementalTests.test_stationary_marginal_and_covariance) ... ok
+test_trailing_has_no_future_or_cross_block_information (__main__.SupplementalTests.test_trailing_has_no_future_or_cross_block_information) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.514s
+
+OK

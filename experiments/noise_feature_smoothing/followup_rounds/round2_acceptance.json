@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "confusion_conditions": 80,
+  "error_flow_rows": 400,
+  "prediction_pair_flow_rows": 2000,
+  "summary_rows": 20,
+  "paired_feature_contrasts": 24,
+  "group_omission_contrasts": 240,
+  "bootstrap_draws_reused": 5000,
+  "new_bootstrap_draws": 0
+}
